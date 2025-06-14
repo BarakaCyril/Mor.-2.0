@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap");
+
+:root {
+  --primary-color: #ffc4acff;
+  --secondary-color: #fff8f6ff;
+  --accent-color: #333333ff;
+  --font-main: "Winky Sans", sans-serif;
+  --font-accent: "Noto Serif Georgian", cursive;
+}
+
+body,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: var(--secondary-color);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  font-family: var(--font-main);
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 248, 246, 0.012);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.039);
+}
+
+.nav-links {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 1.5rem;
+  font-size: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.order-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 2.5rem;
+  background-size: cover;
+  background-position: center;
+  transform: scale(0.5);
+  z-index: 1;
+  box-shadow: 0 8px 32px 0 rgba(60, 60, 60, 0.384);
+}
+
+.center-img {
+  z-index: 3;
+}
+
+.center-text {
+  position: absolute;
+  font-family: var(--font-main);
+  color: var(--accent-color);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  text-align: center;
+  z-index: 2;
+}
+
+.center-text h1 {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 0.5;
+}
+
+.center-text p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-family: var(--font-accent);
+}
