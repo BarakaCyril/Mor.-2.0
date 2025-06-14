@@ -9,6 +9,15 @@
   --font-accent: "Noto Serif Georgian", cursive;
 }
 
+h1{
+  font-family: var(--font-accent);
+  line-height: 1.2;
+}
+
+p{
+  font-family: var(--font-main);
+}
+
 body,
 html {
   box-sizing: border-box;
@@ -113,19 +122,73 @@ html {
 .center-text p {
   font-size: 1.2rem;
   margin-top: 1rem;
-  font-family: var(--font-accent);
+  font-family: var(--font-main);
 }
 
+
+
+.item-1 { grid-area: item1; }
+.item-2 { grid-area: item2; }
+.item-3 { grid-area: item3; }
+.item-4 { grid-area: item4; }
+.item-5 { grid-area: item5; }
+
 .bento-section {
-  padding: 2rem 1.5rem;
-  margin-top: 1rem;
-  z-index: 2000;
+  padding: 2rem;
+  margin-top: 2rem;
 }
 
 .bento-container{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: min-content;
+  padding: 1rem;
+  justify-content: center;
+  grid-template-areas: 
+  "item1 item1 item2"
+  "item3 item4 item5";
+}
+
+.bento-about{
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+
+}
+
+.bento-about h1{
+  font-weight: bold;
+  line-height: 0.2;
+  font-size: 2.0rem;
+  color: var(--accent-color);
+}
+
+.bento-about p{
+  font-size: 1.3rem;
+  color: var(--accent-color);
+}
+
+.bento-video video {
+  max-width: 550px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(60,60,60,0.12);
+}
+
+.bento-image img{
+  width: 320px;
+  height: auto;
+  border-radius: 1rem;
+  height: auto;
+}
+
+.bento-info{
+  background-color: var(--accent-color);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 @media (max-width: 768px){
