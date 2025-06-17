@@ -152,3 +152,25 @@ window.addEventListener('resize', () => {
 window.addEventListener('load', () => {
   ScrollTrigger.refresh();
 });
+
+
+//? - ?//
+//swiper carousel effect/////
+new Swiper(".mySwiper" , {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+  coverflowEffect: {
+    rotate: 30,
+    stretch: 0,
+    depth: 50,
+    modifier: 0.5,
+    slideShadows: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  }
+})

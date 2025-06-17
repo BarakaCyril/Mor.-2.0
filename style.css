@@ -3,11 +3,15 @@
 
 :root {
   --primary-color: rgb(250, 207, 189);
+  --primary-color-light: rgba(250, 207, 189, 0.3);
   --secondary-color: #fff8f6ff;
   --accent-color: #333333ff;
   --font-main: "Winky Sans", sans-serif;
   --font-accent: "Noto Serif Georgian", cursive;
+  --ticker-gap: 20px;
 }
+
+
 
 h1{
   font-family: var(--font-accent);
@@ -182,7 +186,7 @@ html {
   justify-content: center;
   text-align: center;
   max-width: 550px;
-  background-color: rgba(250, 207, 189, 0.685);
+  background-color: var(--primary-color);
   border-radius: 1rem;
   border: 1.5px solid var(--accent-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
@@ -197,7 +201,6 @@ html {
   border-radius: 1rem; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .bento-testimonial img {
   width: 120px;
@@ -214,6 +217,119 @@ html {
 
 .bento-testimonial h1 {
   font-size: 1rem;
+}
+
+@keyframes scroll{
+  to{
+    transform: translate(calc(-100% - var(--ticker-gap)));
+  }
+}
+
+
+
+.word-ticker{
+  rotate: -1deg;
+  margin-bottom: -10px;
+  font-size: 1.3rem;
+  padding-block: 0.5rem;
+  border-block: 1.5px solid var(--accent-color);
+  display: flex;
+  background-color: var(--primary-color);
+  overflow: hidden;
+  user-select: none;
+
+  margin-top: 10px;
+}
+
+.word-ticker:hover ul{
+  animation-play-state: paused;
+}
+
+.ticker-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 6px;
+}
+
+.word-ticker ul{
+  flex-shrink: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--ticker-gap);
+  min-width: 100%;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  background-color: var(--primary-color-light);
+}
+
+.carousel-title{
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-desc{
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.swiper {
+  padding: 1rem;
+}
+
+.swiper-slide {
+  max-width: 350px;
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  margin: 2rem 2rem; /* Added spacing between cards */
+}
+
+.swiper-slide img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+} 
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary-color);
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #ffe1d6;
+  transform: scale(1.1);
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
 }
 
 @media (max-width: 768px){
