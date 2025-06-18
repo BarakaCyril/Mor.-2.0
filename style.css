@@ -221,7 +221,7 @@ html {
 
 @keyframes scroll{
   to{
-    transform: translate(calc(-100% - var(--ticker-gap)));
+    transform: translate(calc(-100% - var(--ticker-gap)), 0);
   }
 }
 
@@ -241,9 +241,6 @@ html {
   margin-top: 10px;
 }
 
-.word-ticker:hover ul{
-  animation-play-state: paused;
-}
 
 .ticker-dot {
   width: 10px;
@@ -331,6 +328,116 @@ html {
 .swiper-button-prev {
   left: 10px;
 }
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 4rem;
+}
+
+.about-img-container img {
+  max-width: 450px;
+  margin-top: 20px;
+}
+
+.about-image h1{
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-image h2{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.about-desc h1{
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.about-desc p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.subscribe-section {
+  margin: 5rem auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.subscribe-container {
+  display: flex;
+  max-width: 800px;
+  border: 1.5px solid var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border-radius: 0.5rem;
+  min-height: 350px;
+}
+
+.subscribe-image {
+  flex: 1;
+  min-width: 300px;
+  background: url('Images/fudge.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.subscribe-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subscribe-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.subscribe-content p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.subscribe-form {
+  display: flex;
+  max-width: 100%;
+  border: 1px solid var(--accent-color);
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+.subscribe-form button {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscribe-form button:hover {
+  background-color: #ffc4ac;
+  color: var(--accent-color);
+}
+
 
 @media (max-width: 768px){
   .image {
