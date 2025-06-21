@@ -33,11 +33,15 @@ html {
 }
 
 .logo {
+  display: flex;
+  flex-direction: column;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--accent-color);
   font-family: var(--font-accent);
+  line-height: 20px;
 }
+
 .navbar {
   position: fixed;
   top: 0;
@@ -45,7 +49,7 @@ html {
   right: 0;
   z-index: 1000;
   display: flex;
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   text-align: center;
   justify-content: space-between;
   align-items: center;
@@ -88,7 +92,7 @@ html {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .image {
@@ -98,7 +102,6 @@ html {
   border-radius: 2.5rem;
   background-size: cover;
   background-position: center;
-  transform: scale(0.5);
   z-index: 1;
   box-shadow: 0 8px 32px 0 rgba(60, 60, 60, 0.384);
 }
@@ -132,7 +135,7 @@ html {
 
 .bento-section{
   padding: 2rem;
-  margin: 1rem 1rem;
+  margin: 0.5rem 1rem;
 }
 .bento-title h1{
   font-size: 2.5rem;
@@ -145,37 +148,7 @@ html {
   justify-content: center;
 }
 
-.bento-icons{
-  display: flex;
-  flex-direction: row;
-  gap: 4rem;
-  margin-bottom: 2rem;
-}
 
-.bento-icons h1{
-  line-height: 0;
-}
-
-.bento-icon{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icon-wrapper{
-  border: 1.5px solid var(--accent-color);
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.bento-icon img {
-  max-width: 70px;
-  max-height: 70px;
-  object-fit: cover;
-  display: block;
-  padding: 2rem;
-
-}
 
 .bento-about{
   margin: 1.2rem 0rem;
@@ -285,8 +258,54 @@ html {
   padding: 1rem;
 }
 
+.custom-swiper-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 248, 246, 0.6);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(90px);
+}
+
+.custom-swiper-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.custom-swiper-btn::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+}
+
+.custom-prev::before {
+    transform: rotate(225deg);
+    margin-left: 4px;
+}
+
+.custom-next::before {
+    transform: rotate(45deg);
+    margin-right: 4px;
+}
+
 .swiper-slide {
-  max-width: 350px;
+  max-width: 330px;
   background: #ffffff;
   border-radius: 2rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
@@ -302,30 +321,12 @@ html {
   object-fit: cover;
 } 
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--primary-color);
-  background-color: #ffffff;
-  border-radius: 50%;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background-color: #ffe1d6;
-  transform: scale(1.1);
-}
-
-.swiper-button-next {
+.custom-next {
   right: 10px;
 }
 
-.swiper-button-prev {
+.custom-prev {
   left: 10px;
 }
 
@@ -438,6 +439,32 @@ html {
   color: var(--accent-color);
 }
 
+.footer {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.footer-container{
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+@media (max-width: 1200px) {
+  .about-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .about-img-container img {
+    max-width: 90%;
+  }
+}
 
 @media (max-width: 768px){
   .image {
@@ -451,5 +478,59 @@ html {
 
   .center-text p {
     font-size: 1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .about-img-container img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  .custom-swiper-btn{
+    display: none;
+  }
+}
+
+
+/* even smaller devices */
+@media (max-width: 480px) {
+  .center-text  {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    max-width: 80%;
+  }
+  .center-text h1 {
+    font-size: 2rem;
+  }
+  .bento-section {
+    padding: 0.2rem;
+  }
+  .bento-about {
+    padding: 0.5rem;
+  }
+
+  .bento-testimonial {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .about-img-container img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .about-desc h1 {
+    font-size: 2rem;
   }
 }

@@ -6,10 +6,11 @@ function getResponsiveDirections() {
   const width = window.innerWidth;
   
   if (width <= 480) {
+    
     // Mobile - mostly vertical layout
     return [
-      { x: 0, y: -300}, // center image
-      { x: -120, y: -350 },
+      { x: 0, y: -200}, // center image
+      { x: -120, y: -250 },
       { x: 120, y: -250 },
       { x: -150, y: -150 },
       { x: 150, y: -50 },
@@ -32,14 +33,14 @@ function getResponsiveDirections() {
   } else if (width <= 1024) {
     // Small desktop - moderate spread
     return [
-      { x: 0, y: -260}, // center image
+      { x: 20, y: -360}, // center image
       { x: -300, y: -280 },
       { x: 300, y: -180 },
-      { x: -380, y: -50 },
+      { x: -390, y: -50 },
       { x: 380, y: 50 },
       { x: -250, y: 150 },
       { x: 220, y: 170 },
-      { x: 0, y: 240 },
+      { x: 0, y: 340 },
     ];
   } else {
     //This was my original implementation
@@ -57,6 +58,43 @@ function getResponsiveDirections() {
   }
 }
 
+function getResponsiveScales() {
+  const width = window.innerWidth;
+  
+  if (width <= 480) {
+    // Mobile - much smaller scales
+    return {
+      centerInitial: 0.4,
+      centerFinal: 0.5,
+      randomMin: 0.3,
+      randomMax: 0.4
+    };
+  } else if (width <= 764) {
+    // Tablet - smaller scales
+    return {
+      centerInitial: 0.6,
+      centerFinal: 0.7,
+      randomMin: 0.4,
+      randomMax: 0.5
+    };
+  } else if (width <= 1024) {
+    // Small desktop - moderate scales
+    return {
+      centerInitial: 0.7,
+      centerFinal: 0.8,
+      randomMin: 0.5,
+      randomMax: 0.6
+    };
+  } else {
+    // Large desktop - original scales
+    return {
+      centerInitial: 0.8,
+      centerFinal: 1,
+      randomMin: 0.6,
+      randomMax: 0.7
+    };
+  }
+}
 
 function initHeroAnimation() {
 
@@ -66,14 +104,16 @@ function initHeroAnimation() {
   }
 
   const directions = getResponsiveDirections();
+  const scales = getResponsiveScales();
+
 
   // Reset all images initially
   for (let i = 1; i <= 8; i++) {
     const img = document.getElementById(`img${i}`);
     if (img) {
-      const randomScale = Math.random() > 0.7 ? 0.7 : 0.6;
+      const randomScale = Math.random() > 0.7 ? scales.randomMax : scales.randomMin;
       gsap.set(img, {
-        scale: i === 1 ? 1: randomScale,
+        scale: randomScale,
         opacity: 0.7,
         x: 0,
         y: 0,
@@ -86,7 +126,7 @@ function initHeroAnimation() {
   const centerImg = document.getElementById("img1");
   if (centerImg) {
     gsap.set(centerImg, {
-      scale: 0.8,
+      scale: scales.centerInitial,
       opacity: 1,
       x: 0,
       y: 0,
@@ -99,7 +139,7 @@ function initHeroAnimation() {
   for (let i = 2; i <= 8; i++) {
     const img = document.getElementById(`img${i}`);
     if (!img) continue;
-    const startScale = Number(img.dataset.randomScale) || 0.6;
+    const startScale = Number(img.dataset.randomScale) || scales.randomMin;
     tl.to(
       img,
       {
@@ -113,7 +153,12 @@ function initHeroAnimation() {
   }
 
   // Center image grows
-  tl.to(centerImg, { x: directions[0].x, y: directions[0].y, scale: 1 }, "+=0.2");
+  tl.to(
+    centerImg,{
+      x: directions[0].x,
+      y: directions[0].y,
+      scale: scales.centerFinal},
+      "+=0.2");
 
   // Fade in center text
   tl.to(
@@ -170,7 +215,7 @@ new Swiper(".mySwiper" , {
     slideShadows: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
   }
 })

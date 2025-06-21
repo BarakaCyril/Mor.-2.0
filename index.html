@@ -10,7 +10,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">MOR.</div>
+        <div class="logo"><div class="nav-logo"><img style="width: 30px; height: auto" src="icons/logo.svg" alt=""></div>MOR.</div>
         <ul class="nav-links">
             <li><a href="">About</a></li>
             <li><a href="">Menu</a></li>
@@ -40,28 +40,12 @@
     <section class="bento-section">
         <div class="bento-container">
             <div class="bento-title">
-                <h1>WHAT WE DO</h1>
             </div>
+
             <div class="bento-icons">
-                <div class="bento-icon">
-                    <div class="icon-wrapper">
-                        <img src="icons/cake.svg" alt="cake image">
-                    </div>
-                    <h1>Cakes</h1>
-                </div>
-                <div class="bento-icon">
-                    <div class="icon-wrapper">
-                        <img src="icons/pasteries.svg" alt="pastery image">
-                    </div>
-                    <h1>Pasteries</h1>
-                </div>
-                <div class="bento-icon">
-                    <div class="icon-wrapper">
-                        <img src="icons/desert.svg" alt="dessert image">
-                    </div>
-                    <h1>Desserts</h1>
-                </div>
+
             </div>
+
             <div class="bento-about">
                 <h1>ABOUT US</h1>
                 <p>At Mor we whip up cakes, pastries, dessert jars and sweet treats that taste as good as they look. Think custom birthday cakes, mini cakes, cookies that melt in your mouth, buttery tarts, flaky pastries and drool worthy dessert boxes.</p>
@@ -69,7 +53,7 @@
                 <p>Because life is better when it's Sweeter By Design</p>
             </div>
             <div class="bento-testimonial">
-                <img src="icons/insta.png" alt="">
+                <img src="icons/insta.png" alt="testimonial-profile">
                 <div class="bento-testimony">
                     <p>"These are the most delicious cakes ver made. Big shout out to cyril " </p>
                     <h1>-- Andy Achie</h1>
@@ -105,8 +89,7 @@
         <h1 class="carousel-title">MOR. Gallery</h1>
         <h2 class="carousel-desc">"Our 'no favorites' rule just went out the window. Whoops!"</h2>
         <div class="swiper mySwiper">
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="image-container"><img src="Images/1.webp" alt="Cake Image 1"></div>
@@ -141,6 +124,8 @@
                     </div>
                 </div>
             </div>
+            <button class="custom-next custom-swiper-btn" aria-label="Previous slide"> </button>
+            <button class="custom-prev custom-swiper-btn" aria-label="Next slide"> </button>
         </div>
         <div><button></button></div>
     </section>
@@ -187,7 +172,22 @@
 
         </div>
     </section>
-    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-icons">
+                <div class="footer-insta"></div>
+                <div class="footer-twitter"></div>
+                <div class="footer-whatsapp"></div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Mor. All rights reserved.</p>
+                <div class="">Website by CrealStudio</div>
+            </div>
+            
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
