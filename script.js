@@ -43,7 +43,7 @@ function getResponsiveDirections() {
       { x: 0, y: 340 },
     ];
   } else {
-    //This was my original implementation
+    // This was my original implementation
     // Large desktop - original layout
     return [
       { x: 0, y: -250}, // center image
@@ -114,7 +114,7 @@ function initHeroAnimation() {
       const randomScale = Math.random() > 0.7 ? scales.randomMax : scales.randomMin;
       gsap.set(img, {
         scale: randomScale,
-        opacity: 0.8,
+        opacity: 0.9,
         x: 0,
         y: 0,
       });
@@ -132,6 +132,11 @@ function initHeroAnimation() {
       y: 0,
     });
   }
+
+  gsap.set("center-text", {
+    opacity: 0,
+    scale: 0.8
+  });
 
   const tl = gsap.timeline();
 

@@ -491,8 +491,6 @@ html {
     margin-top: 10px;
   }
 
-
-
   .swiper-slide img {
     max-width: 90%;
     border-radius: 1rem;
@@ -500,6 +498,15 @@ html {
 
   .custom-swiper-btn{
     display: none;
+  }
+
+  .subscribe-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .subscribe-image {
+    width: 100%;
+    height: 300px;
   }
 }
 
