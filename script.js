@@ -114,7 +114,7 @@ function initHeroAnimation() {
       const randomScale = Math.random() > 0.7 ? scales.randomMax : scales.randomMin;
       gsap.set(img, {
         scale: randomScale,
-        opacity: 0.7,
+        opacity: 0.8,
         x: 0,
         y: 0,
       });
@@ -158,7 +158,7 @@ function initHeroAnimation() {
       x: directions[0].x,
       y: directions[0].y,
       scale: scales.centerFinal},
-      "+=0.2");
+      "+=0.5");
 
   // Fade in center text
   tl.to(
