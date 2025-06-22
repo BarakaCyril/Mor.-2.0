@@ -9,14 +9,14 @@ function getResponsiveDirections() {
     
     // Mobile - mostly vertical layout
     return [
-      { x: 0, y: -200}, // center image
+      { x: 0, y: -180}, // center image
       { x: -120, y: -250 },
-      { x: 120, y: -250 },
+      { x: 190, y: -250 },
       { x: -150, y: -150 },
-      { x: 150, y: -50 },
-      { x: -100, y: 50 },
-      { x: 100, y: 150 },
-      { x: 0, y: 250 },
+      { x: 150, y: -100 },
+      { x: -150, y: 130 },
+      { x: 100, y: 140 },
+      { x: 0, y: 200 },
     ];
   } else if (width <= 768) {
     // Tablet - balanced vertical and horizontal
@@ -64,10 +64,10 @@ function getResponsiveScales() {
   if (width <= 480) {
     // Mobile - much smaller scales
     return {
-      centerInitial: 0.4,
+      centerInitial: 0.5,
       centerFinal: 0.5,
-      randomMin: 0.3,
-      randomMax: 0.4
+      randomMin: 0.4,
+      randomMax: 0.5
     };
   } else if (width <= 764) {
     // Tablet - smaller scales
