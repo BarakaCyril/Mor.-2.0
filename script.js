@@ -189,7 +189,7 @@ let resizeTimeout;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
-    initAnimation();
+    initHeroAnimation();
   }, 250);
 });
 
