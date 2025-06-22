@@ -72,10 +72,10 @@ function getResponsiveScales() {
   } else if (width <= 764) {
     // Tablet - smaller scales
     return {
-      centerInitial: 0.6,
-      centerFinal: 0.7,
-      randomMin: 0.4,
-      randomMax: 0.5
+      centerInitial: 0.7,
+      centerFinal: 0.8,
+      randomMin: 0.5,
+      randomMax: 0.6
     };
   } else if (width <= 1024) {
     // Small desktop - moderate scales
@@ -133,14 +133,19 @@ function initHeroAnimation() {
     });
   }
 
-  gsap.set("center-text", {
+  gsap.set(".center-text", {
     opacity: 0,
-    scale: 0.8
+    scale: 0.7
   });
 
   const tl = gsap.timeline();
 
-  // Animate surrounding images
+  //first phase: All images bursting outwards at the same time
+
+  const burstDuration = 0.9;
+  const burstEase = "power2.out";
+
+  // Animate surrounding images bursting outwards
   for (let i = 2; i <= 8; i++) {
     const img = document.getElementById(`img${i}`);
     if (!img) continue;
@@ -152,8 +157,10 @@ function initHeroAnimation() {
         y: directions[i - 1].y,
         scale: startScale,
         opacity: 1,
+        duration: burstDuration,
+        ease: burstEase
       },
-      (i - 2) * 0.1 // adjust timing between
+      0 // All start at the same time
     );
   }
 
@@ -162,8 +169,11 @@ function initHeroAnimation() {
     centerImg,{
       x: directions[0].x,
       y: directions[0].y,
-      scale: scales.centerFinal},
-      "+=0.5");
+      scale: scales.centerFinal,
+      duration: burstDuration,
+      ease: burstEase
+    },0 //Starts at the same time as all the other images
+  );
 
   // Fade in center text
   tl.to(
@@ -171,20 +181,23 @@ function initHeroAnimation() {
     {
       opacity: 1,
       scale: 1,
-      duration: 0.5,
-      ease: "power1.out",
+      duration: 0.1,
+      ease: "power2.out", //Bouncy reveal ?? I don't really see it but whatever lol
     },
-    "-=0.5"
+    burstDuration * 0.3
   );
+
+  tl.set({}, {}, "+=0.2"); //Apparently a buffer that should help for smooth transition
 
   heroScrollTrigger = ScrollTrigger.create({
     trigger: ".hero-section",
     start: "top top",
-    end: "+=3500",
-    scrub: true,
+    end: "+=1400",
+    scrub: 1,
     pin: true,
     anticipatePin: 1,
-    animation: tl
+    animation: tl,
+
   });
 }
 

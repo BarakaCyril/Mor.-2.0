@@ -141,6 +141,46 @@ html {
   font-size: 2.5rem;
 }
 
+.work-section{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 2rem;
+  border-top: 2.5px solid var(--primary-color);
+}
+
+.work-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.info-icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-container p{
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.info-icons img{
+  width: 100px;
+}
+
+.work-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 300px;
+}
 .bento-container{
   display: flex;
   flex-direction: column;
@@ -148,9 +188,8 @@ html {
   justify-content: center;
 }
 
-
-
 .bento-about{
+  font-size: 1.1rem;
   margin: 1.2rem 0rem;
   padding: 2.5rem 2em;
   display: flex;
