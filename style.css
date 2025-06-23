@@ -213,16 +213,9 @@ html {
   padding: 2rem;
   margin: 0.5rem 1rem;
 }
+
 .bento-title h1{
   font-size: 2.5rem;
-}
-
-.work-section{
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 3rem 2rem;
-  border-top: 2.5px solid var(--primary-color);
 }
 
 .work-container{
@@ -230,7 +223,7 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .info-icons{
@@ -255,16 +248,20 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
   max-width: 255px;
   border: 1.5px solid var(--accent-color);
   border-radius: 1rem;
   padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
 }
+
 .bento-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 .bento-about{
@@ -584,7 +581,7 @@ html {
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 668px){
   .nav-links {
     display: none;
   }
@@ -602,6 +599,11 @@ html {
 
   .center-text p {
     font-size: 1rem;
+  }
+
+  .work-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   .about-container {
