@@ -11,8 +11,6 @@
   --ticker-gap: 20px;
 }
 
-
-
 h1{
   font-family: var(--font-accent);
   line-height: 1.2;
@@ -40,6 +38,85 @@ html {
   color: var(--accent-color);
   font-family: var(--font-accent);
   line-height: 20px;
+}
+
+.ham-menu{
+  margin-left: auto;
+  height: 35px;
+  width: 35px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+
+.ham-menu.active .bar:nth-child(1){
+  transform: translateY(10px) rotate(45deg);
+}
+.ham-menu.active .bar:nth-child(2){
+  opacity: 0;
+}
+.ham-menu.active .bar:nth-child(3){
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.bar{
+  height: 5px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: auto;
+  transition: .3s ease;
+}
+
+.bar:nth-child(1){
+  top: 25%
+}
+
+.bar:nth-child(3){
+  top: 75%;
+}
+
+.mobile-menu{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 350px;
+  z-index: 999;
+  right: -450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: right 0.3s ease;
+  background: var(--primary-color-light);
+  backdrop-filter: blur(50px);
+}
+
+.mobile-links{
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.mobile-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-menu.active{
+  right: 0;
 }
 
 .navbar {
@@ -114,8 +191,7 @@ html {
   position: absolute;
   font-family: var(--font-main);
   color: var(--accent-color);
-  opacity: 0;
-  transition: all 0.3s ease;
+
   text-align: center;
   z-index: 2;
   max-width: 450px;
@@ -179,7 +255,10 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
-  max-width: 300px;
+  max-width: 255px;
+  border: 1.5px solid var(--accent-color);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 .bento-container{
   display: flex;
@@ -506,6 +585,12 @@ html {
 }
 
 @media (max-width: 768px){
+  .nav-links {
+    display: none;
+  }
+  .ham-menu {
+    display: block;
+  }
   .image {
     width: 180px;
     height: 180px;
@@ -552,6 +637,7 @@ html {
 
 /* even smaller devices */
 @media (max-width: 480px) {
+
   .center-text  {
     font-size: 0.9rem;
     line-height: 1.3;

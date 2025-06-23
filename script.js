@@ -2,6 +2,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 let heroScrollTrigger = null;
 
+const hamMenu = document.querySelector('.ham-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+hamMenu.addEventListener('click',() => {
+  hamMenu.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+});
+
 function getResponsiveDirections() {
   const width = window.innerWidth;
   
@@ -135,7 +143,7 @@ function initHeroAnimation() {
 
   gsap.set(".center-text", {
     opacity: 0,
-    scale: 0.7
+    scale: 0.3
   });
 
   const tl = gsap.timeline();
@@ -181,10 +189,10 @@ function initHeroAnimation() {
     {
       opacity: 1,
       scale: 1,
-      duration: 0.1,
-      ease: "power2.out", //Bouncy reveal ?? I don't really see it but whatever lol
+      duration: 0.6,
+      ease: "power2.out",
     },
-    burstDuration * 0.3
+    burstDuration * 0.15
   );
 
   tl.set({}, {}, "+=0.2"); //Apparently a buffer that should help for smooth transition
