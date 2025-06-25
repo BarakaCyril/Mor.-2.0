@@ -224,6 +224,21 @@ window.addEventListener('load', () => {
   ScrollTrigger.refresh();
 });
 
+document.querySelectorAll('.faq-question').forEach((question) => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+
+  // Animate in with GSAP
+  gsap.to(".faq-item", {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
 
 //? - ?//
 //swiper carousel effect/////
