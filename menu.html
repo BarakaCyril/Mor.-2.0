@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MOR. Menu</title>
+  
+  <link rel="stylesheet" href="variables.css">
+  <link rel="stylesheet" href="menu-styles.css" />
+</head>
+<body>
+  <div class="menu-container">
+    <header class="menu-header">
+      <h1 class="brand">MOR.<span>sweeter by design</span></h1>
+      <h2>MENU</h2>
+    </header>
+
+    <section class="menu-section">
+      <!-- Cakes -->
+      <div class="menu-box animate">
+        <div class="menu-title">CAKES</div>
+
+        <div class="menu-item animate">
+          <h3><span>Chocolate cake</span><span class="price">Ksh 1,200</span></h3>
+          <p>Chocolate Ganache | Very-Berry Vanilla | Salted Caramel | Coffee | Macha | Passion Fruit Curd</p>
+        </div>
+
+        <div class="menu-item animate">
+          <h3><span>Red velvet cake</span><span class="price">Ksh 1,300</span></h3>
+          <p>Chocolate Ganache | Very-Berry Vanilla | Salted Caramel | Coffee | Macha | Passion Fruit Curd</p>
+        </div>
+
+        <div class="menu-item animate">
+          <h3><span>Orange cake</span><span class="price">Ksh 1,150</span></h3>
+          <p>Chocolate Ganache | Very-Berry Vanilla | Salted Caramel | Coffee | Macha | Passion Fruit Curd</p>
+        </div>
+      </div>
+
+      <!-- Pastries -->
+      <div class="menu-box animate">
+        <div class="menu-title">PASTERIES</div>
+
+        <div class="menu-item animate">
+          <h3><span>Cupcakes</span><span class="price">Ksh 250</span></h3>
+          <p>Freshly baked muffins in flavours such as blueberry and chocolate</p>
+        </div>
+
+        <div class="menu-item animate">
+          <h3><span>Cookies</span><span class="price">Ksh 200</span></h3>
+          <p>Freshly baked muffins in flavours such as blueberry and chocolate</p>
+        </div>
+
+        <div class="menu-item animate">
+          <h3><span>Cinnamon rolls</span><span class="price">Ksh 300</span></h3>
+          <p>Soft roll with cinnamon and sugar such as blueberry and chocolate</p>
+        </div>
+
+        <div class="menu-item animate">
+          <h3><span>Brownies</span><span class="price">Ksh 350</span></h3>
+          <p>Almond, cranberry? Very buttery</p>
+        </div>
+
+        <div class="menu-item animate">
+          <h3><span>Waffles</span><span class="price">Ksh 400</span></h3>
+          <p>Buttery waffles with choices like cranberry, orange</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Section -->
+    <section class="menu-special animate">
+      <div class="menu-title">SPECIAL</div>
+      <div class="special-columns">
+        <div>
+          <h3>Special Cakes</h3>
+          <ul>
+            <li>Lemon Blueberry – Ksh 1,500</li>
+            <li>Lotus Biscoff – Ksh 1,600</li>
+            <li>Mint Chocolate – Ksh 1,400</li>
+            <li>Birthday FunFetti – Ksh 1,700</li>
+            <li>Fruit Cake – Ksh 1,350</li>
+          </ul>
+        </div>
+        <div>
+          <h3>More of Mor.</h3>
+          <ul>
+            <li>Organic Cookies – Ksh 250</li>
+            <li>Bento Cakes – Ksh 800</li>
+            <li>Cake Jars – Ksh 500</li>
+            <li>Gift Packages – Ksh 2,000</li>
+            <li>Cake Tins – Ksh 1,000</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="menu-footer">
+      <span>TIME: 8AM – 3PM</span>
+      <span>Contact Us: 0742044311</span>
+    </footer>
+  </div>
+
+<script>
+  // Reveal elements on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+</script>
+</body>
+
+</html>
