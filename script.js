@@ -5,6 +5,22 @@ let heroScrollTrigger = null;
 const hamMenu = document.querySelector('.ham-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 
+document.addEventListener("DOMContentLoaded", function(){
+  const animElements = document.querySelectorAll(".animate");
+  
+  const observor = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target); //Animate only once??
+      }
+    });
+  },{
+    threshold: 0.15
+  });
+  animElements.forEach(el => observor.observe(el));
+});
+
 hamMenu.addEventListener('click',() => {
   hamMenu.classList.toggle('active');
   mobileMenu.classList.toggle('active');
