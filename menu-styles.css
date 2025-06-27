@@ -1,5 +1,4 @@
 
-
 * {
   margin: 0;
   padding: 0;
@@ -11,22 +10,38 @@ body {
   color: var(--accent-color);
 }
 
+
 .menu-container {
   padding: 2rem;
   max-width: 1200px;
   margin: auto;
 }
 
+.back-btn {
+  border-radius: 50%;
+  background-color: var(--primary-color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  padding: 1rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  border: 1.5px solid var(--accent-color);
+  cursor: pointer;
+}
+
 .menu-header {
+  background-color: var(--primary-color-light);
   text-align: center;
   margin-bottom: 2rem;
   padding: 2rem 0rem;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
   border-radius: 2rem;
   border: 2px solid var(--accent-color);
-  flex-direction: column;
-  justify-content: center;
 }
 
 .brand {
@@ -38,7 +53,7 @@ body {
 
 .brand span {
   display: block;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: var(--font-main);
   color: var(--primary-color);
   margin-top: -10px;
@@ -60,53 +75,41 @@ body {
 }
 
 .menu-box {
-  background: white;
-  border-radius: 1rem;
+  background: var(--primary-color-light);
+  border-radius: 2rem;
   padding: 1.5rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
   box-shadow: 0 0 10px #00000010;
   position: relative;
+  border: 1.5px solid var(--accent-color);
 }
 
 .menu-title {
-  position: absolute;
+  position: absolute; 
   top: -1.2rem;
   left: 1.5rem;
-  background: white;
-  padding: 0.2rem 1rem;
-  font-family: var(--font-head);
+  background:var(--secondary-color);
+  padding: 0.4rem 2rem;
+  font-family: var(--font-accent);
   border-radius: 2rem;
-  border: 1px solid var(--peach);
-  color: black;
+  border: 1.5px solid var(--accent-color);
+  color: var(--accent-color);
   font-weight: bold;
-  box-shadow: 0 3px 0 var(--peach);
+  box-shadow: 0 3px 0px var(--accent-color);
 }
 
-.menu-item h3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: var(--font-head);
-  color: var(--accent-text);
-  margin-top: 1.2rem;
-}
 
 .menu-item p {
   font-size: 0.95rem;
   margin-top: 0.2rem;
 }
 
-.price {
-  font-family: var(--font-body);
-  font-weight: 600;
-  color: var(--dark-text);
-}
-
 .menu-special {
-  background: white;
+  background: var(--primary-color-light);
   border-radius: 1rem;
-  padding: 1.5rem;
+  border: 1.5px solid var(--accent-color);
+  padding: 1.5rem 2.5rem;
   position: relative;
   box-shadow: 0 0 10px #00000010;
   margin-bottom: 2rem;
@@ -115,32 +118,33 @@ body {
 .special-columns {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: space-between;
 }
 
 .special-columns h3 {
-  color: var(--accent-text);
-  font-family: var(--font-head);
+  color: var(--accent-color);
+  font-family: var(--font-accent);
   margin-bottom: 0.5rem;
 }
 
 .special-columns ul {
   list-style: none;
-  font-size: 0.95rem;
+  font-size: 1.0rem;
   line-height: 1.6;
 }
 
 .menu-footer {
-  background: var(--peach);
+  background: var(--primary-color-light);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  font-family: var(--font-body);
+  font-family: var(--font-accent);
   flex-wrap: wrap;
   gap: 1rem;
   text-align: center;
+  border-radius: 1.5rem;
+  border: 1.5px solid var(--accent-color);
 }
 
 /* Animations */
@@ -174,15 +178,16 @@ body {
 
 /* Refined price styling */
 .price {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #666;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--accent-color);
   margin-left: 0.5rem;
   transition: color 0.3s ease;
 }
 
 .price:hover {
-  color: var(--accent-text);
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 /* Footer animation */
@@ -198,7 +203,7 @@ body {
   justify-content: flex-start;
   gap: 1rem;
   align-items: baseline;
-  font-family: var(--font-head);
-  color: var(--accent-text);
+  font-family: var(--font-accent);
+  color: var(--primary-color);
   margin-top: 1.2rem;
 }
