@@ -33,8 +33,8 @@ function getResponsiveDirections() {
     
     // Mobile - mostly vertical layout
     return [
-      { x: 0, y: -180}, // center image
-      { x: -120, y: -250 },
+      { x: 0, y: -280}, // center image
+      { x: -100, y: -250 },
       { x: 190, y: -250 },
       { x: -150, y: -150 },
       { x: 150, y: -100 },
@@ -45,14 +45,14 @@ function getResponsiveDirections() {
   } else if (width <= 768) {
     // Tablet - balanced vertical and horizontal
     return [
-      { x: 0, y: -280}, // center image
-      { x: -220, y: -300 },
-      { x: 220, y: -200 },
-      { x: -280, y: -100 },
-      { x: 280, y: 0 },
+      { x: 0, y: -230}, // center image
+      { x: -200, y: -250 },
+      { x: 220, y: -210 },
+      { x: -230, y: -100 },
+      { x: 230, y: -30},
       { x: -200, y: 100 },
-      { x: 180, y: 180 },
-      { x: 0, y: 280 },
+      { x: 180, y: 160 },
+      { x: 0, y: 230 },
     ];
   } else if (width <= 1024) {
     // Small desktop - moderate spread
@@ -204,7 +204,7 @@ function initHeroAnimation() {
     ".center-text",
     {
       opacity: 1,
-      scale: 1,
+      scale: scales.centerFinal,
       duration: 0.6,
       ease: "power2.out",
     },
