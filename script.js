@@ -1,6 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 let heroScrollTrigger = null;
+ScrollTrigger.normalizeScroll(true)
 
 const hamMenu = document.querySelector('.ham-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -220,6 +221,7 @@ function initHeroAnimation() {
     scrub: 1,
     pin: true,
     anticipatePin: 1,
+    pinSpacing: true,
     animation: tl,
 
   });
