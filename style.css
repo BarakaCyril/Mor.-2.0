@@ -1,4 +1,16 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap");
+
+:root {
+  --primary-color: rgb(250, 207, 189);
+  --primary-color-light: rgba(250, 207, 189, 0.3);
+  --secondary-color: #fff8f6ff;
+  --accent-color: #333333ff;
+  --font-main: "Winky Sans", sans-serif;
+  --font-accent: "Noto Serif Georgian", cursive;
+  --ticker-gap: 20px;
+}
 
 h1{
   font-family: var(--font-accent);
@@ -164,6 +176,7 @@ html {
   padding-bottom: 1rem;
 }
 
+
 .image {
   position: absolute;
   width: 220px;
@@ -173,6 +186,14 @@ html {
   background-position: center;
   z-index: 1;
   box-shadow: 0 8px 32px 0 rgba(60, 60, 60, 0.384);
+}
+
+.image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
 }
 
 .center-img {
@@ -306,8 +327,6 @@ html {
   }
 }
 
-
-
 .word-ticker{
   rotate: -1deg;
   margin-bottom: -10px;
@@ -318,7 +337,6 @@ html {
   background-color: var(--primary-color);
   overflow: hidden;
   user-select: none;
-
   margin-top: 10px;
 }
 
@@ -748,7 +766,11 @@ html {
 
 /* even smaller devices */
 @media (max-width: 480px) {
-
+  .hero-section {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for modern browsers */
+    overflow: hidden; /* Prevent content from spilling out */
+  }
   .bento-section {
     padding: 0.2rem;
   }
@@ -785,3 +807,6 @@ html {
     margin-top: 0.5rem;
   }
 }
+
+
+/* Menu Styles */

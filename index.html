@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "MOR. Cakes and Pastries",
+        "description": "Custom cakes and pastries in Nairobi",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nairobi",
+            "addressCountry": "KE"
+        },
+        "telephone": "0742044311",
+        "openingHours": "Tu-Fr 09:00-16:00",
+        "sameAS": [
+            "https://www.instagram.com/mor.cakesandpastries",
+        ],
+        }
+    </script>
+
+    <!-- SEO meta tags -->
+    <meta name="description" content="MOR. - Custom cakes, pastries, and sweet treats in Nairobi. Sweeter by design for birthdays, weddings, and special occasions.">
+    <meta name="keywords" content="cakes, pastries, custom cakes, Nairobi bakery, wedding cakes">
+    <meta property="og:title" content="MOR. - Sweeter By Design">
+    <meta property="og:description" content="Custom cakes and pastries in Nairobi">
+    <meta property="og:image" content="Images/1.webp">
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mor.</title>
+
+    <!-- Performance hints-->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+    <!--preload images for better performance-->
+    <link rel="preload" as="image" href="Images/1.webp">
+
+    <!--Style stuff-->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo"><div class="nav-logo"><img style="width: 30px; height: auto" src="icons/logo.svg" alt=""></div>MOR.</div>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="logo"><div class="nav-logo"><img style="width: 30px; height: auto" src="icons/logo.svg" alt="logo-icon"></div>MOR.</div>
         <ul class="nav-links">
             <li><a href="#aboutSection">About</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><button class="order-btn">ORDER NOW</button></li>
         </ul>
 
-        <div class="ham-menu">
+        <div class="ham-menu" aria-label="Mobile Menu" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -44,17 +87,31 @@
             <h1>Sweeter By Design</h1>
             <p>We're here for your birthdays, special milestones, weddings, and every "I just need a cake" moment in between</p>
         </div>
+            <div class="image center-img" id="img1">
+                <img src="Images/1.webp" alt="Cake Image 1" />
+            </div>
 
-        <div style="background-image: url('Images/1.webp')" class="image center-img" id="img1" alt="Image 1"></div>
-
-
-        <div style="background-image: url('Images/2.webp')" class="image" id="img2" alt="Image 2"></div>
-        <div style="background-image: url('Images/3.webp')" class="image" id="img3" alt="Image 3"></div>
-        <div style="background-image: url('Images/4.webp')" class="image" id="img4" alt="Image 4"></div>
-        <div style="background-image: url('Images/5.webp')" class="image" id="img5" alt="Image 5"></div>
-        <div style="background-image: url('Images/6.webp')" class="image" id="img6" alt="Image 6"></div>
-        <div style="background-image: url('Images/7.webp')" class="image" id="img7" alt="Image 7"></div>
-        <div style="background-image: url('Images/8.webp')" class="image" id="img8" alt="Image 8"></div>
+            <div class="image" id="img2">
+                <img src="Images/2.webp" alt="Cake Image 2" loading="lazy"/>
+            </div>
+            <div class="image" id="img3">
+                <img src="Images/3.webp" alt="Cake Image 3" loading="lazy" />
+            </div>
+            <div class="image" id="img4">
+                <img src="Images/4.webp" alt="Cake Image 4" loading="lazy" />
+            </div>
+            <div class="image" id="img5">
+                <img src="Images/5.webp" alt="Cake Image 5" loading="lazy"/>
+            </div>
+            <div class="image" id="img6">
+                <img src="Images/6.webp" alt="Cake Image 6" loading="lazy"/>
+            </div>
+            <div class="image" id="img7">
+                <img src="Images/7.webp" alt="Cake Image 7" loading="lazy"/>
+            </div>
+            <div class="image" id="img8">
+                <img src="Images/8.webp" alt="Cake Image 8" loading="lazy"/>
+            </div>
     </section>
 
 
@@ -169,7 +226,7 @@
                 <h1>Meet Elsie and Mor.</h1>
                 <h2> ( Yes, real people ! ) </h2>
                 <div class="about-img-container">
-                    <img src="Images/about.png" alt="">
+                    <img src="Images/about.png" alt="About Image">
                 </div>
             </div>
             <div class="about-desc animate">
@@ -200,21 +257,21 @@
             
             <div class="socials-images-grid">
                 <div class=" rows row-1 animate">
-                    <div class="grid-item"><img src="Socials Images/1.png" alt=""></div>
-                    <div class="grid-item"><img src="Socials Images/2.png" alt=""></div>
-                    <div class="grid-item"><img src="Socials Images/3.jpg" alt=""></div>
-                    <div class="grid-item"><img src="Socials Images/4.jpg" alt=""></div>
+                    <div class="grid-item"><img src="Socials Images/1.png" alt="Bakery Ingridients" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/2.png" alt="Phone with Logo" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/3.jpg" alt="Brand magazine" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/4.jpg" alt="Brand quotes" loading="lazy"></div>
                 </div>
                 <div class=" rows row-2 animate">
-                    <div class="grid-item"><img src="Socials Images/16.jpg" alt=""></div>
-                    <div class="grid-item"><img src="Socials Images/6.jpg" alt=""></div>
-                    <div class="grid-item"><img src="Socials Images/14.jpg" alt=""></div>
+                    <div class="grid-item"><img src="Socials Images/5.jpg" alt="Lactation cookies" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/6.jpg" alt="Brand magazine held by a woman" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/7.jpg" alt="Strawberry cake slices" loading="lazy"></div>
                 </div>
                 <div class=" rows row-3 animate">
-                    <div class="grid-item"><img src="Socials Images/8.jpg" alt=""></div>
-                    <div class="grid-item"><img src="Socials Images/13.jpg" alt=""></div>
-                    <div class="grid-item"><img src="Socials Images/10.jpg" alt=""></div>
-                    <div class="grid-item"><img src="Socials Images/12.jpg" alt=""></div>
+                    <div class="grid-item"><img src="Socials Images/8.jpg" alt="Cake jar" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/9.jpg" alt="Brand upcoming advert" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/10.jpg" alt="White Bento cake" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/11.jpg" alt="White Earth cake" loading="lazy"></div>
 
                 </div>
             </div>
@@ -259,6 +316,11 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
