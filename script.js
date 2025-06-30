@@ -34,13 +34,13 @@ function getResponsiveDirections() {
     
     // Mobile - mostly vertical layout
     return [
-      { x: 0, y: -280}, // center image
-      { x: -100, y: -250 },
-      { x: 190, y: -250 },
-      { x: -150, y: -150 },
-      { x: 150, y: -100 },
+      { x: 0, y: -230}, // center image
+      { x: -130, y: -150 },
+      { x: 190, y: -10},
+      { x: -170, y: -10 },
+      { x: 150, y: -130 },
       { x: -150, y: 130 },
-      { x: 100, y: 140 },
+      { x: 120, y: 130 },
       { x: 0, y: 200 },
     ];
   } else if (width <= 768) {
@@ -91,6 +91,7 @@ function getResponsiveScales() {
     return {
       centerInitial: 0.5,
       centerFinal: 0.5,
+      centerTextFinal: 0.7,
       randomMin: 0.4,
       randomMax: 0.5
     };
@@ -99,6 +100,7 @@ function getResponsiveScales() {
     return {
       centerInitial: 0.7,
       centerFinal: 0.8,
+      centerTextFinal: 0.8,
       randomMin: 0.5,
       randomMax: 0.6
     };
@@ -106,7 +108,8 @@ function getResponsiveScales() {
     // Small desktop - moderate scales
     return {
       centerInitial: 0.7,
-      centerFinal: 0.8,
+      centerFinal: 1,
+      centerTextFinal: 0.8,
       randomMin: 0.5,
       randomMax: 0.6
     };
@@ -114,6 +117,7 @@ function getResponsiveScales() {
     // Large desktop - original scales
     return {
       centerInitial: 0.8,
+      centerTextFinal: 1,
       centerFinal: 1,
       randomMin: 0.6,
       randomMax: 0.7
@@ -205,7 +209,7 @@ function initHeroAnimation() {
     ".center-text",
     {
       opacity: 1,
-      scale: scales.centerFinal,
+      scale: scales.centerTextFinal,
       duration: 0.6,
       ease: "power2.out",
     },
@@ -265,7 +269,7 @@ new Swiper(".mySwiper" , {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
-  loop: true,
+  loop: false,
   coverflowEffect: {
     rotate: 30,
     stretch: 0,

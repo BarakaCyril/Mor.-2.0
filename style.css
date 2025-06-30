@@ -206,7 +206,6 @@ html {
   position: absolute;
   font-family: var(--font-main);
   color: var(--accent-color);
-
   text-align: center;
   z-index: 2;
   max-width: 450px;
@@ -324,7 +323,7 @@ html {
 
 @keyframes scroll{
   to{
-    transform: translate(calc(-100% - var(--ticker-gap)), 0);
+    transform: translateX(-100%);
   }
 }
 
@@ -359,7 +358,7 @@ html {
   align-items: center;
   gap: var(--ticker-gap);
   min-width: 100%;
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .carousel-section {
@@ -774,6 +773,7 @@ html {
   }
   .bento-section {
     padding: 0.2rem;
+    margin: 0rem 0.5rem;
   }
   .bento-about {
     padding: 0.5rem;
@@ -781,6 +781,7 @@ html {
 
   .bento-testimonial {
     flex-direction: column;
+    max-width: 255px;
     align-items: center;
     text-align: center;
   }
