@@ -207,7 +207,7 @@ html {
   font-family: var(--font-main);
   color: var(--accent-color);
   text-align: center;
-  z-index: 2;
+  z-index: -100;
   max-width: 450px;
 }
 
@@ -297,11 +297,17 @@ html {
 .bento-testimonial{
   display: flex;
   max-width: 570px;
+  width: 570px;
   margin: 2rem auto;
   border: 1.5px solid var(--accent-color);
   padding: 1rem;
   border-radius: 1rem; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.bento-testimonial.fading {
+  opacity: 0;
 }
 
 .bento-testimonial img {
@@ -431,6 +437,7 @@ html {
 }
 
 .swiper-slide {
+  border: 1.5px solid #33333352;
   max-width: 330px;
   background: #ffffff;
   border-radius: 2rem;
@@ -447,6 +454,10 @@ html {
   object-fit: cover;
 } 
 
+.image-desc h2{
+  font-weight: 500;
+  font-size: 0.9rem;
+}
 
 .custom-next {
   right: 10px;
@@ -505,6 +516,7 @@ html {
   justify-content: center;
 }
 
+
 .socials-title{
   font-size: 2.5rem;
   color: var(--accent-color);
@@ -512,21 +524,21 @@ html {
   margin: 0
 }
 
-.socials-icons{
-  display: flex;
-  gap: 1rem;
-  margin: 1rem 0rem;
-}
 
 .socials-icons .icon{
-  font-size: 40px;
+  font-size: 1.5rem;
+  text-align: center;
   color: #333;
   text-decoration: none;
-  transition: color 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .socials-desc{
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0.5rem 0rem;
   line-height: 1.2;
   text-align: center;
@@ -603,7 +615,7 @@ html {
 }
 
 .faq-question {
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 1.25rem;
   font-size: 1.25rem;
   font-family: var(--font-accent);
   font-weight: 400;
@@ -626,53 +638,85 @@ html {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  padding: 0 1rem;
+  padding: 0rem 1rem;
   color: var(--accent-color);
   background-color: var(--primary-color-light);
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition: max-height 0.4s ease, padding 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 300px;
+  max-height: 500px;
   padding: 1rem;
 }
   
 .footer {
   background-color: var(--primary-color-light);
   color: var(--accent-color);
-  text-align: center;
-  font-size: 1rem;
+  padding: 3rem 1rem;
+  border-top: 1px solid var(--accent-color);
 }
 
 .footer-container{
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 0rem 2rem;
 }
 
-.footer-logo {
-  display: flex;
-  align-items: center;
+.footer-column{
+  flex: 1 1 28 0px;
+  margin: 1rem 0;
 }
 
-.footer-logo h1{
-  font-size: 2rem;
-  margin: 0;
-  line-height: 1.2;
-  text-align: center;
+.footer-column h4{
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: var(--font-accent);
+  color: black;
 }
 
+.footer-column ul{
+  list-style: none;
+  padding: 0;
+}
 
-.rights{
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+.footer-column ul li a {
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  display: inline-block;
   color: var(--accent-color);
-  align-items: center;
-  justify-content: center;
 }
+
+.footer-column ul li a:hover {
+  color: var(--primary-color);
+}
+
+.footer-socials{
+  display: flex;
+  gap: 1rem;
+}
+.footer-bottom{
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-bottom .tagline {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.legal-links {
+  margin-top: 0.3rem;
+}
+
+.legal-links a {
+  color: #7b5b4b;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+
+
 
 .animate{
   opacity: 0;
@@ -784,7 +828,11 @@ html {
     max-width: 255px;
     align-items: center;
     text-align: center;
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+
   }
+
 
   .about-container {
     flex-direction: column;

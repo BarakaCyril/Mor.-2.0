@@ -60,7 +60,7 @@
         <ul class="nav-links">
             <li><a href="#aboutSection">About</a></li>
             <li><a href="menu.html">Menu</a></li>
-            <li><button class="order-btn">ORDER NOW</button></li>
+            <li><button onclick="window.location.href='order.html'" class="order-btn">ORDER NOW</button></li>
         </ul>
 
         <div class="ham-menu" aria-label="Mobile Menu" aria-expanded="false">
@@ -75,14 +75,14 @@
         <ul class="mobile-links">
             <li><a href="#aboutSection">About</a></li>
             <li><a href="menu.html">Menu</a></li>
-            <li><button class="order-btn">ORDER NOW</button></li>
+            <li><button onclick="window.location.href='order.html'" class="order-btn">ORDER NOW</button></li>
         </ul>
     </div>
 
 
     
 
-    <section class="hero-section">
+    <section class="hero-section" id="heroSection">
         <div class="center-text">
             <h1>Sweeter By Design</h1>
             <p>We're here for your birthdays, special milestones, weddings, and every "I just need a cake" moment in between</p>
@@ -139,11 +139,11 @@
                     <p>We deliver to all locations within Nairobi. Delivery charges may apply based on distance.</p>
                 </div>
             </div>
-            <div class="bento-testimonial animate">
-                <img src="icons/insta.png" alt="testimonial-profile">
+            <div class="bento-testimonial animate" id="testimonial">
+                <img src="Testimonials/Andy.png" alt="testimonial-profile" id="testimonial-img">
                 <div class="bento-testimony">
-                    <p>"These are the most delicious cakes ver made. Big shout out to cyril " </p>
-                    <h1>-- Andy Achie</h1>
+                    <p id="testimonial-text">"These are the most delicious cakes ver made. Big shout out to cyril " </p>
+                    <h1 id="testimonial-author">-- Andy Achie</h1>
                 </div>
             </div>
 
@@ -158,7 +158,7 @@
             <ul>
                 <li><span class="ticker-dot"></span><span>More for Mor.</span></li>
                 <li><span class="ticker-dot"></span><span>Just taste it</span></li>
-                <li><span class="ticker-dot"></span><span>Father's Day</span></li>
+                <li><span class="ticker-dot"></span><span>Cookiees!!</span></li>
                 <li><span class="ticker-dot"></span><span>It's better with Milk</span></li>
                 <li><span class="ticker-dot"></span><span>Who's Nia?</span></li>
                 <li><span class="ticker-dot"></span><span>Mor Passion</span></li>
@@ -166,13 +166,14 @@
             </ul>
             <ul>
                 <li><span class="ticker-dot"></span><span>More for Mor.</span></li>
-                <li><span class="ticker-dot"></span><span>Chef Sawayi</span></li>
-                <li><span class="ticker-dot"></span><span>Father's Day</span></li>
+                <li><span class="ticker-dot"></span><span>Just taste it</span></li>
+                <li><span class="ticker-dot"></span><span>Cookiees!!</span></li>
                 <li><span class="ticker-dot"></span><span>It's better with Milk</span></li>
                 <li><span class="ticker-dot"></span><span>Who's Nia?</span></li>
                 <li><span class="ticker-dot"></span><span>Mor Passion</span></li>
                 <li><span class="ticker-dot"></span><span>Mor Energy</span></li>
             </ul>
+
         </div>
     </section>
 
@@ -185,33 +186,39 @@
                 <div class="swiper-slide">
                     <div class="image-container"><img src="Images/1.webp" alt="Cake Image 1"></div>
                     <div class="image-desc">
-                        <h2>Choclate all Over!!</h2>
-                        <h1>Chocolate Fudge</h1>
-                        <p>View it --></p>
+                        <h1>chocolate ganache</h1>
+                        <h2>Soft chocolate cake finished with a neat swirl on top - simple and tasty</h2  >
+                        
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="image-container"><img src="Images/2.webp" alt="Cake Image 1"></div>
                     <div class="image-desc">
-                        <h2>Who put fruites in my cake ??</h2>
-                        <h1>Orange Ganash</h1>
-                        <p>View it --></p>
+                        <h1>Orange Bliss</h1>
+                        <h2>Soft vanilla cake topped with cream, fresh berries, and orange slices</h2>
+                        
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="image-container"><img src="Images/8.webp" alt="Cake Image 1"></div>
                     <div class="image-desc">
-                        <h2>Tiny but massive in flavour</h2>
-                        <h1>ANGEL BENTO</h1>
-                        <p>View it --></p>
+                        <h1>Bento Cake</h1>
+                        <h2>A sweet gift box with a mini bento cake and six rose-piped cupcakes</h2>
+                        
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="image-container"><img src="Images/5.webp" alt="Cake Image 1"></div>
                     <div class="image-desc">
-                        <h2>A cake in a Jar? Whaat!</h2>
-                        <h1>ANGEL BENTO</h1>
-                        <p>View it --></p>
+                        <h1>Cake In a Jar</h1>
+                        <h2>Layers of soft cake, cream and toppings packed in a glass jar. The perfect snack</h2>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-container"><img src="Images/red-v.png" alt="Cake Image 1"></div>
+                    <div class="image-desc">
+                        <h1>Frosted Cupcakes</h1>
+                        <h2>A box of soft cupcakes topped with bright red frosting</h2>
                     </div>
                 </div>
             </div>
@@ -230,16 +237,12 @@
                 </div>
             </div>
             <div class="about-desc animate">
-                <h1>Hi I'm Elsie, the founder of Mor.cakesandpasteries</h1>
-                <p> Chef Sawayi, a dreamer who  baked through both triumph and heartbreak.
-                    Elsie found herself starting from scratch, now with a newborn baby in her arms
-                     and a heart still full of ambition. In one of the quiet moments of motherhood, 
-                     the name “Mor.” came to her  a word that means joy, It was the perfect name for 
-                     both her brand… and her baby. With passion as the recipe and purpose as the flame, 
-                     she invited her siblings, each talented, dedicated, and relentless to co-found what 
-                     is now becoming a food and lifestyle movement. Our goal is to become a powerhouse in 
-                     the food and beverage industry. This is the start of something bold and beautiful and 
-                     we are so honored to build it , with butter with fire, and with family.</p>
+                <h1>Hi I'm Elsie, the founder of Mor.cakesandpastries</h1>
+                <p>
+                   Chef Sawayi began again with a newborn in her arms and a quiet determination to keep creating. In one of those still moments of motherhood, the name “Mor.” came to her, a word that means joy. It felt like the perfect name for her baby and for the brand she was about to build.
+                   Mor. is more than cakes and pastries. It's a celebration of family, creativity, and starting fresh. Everything we make is filled with intention, built with butter, with fire, and with family.
+                   With passion as the recipe and purpose as the flame, she invited her siblings, each one gifted and all-in, to help bring the dream to life. From home kitchen experiments to growing demand, what started small is becoming something bigger than they imagined.
+                </p>
             </div>
         </div>
     </section>
@@ -249,9 +252,10 @@
             <h1 class="socials-title animate">Follow Our Socials</h1>
             <p class="socials-desc animate">#Sweeter by Design</p>
             <div class="socials-icons">
-                <a href="" class="icon"><i class="fab fa-instagram"></i></a>
-                <a href="" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/mor.cakesandpastries/" class="icon">
+                    <i class="fab fa-instagram"></i>
+                    <p>mor.cakesandpastries</p>
+                </a>
             </div>
             
             
@@ -278,7 +282,7 @@
         </div>
     </section>
 
- <section class="faq-section">
+ <section class="faq-section" id="faqSection">
     <h1 class="faq-title animate">Frequently Asked Questions</h1>
     <div class="faq-container animate">
 
@@ -302,19 +306,67 @@
         <div class="faq-answer">Unfortunately, we don't offer same-day delivery. Each order is freshly baked and requires prep time. Delivery starts from the next day after order is confirmed</div>
       </div>
 
+    <div class="faq-item">
+        <div class="faq-question">How do I place an order?</div>
+    <div class="faq-answer">You can place your order by contacting us directly via WhatsApp. Check the "Order Now" button on our site in the navigation.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Can I make changes to my order after it's been placed?</div>
+        <div class="faq-answer">Yes — if it's within 6 hours of placing your order. Beyond that, changes may not be possible depending on production status.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Do your prices include delivery fees?</div>
+        <div class="faq-answer">Delivery fees are calculated separately based on distance. We'll confirm the total cost with you before proceeding with the order.</div>
+    </div>
+
     </div>
   </section>
 
 
     <footer class="footer">
+        <h1 class="footer-title">MOR.</h1>
+
         <div class="footer-container">
-            <div class="footer-logo">
-                <h1>MOR.</h1>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>📍 Nairobi, Kenya</p>
+                <p>📞 +254 742 044 311</p>
+                <p>✉️ mor.cakesandpastries@gmail.com</p>
+                <p>🕒 Tue - Sat: 9am  6pm</p>
             </div>
-            <div class="rights">
-                <p>&copy; 2025 Mor.cakesandpasteries. All rights reserved.</p>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#heroSection">Home</a></li>
+                    <li><a href="#aboutSection">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="order.html">Order Now</a></li>
+                    <li><a href="#faqSection">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Stay Connected</h4>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/mor.cakesandpastries/" target="_blank"><i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i></i></a>
+                    <a href="https://www.tiktok.com/@mor.cakesandpastries" target="_blank"><i class="fa-brands fa-tiktok fa-xl" style="color: #000000;"></i></i></a>
+                    <a href="https://wa.me/254742044311?text=Hi%20mor.%20I%20would%20like%20to%20make%20an%20order" target="_blank"><i class="fab fa-whatsapp fa-xl" style="color: #000000;"></i></a>
+                </div>
             </div>
         </div>
+
+        <div class="footer-bottom">
+            <p class="tagline">Sweeter by design.</p>
+            <p>© 2025 Mor. All rights reserved.</p>
+            <div class="legal-links">
+            <a href="/terms">Terms</a>
+            <span>•</span>
+            <a href="/privacy">Privacy</a>
+            </div>
+        </div>
+        
     </footer>
 
     <script>

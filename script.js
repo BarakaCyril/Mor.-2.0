@@ -3,6 +3,26 @@ gsap.registerPlugin(ScrollTrigger);
 let heroScrollTrigger = null;
 ScrollTrigger.normalizeScroll(true)
 
+
+const testimonials = [
+  {
+  img: "Testimonials/Andy.png",
+  text: '"These are the most delicious cakes ever made. Big shout out to Cyril."',
+  author: "-- Andy Achie"
+  },
+  {
+    img: "Testimonials/Ivy.png",
+    text: '"Absolutely loved the pastries! Will order again."',
+    author: "-- Ivy Neema"
+  },
+  {
+    img: "Testimonials/Robot.png",
+    text: '"The best cakes in Nairobi, hands down!"',
+    author: "-- Mr. Smith"
+  }
+];
+
+
 const hamMenu = document.querySelector('.ham-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 
@@ -20,6 +40,33 @@ document.addEventListener("DOMContentLoaded", function(){
     threshold: 0.15
   });
   animElements.forEach(el => observor.observe(el));
+
+
+  //fading animation
+  let current = 0;
+  const testimonialEl = document.getElementById("testimonial");
+  const imgEl = document.getElementById("testimonial-img");
+  const textEl = document.getElementById("testimonial-text");
+  const authorEl = document.getElementById("testimonial-author");
+
+  function showTestimonial(idx) {
+    testimonialEl.classList.add('fading');
+    setTimeout(() => {
+      imgEl.src = testimonials[idx].img;
+      textEl.textContent = testimonials[idx].text;
+      authorEl.textContent = testimonials[idx].author;
+      // Wait a bit before fading in
+      setTimeout(() => {
+        testimonialEl.classList.remove('fading');
+      }, 1000); // 50ms ensures browser registers the opacity change
+    }, 1000); // 1s fade out
+  }
+
+  setInterval(() => {
+    current = (current + 1) % testimonials.length;
+    showTestimonial(current);
+  }, 4000);
+
 });
 
 hamMenu.addEventListener('click',() => {
@@ -258,7 +305,7 @@ document.querySelectorAll('.faq-question').forEach((question) => {
     opacity: 1,
     y: 0,
     duration: 0.6,
-    stagger: 0.2,
+    stagger: 0.3,
     ease: "power2.out"
   });
 
@@ -269,7 +316,7 @@ new Swiper(".mySwiper" , {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
-  loop: false,
+  loop: true,
   coverflowEffect: {
     rotate: 30,
     stretch: 0,
@@ -282,3 +329,6 @@ new Swiper(".mySwiper" , {
     prevEl: ".custom-prev",
   }
 })
+
+
+
