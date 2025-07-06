@@ -4,31 +4,11 @@ let heroScrollTrigger = null;
 ScrollTrigger.normalizeScroll(true)
 
 
-const testimonials = [
-  {
-  img: "Testimonials/Andy.png",
-  text: '"These are the most delicious cakes ever made. Big shout out to Cyril."',
-  author: "-- Andy Achie"
-  },
-  {
-    img: "Testimonials/Ivy.png",
-    text: '"Absolutely loved the pastries! Will order again."',
-    author: "-- Ivy Neema"
-  },
-  {
-    img: "Testimonials/Robot.png",
-    text: '"The best cakes in Nairobi, hands down!"',
-    author: "-- Mr. Smith"
-  }
-];
-
-
 const hamMenu = document.querySelector('.ham-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 
 document.addEventListener("DOMContentLoaded", function(){
   const animElements = document.querySelectorAll(".animate");
-  
   const observor = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
@@ -42,30 +22,41 @@ document.addEventListener("DOMContentLoaded", function(){
   animElements.forEach(el => observor.observe(el));
 
 
-  //fading animation
-  let current = 0;
-  const testimonialEl = document.getElementById("testimonial");
-  const imgEl = document.getElementById("testimonial-img");
-  const textEl = document.getElementById("testimonial-text");
-  const authorEl = document.getElementById("testimonial-author");
 
-  function showTestimonial(idx) {
-    testimonialEl.classList.add('fading');
-    setTimeout(() => {
-      imgEl.src = testimonials[idx].img;
-      textEl.textContent = testimonials[idx].text;
-      authorEl.textContent = testimonials[idx].author;
-      // Wait a bit before fading in
-      setTimeout(() => {
-        testimonialEl.classList.remove('fading');
-      }, 1000); // 50ms ensures browser registers the opacity change
-    }, 1000); // 1s fade out
+  //Animate the stat numbers
+  const statNumbers = document.querySelectorAll('.stat-number');
+  const speed = 500;
+
+  function animateCount(el) {
+    const target = +el.getAttribute('data-target');
+    let count = 0;
+    const increment = Math.ceil(target / speed);
+
+    function update() {
+      count += increment;
+      if (count < target) {
+        el.childNodes[0].nodeValue = count;
+        requestAnimationFrame(update);
+      } else {
+        el.childNodes[0].nodeValue = target;
+      }
+    }
+    update();
   }
 
-  setInterval(() => {
-    current = (current + 1) % testimonials.length;
-    showTestimonial(current);
-  }, 4000);
+  //trigger when stats-section is in view
+  let started = false;
+  function onScroll() {
+    const statsSection = document.querySelector('.stats-section');
+    const rect = statsSection.getBoundingClientRect();
+    if (!started && rect.top < window.innerHeight - 200) {
+      statNumbers.forEach(animateCount);
+      started = true;
+      window.removeEventListener('scroll', onScroll);
+    }
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
 
 });
 
@@ -308,6 +299,22 @@ document.querySelectorAll('.faq-question').forEach((question) => {
     stagger: 0.3,
     ease: "power2.out"
   });
+
+gsap.to(".testimonial", {
+  scrollTrigger: {
+    trigger: ".testimonials-section",
+    start: "top 60%"
+  },
+  opacity: 1,
+  y: 0,
+  x: 0,
+  duration: 1,
+  stagger: 0.4,
+  ease: "power2.out"
+});
+
+
+
 
 //? - ?//
 //swiper carousel effect/////
