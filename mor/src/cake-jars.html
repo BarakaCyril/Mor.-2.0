@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/navbar.css"/>
+    <link rel="stylesheet" href="styles/cake-jar-styles.css"/>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Order Cake Jars</title>
+</head>
+<body>
+    <div class="navbar"></div>
+
+    <div class="container">
+        <div class="top-text">
+            <h1>Mor. Cake Jars</h1>
+            <p>Our cake jars are the perfect blend of indulgence and convenience – beautifully layered with moist sponge, creamy frosting, and rich fillings in every scoop. Choose from three irresistible flavors: decadent Red Velvet, fruity and refreshing Very Berry Vanilla, or indulgent Chocolate Fudge</p>
+        </div>
+
+        <div class="jar-display">
+            <div class="display chocolate-jar"></div>
+            <div class="display chocolate-jar"></div>
+            <div class="display chocolate-jar"></div>
+        </div>
+
+        <div class="order-section">
+            
+            <form action="">
+
+                <div class="form-header">
+                    <img class="icon" src="" alt="">
+                    <h2>Place Your Order</h2>
+                </div>
+
+                <div class="form-pricing">
+                    <h2>Pricing</h2>
+                    <div>One jar 400</div>
+                    <div>Two or more 350 each</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="number" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cake-flavour">Cake Flavour</label>
+                    <select id="cake-flavour" name="cake-flavour" required>
+                        <option value="">Select Flavour</option>
+                        <option value="vanilla">Red Velvet</option>
+                        <option value="chocolate">Very Berry Vanilla</option>
+                        <option value="red-velvet">Chocolate Fudge</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Amount">Amount</label>
+                    <input type="number" id="amount" name="amount">
+                </div>
+
+                <div class="form-total">
+                    <h1>Total</h1>
+                    <h2 class="price">400</h2>
+                </div>
+
+                <button type="submit" class="submit-btn">ORDER</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="javascript/jars.js"></script>
+</body>
+</html>

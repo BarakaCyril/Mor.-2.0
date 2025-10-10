@@ -1,8 +1,4 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap");
-
-
 .logo {
   display: flex;
   flex-direction: column;
@@ -12,6 +8,7 @@
   font-family: var(--font-accent);
   line-height: 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .ham-menu{
