@@ -1,13 +1,14 @@
 gsap.registerPlugin(ScrollTrigger);
 
 let heroScrollTrigger = null;
-ScrollTrigger.normalizeScroll(true)
+ScrollTrigger.normalizeScroll(true);
 
-
-const hamMenu = document.querySelector('.ham-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 
+const logo = document.querySelector('.logo');
+
 document.addEventListener("DOMContentLoaded", function(){
+
   const animElements = document.querySelectorAll(".animate");
   const observor = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
     threshold: 0.15
   });
   animElements.forEach(el => observor.observe(el));
+
 
 
 
@@ -60,10 +62,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
-hamMenu.addEventListener('click',() => {
-  hamMenu.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-});
+
 
 function getResponsiveDirections() {
   const width = window.innerWidth;
@@ -154,7 +153,7 @@ function getResponsiveScales() {
   } else {
     // Large desktop - original scales
     return {
-      centerInitial: 0.8,
+      centerInitial: 1.8,
       centerTextFinal: 1,
       centerFinal: 1,
       randomMin: 0.6,
@@ -313,10 +312,6 @@ gsap.to(".testimonial", {
   ease: "power2.out"
 });
 
-
-
-
-//? - ?//
 //swiper carousel effect/////
 new Swiper(".mySwiper" , {
   effect: "coverflow",
@@ -336,6 +331,3 @@ new Swiper(".mySwiper" , {
     prevEl: ".custom-prev",
   }
 })
-
-
-

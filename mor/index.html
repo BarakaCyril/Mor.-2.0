@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 
-
     <script type="application/ld+json">
         {
         "@context": "https://schema.org",
@@ -48,39 +47,14 @@
     <link rel="preload" as="image" href="Images/1.webp">
 
     <!--Style stuff-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
-
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <div class="logo"><div class="nav-logo"><img style="width: 30px; height: auto" src="icons/logo.svg" alt="logo-icon"></div>MOR.</div>
-        <ul class="nav-links">
-            <li><a href="#aboutSection">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><button onclick="window.location.href='order.html'" class="order-btn">ORDER NOW</button></li>
-        </ul>
-
-        <div class="ham-menu" aria-label="Mobile Menu" aria-expanded="false">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </nav>
-
-    
-    <div class="mobile-menu">
-        <ul class="mobile-links">
-            <li><a href="#aboutSection">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><button onclick="window.location.href='order.html'" class="order-btn">ORDER NOW</button></li>
-        </ul>
-    </div>
-
-
-    
+    <div id="navbar"></div>
 
     <section class="hero-section" id="heroSection">
         <div class="center-text">
@@ -419,6 +393,16 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="src/main.js"></script>
+    <script>
+    fetch("navigation.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+
+
+    </script>
 </body>
 </html>
