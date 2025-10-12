@@ -12,38 +12,46 @@
     <title>Order Cake Jars</title>
 </head>
 <body>
-    <div class="navbar"></div>
+    <div id="navbar"></div>
 
     <div class="container">
         <div class="top-text">
             <h1>Mor. Cake Jars</h1>
-            <p>Our cake jars are the perfect blend of indulgence and convenience – beautifully layered with moist sponge, creamy frosting, and rich fillings in every scoop. Choose from three irresistible flavors: decadent Red Velvet, fruity and refreshing Very Berry Vanilla, or indulgent Chocolate Fudge</p>
+            <p>Our cake jars are the perfect blend of indulgence and convenience - beautifully layered with moist sponge, creamy frosting, and rich fillings in every scoop. Choose from three irresistible flavors: decadent Red Velvet, fruity and refreshing Very Berry Vanilla, or indulgent Chocolate Fudge</p>
         </div>
 
         <div class="jar-display">
-            <div class="display chocolate-jar"></div>
-            <div class="display chocolate-jar"></div>
-            <div class="display chocolate-jar"></div>
+            <div class="display"><img src="../jars/berry-jar.png" alt=""></div>
+            <div class="display"><img src="../jars/chocolate-jar.png" alt=""></div>
+            <div class="display"><img src="../jars/velvet-jar.png" alt=""></div>
         </div>
 
         <div class="order-section">
             
-            <form action="">
+            <form class="form" action="">
 
                 <div class="form-header">
-                    <img class="icon" src="" alt="">
+                    <a class="cart-icon"><i class="fa-solid fa-cart-shopping fa-6x"></i></a>
                     <h2>Place Your Order</h2>
                 </div>
 
                 <div class="form-pricing">
                     <h2>Pricing</h2>
-                    <div>One jar 400</div>
-                    <div>Two or more 350 each</div>
+                    <div class="price-items">
+                        <div>One jar 400</div>
+                        <div>Two or more 350 each</div>
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
@@ -77,5 +85,13 @@
     </div>
 
     <script src="javascript/jars.js"></script>
+    <script>
+    fetch("navigation.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    </script>
 </body>
 </html>

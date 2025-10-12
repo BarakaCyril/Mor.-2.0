@@ -3,9 +3,10 @@
 
 :root {
     --primary-color: rgb(250, 207, 189);
+    --primary-easy: #FEECE5;
     --primary-color-light: rgba(250, 207, 189, 0.3);
     --secondary-color: #FEECE5;
-    --accent-color: #333333ff;
+    --accent-color: #333;
     --font-main: "Winky Sans", sans-serif;
     --font-accent: "Noto Serif Georgian", cursive;
     --ticker-gap: 20px;

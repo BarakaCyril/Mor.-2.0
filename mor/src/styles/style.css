@@ -21,7 +21,7 @@ html {
   padding: 0;
   font-family: var(--font-main);
   overflow-x: hidden;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-easy);
   overflow-y: hidden;
 }
 
@@ -34,7 +34,7 @@ html {
   justify-content: center;
   overflow: hidden;
   padding-bottom: 1rem;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-easy);
 }
 
 
@@ -157,6 +157,7 @@ html {
   display: flex;
   gap: 1rem;
   padding: 2rem;
+
 }
 
 .testimonial-title{
@@ -182,6 +183,7 @@ html {
   padding: 1rem;
   opacity: 0;
   transform: translateY(40px);
+  background-color: var(--primary-color-light);
 }
 
 .testimonial:hover{
