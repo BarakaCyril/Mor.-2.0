@@ -10,5 +10,6 @@
     --font-main: "Winky Sans", sans-serif;
     --font-accent: "Noto Serif Georgian", cursive;
     --ticker-gap: 20px;
+    --default-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
   

@@ -290,14 +290,23 @@ document.querySelectorAll('.faq-question').forEach((question) => {
     });
   });
 
-  // Animate in with GSAP
-  gsap.to(".faq-item", {
-    opacity: 1,
-    y: 0,
-    duration: 0.6,
-    stagger: 0.3,
-    ease: "power2.out"
-  });
+// Animate in with GSAP
+gsap.to(".faq-item", {
+  opacity: 1,
+  y: 0,
+  duration: 0.6,
+  stagger: 0.3,
+  ease: "power2.out"
+});
+
+gsap.to(".update-card", {
+  opacity: 1,
+  y: 0,
+  duration: 0.6,
+  stagger: 0.3,
+  ease: "power2.out"
+});
+
 
 gsap.to(".testimonial", {
   scrollTrigger: {

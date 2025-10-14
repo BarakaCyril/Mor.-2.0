@@ -47,9 +47,9 @@
     <link rel="preload" as="image" href="Images/1.webp">
 
     <!--Style stuff-->
-    <link rel="stylesheet" href="src/styles/style.css">
-    <link rel="stylesheet" href="src/styles/navbar.css">
     <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/navbar.css">
+    <link rel="stylesheet" href="src/styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -87,6 +87,40 @@
             <div class="image" id="img8">
                 <img src="Images/8.webp" alt="Cake Image 8" loading="lazy"/>
             </div>
+    </section>
+
+    <section class="updates-section animate" id="updatesSection">
+        <div class="updates-header">
+            <h1>MOR. NEWS</h1>
+            <p>Limited drops, fresh items and good news</p>
+        </div>
+
+        <div class="updates-grid">
+
+            <article class="update-card">
+                <div class="update-media">
+                    <img src="Images/caramel-drop.jpg" alt="Limited Drop">
+                </div>
+                <div class="update-content">
+                    <h2>Limited Drop: Salted Caramel Cake Jars</h2>
+                    <p>Mini cake jars with new flavours every month</p>
+                    <div class="update-cta">
+                        <a class="cta-link" href="/src/menu.html">See Menu</a>
+                        <button class="order-btn" onclick="window.location.href='/src/cake-jars.html'">Order Yours</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="update-card">
+                <div class="update-media">
+                    <img src="Images/8.webp" alt="New Item">
+                </div>
+                <div class="update-content">
+                    <h2>Community Outreach</h2>
+                    <p>Mor is planning something special. An initiative to give back to the communtiy 🤗. Don't worry, updates are coming soon. Stay tuned to know Mor.</p>
+                </div>
+            </article>
+        </div>
     </section>
 
      <section class="ticker-section">
@@ -283,7 +317,7 @@
             <div class="socials-images-grid">
                 <div class=" rows row-1 animate">
                     <div class="grid-item"><img src="Socials Images/1.webp" alt="Bakery Ingridients" loading="lazy"></div>
-                    <div class="grid-item"><img src="Socials Images/2.webp" alt="Phone with Logo" loading="lazy"></div>
+                    <div class="grid-item"><video  autoplay muted loop width="230"> <source src="/Public/Videos/funny-cake.mp4"></video></div>
                     <div class="grid-item"><img src="Socials Images/3.webp" alt="Brand magazine" loading="lazy"></div>
                     <div class="grid-item"><img src="Socials Images/4.webp" alt="Brand quotes" loading="lazy"></div>
                 </div>
@@ -292,13 +326,23 @@
                     <div class="grid-item"><img src="Socials Images/6.webp" alt="Brand magazine held by a woman" loading="lazy"></div>
                     <div class="grid-item"><img src="Socials Images/7.webp" alt="Strawberry cake slices" loading="lazy"></div>
                 </div>
+
                 <div class=" rows row-3 animate">
                     <div class="grid-item"><img src="Socials Images/8.webp" alt="Cake jar" loading="lazy"></div>
-                    <div class="grid-item"><img src="Socials Images/9.webp" alt="Brand upcoming advert" loading="lazy"></div>
+                    <div class="grid-item"><video  autoplay muted loop width="450"> <source src="/Public/Videos/process.mp4"></video></div>
+                    
                     <div class="grid-item"><img src="Socials Images/10.webp" alt="White Bento cake" loading="lazy"></div>
                     <div class="grid-item"><img src="Socials Images/11.webp" alt="White Earth cake" loading="lazy"></div>
-
                 </div>
+
+                <div class=" rows row-4 animate">
+                    <div class="grid-item"><img src="Socials Images/12.webp" alt="White Earth cake" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/9.webp" alt="Brand upcoming advert" loading="lazy"></div>
+                    <div class="grid-item"><img src="Socials Images/13.jpg" alt="Brand upcoming advert" loading="lazy"></div>
+
+                    
+                </div>
+
             </div>
         </div>
     </section>
@@ -395,6 +439,7 @@
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="src/javascript/main.js"></script>
+    
     <script>
     fetch("src/navigation.html")
         .then(response => response.text())
