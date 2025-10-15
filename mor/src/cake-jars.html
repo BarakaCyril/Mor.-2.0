@@ -8,34 +8,43 @@
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/navbar.css"/>
     <link rel="stylesheet" href="styles/cake-jar-styles.css"/>
+    <link rel="stylesheet" href="styles/footer.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>Order Cake Jars</title>
+    <title>Mor. Cake Jars</title>
+
+    <!--FAVIVO ICONS-->
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Mor" />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
 </head>
 <body>
     <div id="navbar"></div>
 
     <div class="container">
-        <div class="top-text">
+        <div class="top-text animate">
             <h1>Mor. Cake Jars</h1>
             <p>Our cake jars are the perfect blend of indulgence and convenience - beautifully layered with moist sponge, creamy frosting, and rich fillings in every scoop. Choose from three irresistible flavors: decadent Red Velvet, fruity and refreshing Very Berry Vanilla, or indulgent Chocolate Fudge</p>
         </div>
 
-        <div class="jar-display">
+        <div class="jar-display animate">
             <div class="display"><img src="../jars/berry-jar.png" alt=""></div>
             <div class="display"><img src="../jars/chocolate-jar.png" alt=""></div>
             <div class="display"><img src="../jars/velvet-jar.png" alt=""></div>
         </div>
 
-        <div class="order-section">
+        <div class="order-section animate">
             
             <form class="form" action="">
 
-                <div class="form-header">
+                <div class="form-header animate">
                     <a class="cart-icon"><i class="fa-solid fa-cart-shopping fa-6x"></i></a>
                     <h2>Place Your Order</h2>
                 </div>
 
-                <div class="form-pricing">
+                <div class="form-pricing animate">
                     <h2>Pricing</h2>
                     <div class="price-items">
                         <div class="price-row"><span class="label">One jar:</span><span class="value">Ksh. 400</span></div>
@@ -44,22 +53,22 @@
 
                 </div>
 
-                <div class="form-group">
+                <div class="form-group animate">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group animate">
                     <label for="email">Email</label>
                     <input type="text" id="email" name="email" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group animate">
                     <label for="phone">Phone</label>
                     <input type="tel" id="number" name="phone" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group animate">
                     <label for="cake-flavour">Cake Flavour</label>
                     <select id="cake-flavour" name="cake-flavour" required>
                         <option value="">Select Flavour</option>
@@ -69,22 +78,25 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group animate">
                     <label for="Amount">Amount</label>
                     <input type="number" id="amount" name="amount">
                 </div>
 
-                <div class="form-total">
+                <div class="form-total animate">
                     <h1>Total</h1>
                     <h2 class="price">400</h2>
                 </div>
 
-                <button type="submit" class="submit-btn">ORDER</button>
+                <button type="submit" class="submit-btn animate">ORDER</button>
             </form>
         </div>
     </div>
 
+    <div id="footer"></div>
+    
     <script src="javascript/jars.js"></script>
+    <script src="javascript/animations.js"></script>
     <script>
     fetch("navigation.html")
         .then(response => response.text())
@@ -92,6 +104,15 @@
         document.getElementById("navbar").innerHTML = data;
         })
         .catch(error => console.error("Error loading navbar:", error));
+    </script>
+    <script>
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+          const footer = document.getElementById("footer");
+          if (footer) footer.innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
     </script>
 </body>
 </html>

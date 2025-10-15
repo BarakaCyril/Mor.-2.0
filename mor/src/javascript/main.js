@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   //Animate the stat numbers
   const statNumbers = document.querySelectorAll('.stat-number');
-  const speed = 500;
+  const speed = 600;
 
   function animateCount(el) {
     const target = +el.getAttribute('data-target');
