@@ -49,13 +49,14 @@ document.addEventListener('DOMContentLoaded',  ()=>{
         form.reset();
     });
 
-    form.addEventListener('submit', (event) => {
-        if (selectedFiles.length === 0) {
-          event.preventDefault();
-          errorMessage.textContent = 'Please upload at least one photo';
-          return;
-        }
-        // allow native submit
-    });
-
+    const whatsAppUrl = "https://wa.me/254742044311?text=Hi%20mor.%20I%20want%20a%20custom%20cake";
+    const jarsUrl = "/src/cake-jars.html";
+    const custom = document.getElementById('choice-custom');
+    const jars = document.getElementById('choice-jars');
+    const inquiry = document.getElementById('choice-inquiry');
+    
+    if(custom){ custom.addEventListener('click', () => { window.open(whatsAppUrl, '_blank') }); }
+    if(jars){ jars.addEventListener('click', () => { window.location.href = jarsUrl; }); }
+    if(inquiry){ inquiry.addEventListener('click', () => { form && form.classList.remove('hidden'); window.scrollTo({ top: form.offsetTop - 40, behavior: 'smooth' }); }); }
 });
+

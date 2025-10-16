@@ -25,15 +25,54 @@
 
     <div class="container">
         <div class="top-text animate">
-            <h1>Mor. Cake Jars</h1>
-            <p>Our cake jars are the perfect blend of indulgence and convenience - beautifully layered with moist sponge, creamy frosting, and rich fillings in every scoop. Choose from three irresistible flavors: decadent Red Velvet, fruity and refreshing Very Berry Vanilla, or indulgent Chocolate Fudge</p>
+            <h1>SAY HELLOO TO PORTABLE CAKES</h1>
+            <p>Our cake jars are the perfect blend of indulgence and convenience - beautifully layered with moist sponge, creamy frosting, and rich fillings in every scoop.</p>
         </div>
 
-        <div class="jar-display animate">
-            <div class="display"><img src="../jars/berry-jar.png" alt=""></div>
-            <div class="display"><img src="../jars/chocolate-jar.png" alt=""></div>
-            <div class="display"><img src="../jars/velvet-jar.png" alt=""></div>
+        <div class="jar-hero">
+            <img src="../jars/Hero.png" alt="Hero-Image">
         </div>
+
+         <section class="jar-carousel animate">
+             <div class="strip">
+                 <div class="card"><img src="../jars/1.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/2.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/3.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/4.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/5.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/6.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/7.png" alt="jar" loading="lazy"></div>
+
+                
+                 <div class="card"><img src="../jars/1.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/2.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/3.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/4.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/5.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/6.jpg" alt="jar" loading="lazy"></div>
+                 <div class="card"><img src="../jars/7.png" alt="jar" loading="lazy"></div>
+             </div>
+         </section>
+
+         <section class="jar-info animate">
+             <h2>Your Taste Buds</h2>
+             <div class="jar-info-grid">
+                 <article>
+                     <h3>Deserve Eco.</h3>
+                     <p>Our cake jars come in beautiful, reusable glass jars — because sweetness shouldn’t come at the planet’s expense. Each.</p>
+                 </article>
+                 <article>
+                     <h3>Deserve Extra.</h3>
+                     <p>Layers of moist sponge, rich fillings and creamy toppings. Designed to travel, perfect for gifting, made to enjoy.</p>
+                 </article>
+                 <article>
+                     <h3>Deserve Mor.</h3>
+                     <p>Small enough to carry anywhere, big enough to satisfy a sweet craving. Treat yourself — you deserve Mor.</p>
+                 </article>
+             </div>
+         </section>
+
+         
 
         <div class="order-section animate">
             
@@ -44,11 +83,14 @@
                     <h2>Place Your Order</h2>
                 </div>
 
-                <div class="form-pricing animate">
+        <div class="form-pricing animate">
                     <h2>Pricing</h2>
                     <div class="price-items">
-                        <div class="price-row"><span class="label">One jar:</span><span class="value">Ksh. 400</span></div>
-                        <div class="price-row"><span class="label">Two or more</span><span class="value">Ksh. 350 each</span></div>
+                        <div class="price-row"><span class="label">Salted Caramel (Vanilla)</span><span class="value">Ksh. 450</span></div>
+                        <div class="price-row"><span class="label">Salted Caramel (Chocolate)</span><span class="value">Ksh. 550</span></div>
+                        <div class="price-row"><span class="label">Very Berry (Vanilla)</span><span class="value">Ksh. 500</span></div>
+                        <div class="price-row"><span class="label">Red Velvet</span><span class="value">Ksh. 450</span></div>
+                        <div class="price-row"><span class="label">Chocolate</span><span class="value">Ksh. 500</span></div>
                     </div>
 
                 </div>
@@ -72,20 +114,61 @@
                     <label for="cake-flavour">Cake Flavour</label>
                     <select id="cake-flavour" name="cake-flavour" required>
                         <option value="">Select Flavour</option>
-                        <option value="vanilla">Red Velvet</option>
-                        <option value="chocolate">Very Berry Vanilla</option>
-                        <option value="red-velvet">Chocolate Fudge</option>
+                        <option value="salted-caramel-vanilla">Salted Caramel (Vanilla)</option>
+                        <option value="salted-caramel-chocolate">Salted Caramel (Chocolate)</option>
+                        <option value="very-berry-vanilla">Very Berry (Vanilla)</option>
+                        <option value="red-velvet">Red Velvet</option>
+                        <option value="chocolate">Chocolate</option>
                     </select>
                 </div>
 
                 <div class="form-group animate">
                     <label for="Amount">Amount</label>
-                    <input type="number" id="amount" name="amount">
+                    <input type="number" id="amount" name="amount" min="1" step="1" inputmode="numeric">
+                </div>
+
+                <div class="form-group animate">
+                    <label for="location">Delivery Location</label>
+                    <select id="location" name="location" required>
+                        <option value="">Select Location</option>
+                        <option value="hq-pickup" data-price="0">HQ Pick Up: KCS House, Mama Ngina Street, 8th Floor - FREE</option>
+                        <option value="platinum-pickup" data-price="0">Pick Up Point: Platinum Plaza Basement Shop B09 - FREE</option>
+                        <option value="zone-a" data-price="150">ZONE A: Within CBD - Ksh 150</option>
+                        <option value="pickup-mtaani" data-price="220">Pick Up Mtaani Agent Drop Off - Ksh 220</option>
+                        <option value="zone-l" data-price="250">ZONE L: Thika, Kikuyu, Ruiru, Juja, Ngong, Kitengela etc. via Super Metro - Ksh 250</option>
+                        <option value="zone-b" data-price="300">ZONE B: Upperhill, Valley Road, Community, Hurlingham, Nairobi Hospital, Pangani, Ngara, KNH, Ojijo Road etc. - Ksh 300</option>
+                        <option value="zone-c" data-price="350">ZONE C: Riverside, Westlands, ABC, Kilimani, Kileleshwa, Westgate, General Mathenge, Parklands, MP-Shah, Aghakhan, Oshwal etc. - Ksh 350</option>
+                        <option value="zone-e" data-price="350">ZONE E: South B/C, Mbagathi, Madaraka, Nairobi west, Lang'ata, carnivore, Nairobi West, Bellevue, NextGen Mall, Panari, Imara etc. - Ksh 350</option>
+                        <option value="zone-j" data-price="350">ZONE J: Roasters, Mountain Mall, Garden City, TRM, Lumumba Drive, USIU, Ngumba etc. - Ksh 350</option>
+                        <option value="zone-d" data-price="400">ZONE D: Kangemi, Loresho, Mountain View, Spring Valley, Lower Kabete, Industrial Area - Ksh 400</option>
+                        <option value="zone-f" data-price="400">ZONE F: Junction Mall, Lavington, Kibra, Dagoretti Corner, Kawangware, Wanyee etc. - Ksh 400</option>
+                        <option value="zone-k" data-price="400">ZONE K: Outside Nairobi (courier of choice) - Ksh 400</option>
+                        <option value="zone-n" data-price="400">ZONE N: Donholm, Uhuru Estate, Buruburu, Fedha, Tassia, Savanah, Pipeline, Mtindwa, Lucky Summer - Ksh 400</option>
+                        <option value="zone-g" data-price="450">ZONE G: Ruaka, Runda, Nyari, Gigiri, UNEP, Muchatha, Thindigua, Muthaiga North, Fourways, Ridgeways, Komarock, Tassia etc. - Ksh 450</option>
+                        <option value="zone-m" data-price="450">ZONE M: Mirema, Kahawa Sukari, Zimmerman, Githurai, Kahawa West, Kahawa Wendani, Clayworks etc. - Ksh 450</option>
+                        <option value="zone-h" data-price="600">ZONE H: Gateway Mall, Syokimau, Kinoo, Kenyatta Road, Ruiru Bypass - Ksh 600</option>
+                        <option value="zone-o" data-price="650">Zone O: Utawala, Karen, Ruiru Town - Ksh 650</option>
+                        <option value="zone-p" data-price="800">ZONE P: Rongai, Kikuyu, Kiambu Town, Tatu City - Ksh 800</option>
+                        <option value="zone-r" data-price="900">Zone R: Athi River, Thika Town, Kamulu, Kitengela - Ksh 900</option>
+                        <option value="zone-q" data-price="1350">Zone Q: Thika Town, Kamulu, Kitengela - Ksh 1,350</option>
+                    </select>
                 </div>
 
                 <div class="form-total animate">
-                    <h1>Total</h1>
-                    <h2 class="price">400</h2>
+                    <div class="total-breakdown">
+                        <div class="breakdown-row">
+                            <span class="label">Product Total:</span>
+                            <span class="value" id="product-total">Ksh. 0</span>
+                        </div>
+                        <div class="breakdown-row">
+                            <span class="label">Delivery:</span>
+                            <span class="value" id="delivery-total">Ksh. 0</span>
+                        </div>
+                        <div class="breakdown-row total-row">
+                            <span class="label">Total:</span>
+                            <span class="value" id="grand-total">Ksh. 0</span>
+                        </div>
+                    </div>
                 </div>
 
                 <button type="submit" class="submit-btn animate">ORDER</button>

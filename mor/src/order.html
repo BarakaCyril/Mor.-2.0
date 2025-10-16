@@ -25,8 +25,34 @@
 
     <div id="navbar"></div>
 
+    <section class="order-choices">
+        <div class="choices-container">
+            <header class="choices-header">
+                <h1>What would you like to do?</h1>
+                <p>Select an option below to continue.</p>
+            </header>
+            <div class="choices-grid">
+                <button class="choice-card" id="choice-custom">
+                    <div class="choice-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                    <h2>Custom Cakes</h2>
+                    <p>Chat with us on WhatsApp to create a custom cake.</p>
+                </button>
+                <button class="choice-card" id="choice-jars">
+                    <div class="choice-icon"><i class="fa-solid fa-jar"></i></div>
+                    <h2>Cake Jars</h2>
+                    <p>Order our ready-to-go cake jars.</p>
+                </button>
+                <button class="choice-card" id="choice-inquiry">
+                    <div class="choice-icon"><i class="fa-regular fa-envelope"></i></div>
+                    <h2>General Inquiry / Quote</h2>
+                    <p>Send details and we'll get back to you.</p>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
-        <form class="order-form" id="orderForm" 
+        <form class="order-form hidden" id="orderForm" 
         action="https://formsubmit.co/mor.cakesandpastries@gmail.com"
         method="POST"
         enctype="multipart/form-data">
@@ -37,7 +63,7 @@
 
             <div class="form-header">
                 <h1>THE FINE PRINT</h1>
-                <p class="form-description">Hi Sweet soul !😊, welcome to Mor cakes and pasteries Order form, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                <p class="form-description">Hi Sweet soul !😊, welcome to Mor cakes and pasteries. Do you have any issues, inquiries, complaints or suggestions? This is the right place. Fill your contact details and concerns below and we will try to get back to you as fast as possible. Pinky Promise!</p>
             </div>
 
             <section class="contact-details">
@@ -58,63 +84,18 @@
 
 
             <section class="cake-details">
-                <h2>CAKE DETAILS</h2>
+                <h2>UPLOAD PHOTO IF ANY</h2>
                 <div class="upload-section">
                     <div class="upload-circle">
                         <label for="cake-photo">UPLOAD PHOTOS <br> IF ANY </label>
                         <input type="file" id="uploadPhotos" name="cake-photo" accept="image/*" multiple>
                     </div>
                     <div class="upload-info">
-                        <p>The photos uploaded will be used as reference for the cake design.</p>
+                        <p>The photos uploaded will NOT be shared with a third partu</p>
                         <p>Upload a maximum of 2 photos.</p>
                     </div>
                     <div id="previewContainer" class="preview-container"></div>
                     <div id="errorMessage" class="error-message"></div>
-                </div>
-                <div class="form-group">
-                    <label for="cake-flavour">Cake Flavour</label>
-                    <select id="cake-flavour" name="cake-flavour" required>
-                        <option value="">Select Flavour</option>
-                        <option value="vanilla">Vanilla</option>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="red-velvet">Red Velvet</option>
-                        <option value="fruit">Fruit</option>
-                        <option value="other">Other (Please specify)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="cake-size">Cake Size</label>
-                    <select id="cake-size" name="cake-size" required>
-                        <option value="">Select Size</option>
-                        <option value="6-inch">6 inch</option>
-                        <option value="8-inch">8 inch</option>
-                        <option value="10-inch">10 inch</option>
-                        <option value="12-inch">12 inch</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="cake-filling">Cake Filling</label>
-                    <select id="cake-filling" name="cake-filling" required>
-                        <option value="">Select Filling</option>
-                        <option value="buttercream">Buttercream</option>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="fruit">Fruit</option>
-                        <option value="other">Other (Please specify)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="cake-decoration">Cake Decoration</label>
-                    <select id="cake-decoration" name="cake-decoration" required>
-                        <option value="">Select Decoration</option>
-                        <option value="fondant">Fondant</option>
-                        <option value="buttercream">Buttercream</option>
-                        <option value="naked">Naked</option>
-                        <option value="other">Other (Please specify)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="other-inclusions">Other Inclusions</label>
-                    <input type="text" id="other-inclusions" name="other-inclusions">
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
@@ -123,47 +104,23 @@
             </section>
 
             <section class="delivery-details">
-                <h2>DELIVERY DETAILS</h2>
-                <div class="form-group">
-                    <label for="pin-location">Location</label>
-                    <input type="text" id="delivery-location" name="pin-location" required>
-                </div>
-                <div class="form-group">
-                    <label for="preferred-date">Preferred Date</label>
-                    <input type="date" id="preferred-date" name="preferred-date" required>
-                </div>
-                <div class="form-group time-group">
-                        <label for="preferred-time">Preferred Time</label>
-
-                        <div class="time-input">
-                            <div class="time-am-pm">
-                                <input type="time" id="preferred-time" name="preferred-time" required>
-                                <select id="time-period" name="time-period" required>
-                                    <option value="AM">AM</option>
-                                    <option value="PM">PM</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        
-                </div>
                 <div class="form-group checkbox-group">
                     <input type="checkbox" id="mailing-list" name="mailing-list">
-                    <label for="mailing-list">Please add me to your mailing list</label>
+                    <label for="mailing-list">Check this box to be added to our mailing list.</label>
                 </div>
             </section>
 
             <div class="important-note">
                 <h3>Important Note</h3>
                 <p>Please ensure all details are correct before submitting the form.</p>
-                <p>A down payment of 70% is required to secure your order.</p>
+                <p>Your feedback is highly valued, be sure to tell us everything you feel.</p>
                 <p>Please note that all orders are subject to availability and confirmation through email or phone.</p>
                 
             </div>
 
             <div class="form-buttons">
                 <button type="button" class="cancel-btn">CANCEL</button>
-                <button type="submit" class="submit-btn">SUBMIT FORM</button>
+                <button type="submit" class="submit-btn">SUBMIT</button>
             </div>
         </form>
     </div>
@@ -179,6 +136,10 @@
         .catch(error => console.error("Error loading navbar:", error));
     </script>
     <script src="javascript/order.js"></script>
+    <script>
+      // selection handlers
+
+    </script>
     <script>
       fetch("footer.html")
         .then(response => response.text())

@@ -2,30 +2,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.form');
   const amountInput = document.getElementById('amount');
   const flavourSelect = document.getElementById('cake-flavour');
-  const totalEl = document.querySelector('.form-total .price');
+  const locationSelect = document.getElementById('location');
+  const productTotalEl = document.getElementById('product-total');
+  const deliveryTotalEl = document.getElementById('delivery-total');
+  const grandTotalEl = document.getElementById('grand-total');
   const submitBtn = document.querySelector('.submit-btn');
 
-  // Optional flavour-specific unit price overrides.
-  // Example: set a custom unit price per flavour. Leave undefined to use tiered pricing.
-  const flavourPriceOverrides = {
-    // 'chocolate': 450,
-    // 'red-velvet': 420,
-    // 'vanilla': 400,
+  // Fixed prices per flavour (no discounts)
+  const pricePerFlavour = {
+    'salted-caramel-vanilla': 450,
+    'salted-caramel-chocolate': 550,
+    'very-berry-vanilla': 500,
+    'red-velvet': 450,
+    'chocolate': 500,
   };
 
-  function clampAmount(value) {
-    const n = Number(value);
-    if (Number.isNaN(n) || n < 1) return 1;
-    if (n > 1000) return 1000; // reasonable upper bound to avoid mistakes
-    return Math.floor(n);
+  function sanitizeAmountFreeTyping(value) {
+    // Allow empty while typing; coerce to positive integer when present
+    if (value === '') return '';
+    const n = Number(value.replace(/[^0-9]/g, ''));
+    if (!Number.isFinite(n)) return '';
+    return String(Math.min(1000, Math.max(1, Math.floor(n))));
   }
 
-  function getUnitPrice(amount, flavour) {
-    if (flavourPriceOverrides[flavour] != null) {
-      return flavourPriceOverrides[flavour];
-    }
-    // Default tiered pricing
-    return amount >= 2 ? 350 : 400;
+  function clampAmountFinal(value) {
+    const n = Number(value);
+    if (Number.isNaN(n) || n < 1) return 1;
+    return Math.min(1000, Math.floor(n));
+  }
+
+  function getUnitPrice(flavour) {
+    return pricePerFlavour[flavour] || 0;
+  }
+
+  function getDeliveryPrice(locationValue) {
+    if (!locationValue) return 0;
+    const option = locationSelect.querySelector(`option[value="${locationValue}"]`);
+    return option ? Number(option.dataset.price) : 0;
   }
 
   function formatKsh(value) {
@@ -34,37 +47,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateTotal() {
     const flavour = flavourSelect.value;
-    const amount = clampAmount(amountInput.value);
+    const location = locationSelect.value;
+    const amountValue = amountInput.value === '' ? 0 : clampAmountFinal(amountInput.value);
+    
+    const unitPrice = getUnitPrice(flavour);
+    const productTotal = unitPrice * amountValue;
+    const deliveryPrice = getDeliveryPrice(location);
+    const grandTotal = productTotal + deliveryPrice;
 
-    // reflect clamped value in UI without disrupting typing too much
-    if (String(amount) !== String(amountInput.value)) {
-      amountInput.value = String(amount);
-    }
+    // Update display elements
+    if (productTotalEl) productTotalEl.textContent = formatKsh(productTotal);
+    if (deliveryTotalEl) deliveryTotalEl.textContent = formatKsh(deliveryPrice);
+    if (grandTotalEl) grandTotalEl.textContent = formatKsh(grandTotal);
 
-    const unit = getUnitPrice(amount, flavour);
-    const total = unit * amount;
-    if (totalEl) totalEl.textContent = formatKsh(total);
-
-    // enable/disable submit based on minimal validity
-    const valid = amount >= 1 && flavour !== '';
+    // Enable/disable submit based on validity
+    const valid = amountValue >= 1 && flavour !== '' && location !== '';
     if (submitBtn) submitBtn.disabled = !valid;
   }
 
-  // Initialize sensible defaults
-  if (amountInput && !amountInput.value) amountInput.value = '1';
+  // Initialize
+  if (amountInput && !amountInput.value) amountInput.value = '';
   updateTotal();
 
-  // Listeners
-  if (amountInput) amountInput.addEventListener('input', updateTotal);
+  // Event listeners
+  if (amountInput) {
+    amountInput.addEventListener('input', () => {
+      const sanitized = sanitizeAmountFreeTyping(amountInput.value);
+      amountInput.value = sanitized;
+      updateTotal();
+    });
+    amountInput.addEventListener('blur', () => {
+      if (amountInput.value === '') return;
+      amountInput.value = String(clampAmountFinal(amountInput.value));
+      updateTotal();
+    });
+  }
+  
   if (flavourSelect) flavourSelect.addEventListener('change', updateTotal);
+  if (locationSelect) locationSelect.addEventListener('change', updateTotal);
 
-  // Guard submit if somehow invalid
+  // Form submission validation
   if (form) {
     form.addEventListener('submit', (e) => {
-      const amount = clampAmount(amountInput.value);
-      if (amountInput.value !== String(amount)) amountInput.value = String(amount);
+      const amount = clampAmountFinal(amountInput.value);
+      amountInput.value = String(amount);
       const flavour = flavourSelect.value;
-      if (amount < 1 || flavour === '') {
+      const location = locationSelect.value;
+      
+      if (amount < 1 || flavour === '' || location === '') {
         e.preventDefault();
         updateTotal();
       }
