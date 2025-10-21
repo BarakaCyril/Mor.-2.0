@@ -17,7 +17,6 @@ h1{
 p{
     font-family: var(--font-main);
 }
-
 /* Choice section */
 .order-choices{
     max-width: 1000px;

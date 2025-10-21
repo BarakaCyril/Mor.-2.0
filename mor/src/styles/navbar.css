@@ -1,3 +1,7 @@
+a{
+  font-family: var(--font-main);
+}
+
 .logo {
   display: flex;
   flex-direction: column;
@@ -125,6 +129,7 @@
 .nav-links a {
   text-decoration: none;
   color: inherit;
+
 }
 
 .order-btn {
@@ -135,5 +140,5 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }

@@ -19,6 +19,17 @@ p{
   font-family: var(--font-main);
 }
 
+button{
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
 
 .animate{
   opacity: 0;
@@ -30,3 +41,4 @@ p{
   opacity: 1;
   transform: translateY(0);
 }
+

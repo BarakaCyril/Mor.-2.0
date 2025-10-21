@@ -2,25 +2,28 @@ body{
     margin: 0;
     padding: 0;
     background-color: var(--secondary-color);
-    min-height: 100vh;
     color: var(--accent-color);
+    overflow-x: hidden;
 }
 
 .container{
     background-color: var(--secondary-color);
     width: 100%;
-    margin: 5rem auto;
-    max-width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
+    position: relative;
+
 }
 
 .top-text{
     color: var(--accent-color);
     max-width: 800px;
     text-align: center;
+    z-index: 2;
+    margin-top: 3rem;
 }
 
 .top-text h1{
@@ -30,91 +33,220 @@ body{
     font-weight: bold;
 }
 
-.top-text p{
-    font-family: var(--font-main);
-    font-size: 1.2rem;  
-    margin-top: 6rem;
+.top-text h2{
+    font-size: 4rem;
+    margin-top: 4rem;
     margin-bottom: 0;
+    color: var(--primary-color);    
 }
 
 .jar-hero{
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: -9rem;
+    z-index: 20;
 }
 
 .jar-hero img{
-    width: min(1300px, 110%);
+    width: min(1000px, 110%);
     height: auto;
     display: block;
+    pointer-events: none;
 }
 
-.jar-carousel{
-    overflow: hidden;
-    width: 100vw;
-    position: relative;
+.floats{
+    position: absolute;
 }
 
-.strip{
+.caramel{
+    right: -10%;
+    top: 5%;
+    filter: blur(2px);
+}
+
+.caramel2{
+    right: 16%;
+    top: 10%;
+    rotate: 20deg;
+    filter: blur(0.5px);
+}
+
+.caramel2 img{
+    width: 180px;
+}
+
+
+.berry{
+    left: -15%;
+    top: 4%;
+    z-index: 1;
+    rotate: 20deg;
+    filter: blur(3px);
+}
+
+.berry2{
+    left: 10%;
+    top: 10%;
+    z-index: 1;
+    rotate: -20deg;
+    filter: blur(0.5px);
+}
+
+.berry2 img{
+    width: 290px;
+}
+
+.berry img{
+    width: 400px;
+}
+
+.info-section{
+    padding: 1.5rem 5rem;
+    display: flex;
+    gap: 8rem;
+    background-color: var(--primary-color);
+    border-block: 2px solid var(--accent-color);
+    width: 100%;
+    justify-content: center;
+    margin-top: -4rem;
+    z-index: 1000;
+}
+
+.info-word{
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.cake-jars{
     display: flex;
     gap: 2rem;
-    animation: scroll 15s linear infinite;
+    margin-top: 4rem;
 }
 
-.jar-carousel:hover .strip {
-    animation-play-state: paused;
+.jar{
+    background: linear-gradient(
+        180deg,
+        rgba(255, 196, 172, 1) 0%,
+        rgba(255, 162, 124, 1) 100%
+    );
+    border-radius: 2rem;
+    padding: 6rem 3rem;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--accent-color);
     cursor: pointer;
 }
 
-.card{
-    flex: 0 0 auto;
-    width: 320px;
-    height: 250px;
-    border-radius: 22px;
-    overflow: hidden;
-    border: 2px solid var(--primary-color);
+.jar img{
+    width: 150px;
 }
 
-.card img{
+.jar-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.jar-prices{
+    margin-top: 2rem;
+}
+
+.why-section{
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    margin-top: 8rem;
+}
+
+.why-info{
+    max-width: 450px;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.why-right{
+    width: 450px;
+    height: 450px;
+    border: 2px solid var(--primary-color);
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.why-image{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
-@keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%); /* move by half (since we doubled images) */
-    }
-  }
+.why-reasons{
+    margin-top: 4rem;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
 
+.jar-display-section{
+  margin-top: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Copy section */
-.jar-info{
-    text-align: left;
-    margin: 0;
+.jar-display-grid{
+  display: grid;
+  margin: 0 auto;
+  gap: 15px;
+  grid-auto-rows: minmax(200px, 2fr);
 }
-.jar-info h2{
-    font-family: var(--font-accent);
-    font-size: 2rem;
+
+.grid-item{
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid var(--primary-color);
+  max-height: 450px;
+  transition: transform 0.3s ease;
 }
-.jar-info-grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 1rem;
+
+.rows{
+  display: grid;
+  gap: 15px;
+  margin-bottom: 15px;
 }
-.jar-info article{
-    background: #fff;
-    border: 1px solid var(--accent-color);
-    border-radius: 16px;
-    padding: 1rem;
+
+.row-1 {
+  grid-template-columns: 1fr 1fr 1fr;
 }
-.jar-info h3{
-    margin: 0 0 0.4rem 0;
+
+.row-2 {
+  grid-template-columns: 2fr 1fr;
+}
+
+.row-3 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.rows img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rows video{
+    width: 100%;
+    width: 700px;
+    transform: translateY(-500px);
 }
 
 
