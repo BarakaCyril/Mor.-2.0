@@ -34,30 +34,30 @@ const checkoutManager = {
     },
 
     //handle delivery zone selection
-    attachDeliveryZoneHandler(){
-        const deliveryZoneSelect = document.getElementById('deliveryZone');
-        const addressGroup = document.getElementById('addressGroup');
-        const addressField = document.getElementById('address');
+    attachDeliveryZoneHandler() {
+    const deliveryOptions = document.querySelectorAll('input[name="deliveryZone"]');
+    const addressGroup = document.getElementById('addressGroup');
+    const addressField = document.getElementById('address');
 
-        deliveryZoneSelect.addEventListener('change', (e)=>{
-            const selectedOption = e.target.options[e.target.selectedIndex];
-            const fee = parseFloat(selectedOption.getAttribute('data-fee'));
-            const isPickup = selectedOption.value.includes('pickup');
+    deliveryOptions.forEach(option => {
+        option.addEventListener('change', (e) => {
+            const fee = parseFloat(e.target.getAttribute('data-fee'));
+            const isPickup = e.target.value.includes('pickup');
 
             this.deliveryFee = fee;
             this.isPickup = isPickup;
 
-            if (isPickup){
+            if (isPickup) {
                 addressGroup.style.display = 'none';
                 addressField.removeAttribute('required');
-            }else{
+            } else {
                 addressGroup.style.display = 'block';
-                addressField.setAttribute('required', 'required');         
+                addressField.setAttribute('required', 'required');
             }
 
             this.updateTotals();
         });
-
+    });
     },
 
     updateTotals(){
@@ -111,8 +111,9 @@ const checkoutManager = {
         submitBtn.textContent = 'Processing...';
         submitBtn.disabled = true;
 
-        const deliveryZoneSelect = document.getElementById('deliveryZone');
-        const selectedZone = deliveryZoneSelect.options[deliveryZoneSelect.selectedIndex].text;
+        const selectedRadio = document.querySelector('input[name="deliveryZone"]:checked');
+        const selectedZone = selectedRadio.nextElementSibling.querySelector('.option-name').textContent + ' - ' + 
+                     selectedRadio.nextElementSibling.querySelector('.option-details').textContent;
 
         //collect form data
         this.orderData = {

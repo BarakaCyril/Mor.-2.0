@@ -22,7 +22,7 @@
         <!-- Left Side: Checkout Form -->
         <div class="checkout-form-section">
             <div class="back-link">
-                <a href="menu.html">← Back to Menu</a>
+                <a href="cake-jars.html">← Back to Cart</a>
             </div>
             
             <h1>Checkout</h1>
@@ -46,6 +46,7 @@
                         <label for="phone">Phone Number (M-Pesa) *</label>
                         <input type="tel" id="phone" name="phone" placeholder="07XX XXX XXX" required>
                     </div>
+                    
                 </div>
                 
                 <!-- Delivery Information -->
@@ -53,51 +54,190 @@
                     <h2>Delivery Information</h2>
                     
                     <div class="form-group">
-                        <label for="deliveryZone">Select Delivery Location *</label>
-                        <select id="deliveryZone" name="deliveryZone" required>
-                            <option value="">Choose your location</option>
-                            <optgroup label="Free Pickup">
-                                <option value="hq-pickup" data-fee="0">HQ Pick Up: KCS House, Mama Ngina Street, 8th Floor</option>
-                                <option value="platinum-pickup" data-fee="0">Pick Up Point: Platinum Plaza Basement Shop B09</option>
-                            </optgroup>
-                            <optgroup label="Nairobi Delivery">
-                                <option value="zone-a" data-fee="150">ZONE A: Within CBD - Ksh 150</option>
-                                <option value="mtaani-pickup" data-fee="220">Pick Up Mtaani Agent Drop Off - Ksh 220</option>
-                                <option value="zone-l" data-fee="250">ZONE L: Thika, Kikuyu, Ruiru, Juja, Ngong, Kitengela etc. via Super Metro - Ksh 250</option>
-                                <option value="zone-b" data-fee="300">ZONE B: Upperhill, Valley Road, Community, Hurlingham, Nairobi Hospital, Pangani, Ngara, KNH, Ojijo Road etc. - Ksh 300</option>
-                                <option value="zone-c" data-fee="350">ZONE C: Riverside, Westlands, ABC, Kilimani, Kileleshwa, Westgate, General Mathenge, Parklands, MP-Shah, Aghakhan, Oshwal etc. - Ksh 350</option>
-                                <option value="zone-e" data-fee="350">ZONE E: South B/C, Mbagathi, Madaraka, Nairobi west, Lang'ata, carnivore, Nairobi West, Bellevue, NextGen Mall, Panari, Imara etc. - Ksh 350</option>
-                                <option value="zone-j" data-fee="350">ZONE J: Roasters, Mountain Mall, Garden City, TRM, Lumumba Drive, USIU, Ngumba etc. - Ksh 350</option>
-                                <option value="zone-d" data-fee="400">ZONE D: Kangemi, Loresho, Mountain View, Spring Valley, Lower Kabete, Industrial Area - Ksh 400</option>
-                                <option value="zone-f" data-fee="400">ZONE F: Junction Mall, Lavington, Kibra, Dagoretti Corner, Kawangware, Wanyee etc. - Ksh 400</option>
-                                <option value="zone-k" data-fee="400">ZONE K: Outside Nairobi (courier of choice) - Ksh 400</option>
-                                <option value="zone-n" data-fee="400">ZONE N: Donholm, Uhuru Estate, Buruburu, Fedha, Tassia, Savanah, Pipeline, Mtindwa, Lucky Summer - Ksh 400</option>
-                                <option value="zone-g" data-fee="450">ZONE G: Ruaka, Runda, Nyari, Gigiri, UNEP, Muchatha, Thindigua, Muthaiga North, Fourways, Ridgeways, Komarock, Tassia etc. - Ksh 450</option>
-                                <option value="zone-m" data-fee="450">ZONE M: Mirema, Kahawa Sukari, Zimmerman, Githurai, Kahawa West, Kahawa Wendani, Clayworks etc. - Ksh 450</option>
-                                <option value="zone-h" data-fee="600">ZONE H: Gateway Mall, Syokimau, Kinoo, Kenyatta Road, Ruiru Bypass - Ksh 600</option>
-                                <option value="zone-o" data-fee="650">ZONE O: Utawala, Karen, Ruiru Town - Ksh 650</option>
-                                <option value="zone-p" data-fee="800">ZONE P: Rongai, Kikuyu, Kiambu Town, Tatu City - Ksh 800</option>
-                                <option value="zone-r" data-fee="900">ZONE R: Athi River, Thika Town, Kamulu, Kitengela - Ksh 900</option>
-                                <option value="zone-q" data-fee="1350">ZONE Q: Thika Town, Kamulu, Kitengela - Ksh 1,350</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    
-                    <div class="delivery-time-info">
-                        <div class="info-icon">📦</div>
-                        <div class="info-content">
-                            <strong>Delivery Timeline:</strong>
-                            <p id="deliveryTimeWindow">Standard delivery is within 24 hours. Orders placed in the morning (before 1 PM) will typically be delivered between 9 AM - 1 PM the next day. Orders placed in the afternoon/evening will typically be delivered between 1 PM - 5 PM the next day.</p>
-                            <p style="margin-top: 8px; font-size: 13px; color: #666;">
-                                <strong>Need a specific delivery date?</strong> No problem! We'll call you after payment to confirm your preferred delivery date and time.
-                            </p>
+                        <label>Select Delivery Location *</label>
+                        
+                        <!-- Free Pickup Options -->
+                        <!-- <div class="delivery-group">
+                            <h3 class="delivery-group-title">Free Pickup</h3>
+                            <div class="radio-option">
+                                <input type="radio" id="hq-pickup" name="deliveryZone" value="hq-pickup" data-fee="0" required>
+                                <label for="hq-pickup">
+                                    <span class="option-name">HQ Pick Up</span>
+                                    <span class="option-details">KCS House, Mama Ngina Street, 8th Floor</span>
+                                    <span class="option-price">Free</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-option">
+                                <input type="radio" id="platinum-pickup" name="deliveryZone" value="platinum-pickup" data-fee="0">
+                                <label for="platinum-pickup">
+                                    <span class="option-name">Pick Up Point</span>
+                                    <span class="option-details">Platinum Plaza Basement Shop B09</span>
+                                    <span class="option-price">Free</span>
+                                </label>
+                            </div>
+                            
+                        </div> -->
+                        
+                        <!-- Nairobi Delivery Options -->
+                        <div class="delivery-group">
+                            <h3 class="delivery-group-title">Nairobi Delivery</h3>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-a" name="deliveryZone" value="zone-a" data-fee="70">
+                                <label for="zone-a">
+                                    <span class="option-name">ZONE A</span>
+                                    <span class="option-details">Within CBD</span>
+                                    <span class="option-price">Ksh 70</span>
+                                </label>
+                            </div>
+
+                            <div class="radio-option">
+                                <input type="radio" id="zone-l" name="deliveryZone" value="zone-l" data-fee="250">
+                                <label for="zone-l">
+                                    <span class="option-name">ZONE L</span>
+                                    <span class="option-details">Thika, Kikuyu, Ruiru, Juja, Ngong, Kitengela etc. via Super Metro</span>
+                                    <span class="option-price">Ksh 250</span>
+                                </label>
+                            </div>
+                            
+                            <div class="radio-option">
+                                <input type="radio" id="zone-b" name="deliveryZone" value="zone-b" data-fee="300">
+                                <label for="zone-b">
+                                    <span class="option-name">ZONE B</span>
+                                    <span class="option-details">Upperhill, Valley Road, Community, Hurlingham, Nairobi Hospital, Pangani, Ngara, KNH, Ojijo Road etc.</span>
+                                    <span class="option-price">Ksh 300</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-c" name="deliveryZone" value="zone-c" data-fee="350">
+                                <label for="zone-c">
+                                    <span class="option-name">ZONE C</span>
+                                    <span class="option-details">Riverside, Westlands, ABC, Kilimani, Kileleshwa, Westgate, General Mathenge, Parklands, MP-Shah, Aghakhan, Oshwal etc.</span>
+                                    <span class="option-price">Ksh 350</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-e" name="deliveryZone" value="zone-e" data-fee="350">
+                                <label for="zone-e">
+                                    <span class="option-name">ZONE E</span>
+                                    <span class="option-details">South B/C, Mbagathi, Madaraka, Nairobi west, Lang'ata, carnivore, Nairobi West, Bellevue, NextGen Mall, Panari, Imara etc.</span>
+                                    <span class="option-price">Ksh 350</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-j" name="deliveryZone" value="zone-j" data-fee="350">
+                                <label for="zone-j">
+                                    <span class="option-name">ZONE J</span>
+                                    <span class="option-details">Roasters, Mountain Mall, Garden City, TRM, Lumumba Drive, USIU, Ngumba etc.</span>
+                                    <span class="option-price">Ksh 350</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-d" name="deliveryZone" value="zone-d" data-fee="400">
+                                <label for="zone-d">
+                                    <span class="option-name">ZONE D</span>
+                                    <span class="option-details">Kangemi, Loresho, Mountain View, Spring Valley, Lower Kabete, Industrial Area</span>
+                                    <span class="option-price">Ksh 400</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-f" name="deliveryZone" value="zone-f" data-fee="400">
+                                <label for="zone-f">
+                                    <span class="option-name">ZONE F</span>
+                                    <span class="option-details">Junction Mall, Lavington, Kibra, Dagoretti Corner, Kawangware, Wanyee etc.</span>
+                                    <span class="option-price">Ksh 400</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-k" name="deliveryZone" value="zone-k" data-fee="400">
+                                <label for="zone-k">
+                                    <span class="option-name">ZONE K</span>
+                                    <span class="option-details">Outside Nairobi (courier of choice)</span>
+                                    <span class="option-price">Ksh 400</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-n" name="deliveryZone" value="zone-n" data-fee="400">
+                                <label for="zone-n">
+                                    <span class="option-name">ZONE N</span>
+                                    <span class="option-details">Donholm, Uhuru Estate, Buruburu, Fedha, Tassia, Savanah, Pipeline, Mtindwa, Lucky Summer</span>
+                                    <span class="option-price">Ksh 400</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-g" name="deliveryZone" value="zone-g" data-fee="450">
+                                <label for="zone-g">
+                                    <span class="option-name">ZONE G</span>
+                                    <span class="option-details">Ruaka, Runda, Nyari, Gigiri, UNEP, Muchatha, Thindigua, Muthaiga North, Fourways, Ridgeways, Komarock, Tassia etc.</span>
+                                    <span class="option-price">Ksh 450</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-m" name="deliveryZone" value="zone-m" data-fee="450">
+                                <label for="zone-m">
+                                    <span class="option-name">ZONE M</span>
+                                    <span class="option-details">Mirema, Kahawa Sukari, Zimmerman, Githurai, Kahawa West, Kahawa Wendani, Clayworks etc.</span>
+                                    <span class="option-price">Ksh 450</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-h" name="deliveryZone" value="zone-h" data-fee="600">
+                                <label for="zone-h">
+                                    <span class="option-name">ZONE H</span>
+                                    <span class="option-details">Gateway Mall, Syokimau, Kinoo, Kenyatta Road, Ruiru Bypass</span>
+                                    <span class="option-price">Ksh 600</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-o" name="deliveryZone" value="zone-o" data-fee="650">
+                                <label for="zone-o">
+                                    <span class="option-name">ZONE O</span>
+                                    <span class="option-details">Utawala, Karen, Ruiru Town</span>
+                                    <span class="option-price">Ksh 650</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-p" name="deliveryZone" value="zone-p" data-fee="800">
+                                <label for="zone-p">
+                                    <span class="option-name">ZONE P</span>
+                                    <span class="option-details">Rongai, Kikuyu, Kiambu Town, Tatu City</span>
+                                    <span class="option-price">Ksh 800</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-r" name="deliveryZone" value="zone-r" data-fee="900">
+                                <label for="zone-r">
+                                    <span class="option-name">ZONE R</span>
+                                    <span class="option-details">Athi River, Thika Town, Kamulu, Kitengela</span>
+                                    <span class="option-price">Ksh 900</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="zone-q" name="deliveryZone" value="zone-q" data-fee="1350">
+                                <label for="zone-q">
+                                    <span class="option-name">ZONE Q</span>
+                                    <span class="option-details">Thika Town, Kamulu, Kitengela</span>
+                                    <span class="option-price">Ksh 1,350</span>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="form-group" id="addressGroup" style="display: none;">
-                        <label for="address">Delivery Address *</label>
-                        <textarea id="address" name="address" rows="3" placeholder="Street, Building, Apartment"></textarea>
-                    </div>
+        </div>
+    
+    <div class="delivery-time-info">
+        <div class="info-icon">📦</div>
+        <div class="info-content">
+            <strong>Delivery Timeline:</strong>
+            <p id="deliveryTimeWindow">Standard delivery is within 24 hours. Orders placed in the morning (before 1 PM) will typically be delivered between 9 AM - 1 PM the next day. Orders placed in the afternoon/evening will typically be delivered between 1 PM - 5 PM the next day.</p>
+            <p style="margin-top: 8px; font-size: 13px; color: #666;">
+                <strong>Need a specific delivery date?</strong> No problem! We'll call you after payment to confirm your preferred delivery date and time.
+            </p>
+        </div>
+    </div>
+    
+    <div class="form-group" id="addressGroup" style="display: none;">
+        <label for="address">Delivery Address *</label>
+        <textarea id="address" name="address" rows="3" placeholder="Street, Building, Apartment"></textarea>
+    </div>
                 </div>
                 
                 <!-- Additional Notes -->
@@ -163,10 +303,10 @@
             <div class="call-info">
                 <p>📞 <strong>We'll contact you at:</strong> <span id="customerPhone"></span></p>
             </div>
-            <button class="modal-btn" onclick="window.location.href='menu.html'">
+            <button class="modal-btn" onclick="window.location.href='cake-jars.html'">
                 Continue Shopping
             </button>
-            <button class="modal-btn-secondary" onclick="window.location.href='index.html'">
+            <button class="modal-btn-secondary" onclick="window.location.href='../index.html'">
                 Back to Home
             </button>
         </div>
