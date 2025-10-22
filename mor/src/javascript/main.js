@@ -9,6 +9,8 @@ const logo = document.querySelector('.logo');
 
 document.addEventListener("DOMContentLoaded", function(){
 
+
+
   const animElements = document.querySelectorAll(".animate");
   const observor = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {

@@ -49,31 +49,43 @@
 
         <div class="cake-jars">
 
-            <div class="jar-info">
+            <div class="jar-info" 
+                data-product-id="1"
+                data-product-name="VANILLA"
+                data-product-price="600"
+                data-product-image="../jars/berry.webp">
+                <div class="jar"><img src="../jars/berry.webp" alt="Verry berry cake jar"></div>
+                <div class="jar-prices">
+                    <h2>VANILLA</h2>
+                    <p>KSH 600</p>
+                </div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+
+            <div class="jar-info" 
+                data-product-id="2"
+                data-product-name="CHOCOLATE"
+                data-product-price="500"
+                data-product-image="../jars/berry.webp">
+                <div class="jar"><img src="../jars/berry.webp" alt="Verry berry cake jar"></div>
+                <div class="jar-prices">
+                    <h2>CHOCOLATE</h2>
+                    <p>KSH 500</p>
+                </div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+
+            <div class="jar-info" 
+                data-product-id="3"
+                data-product-name="VERY BERRY"
+                data-product-price="450"
+                data-product-image="../jars/berry.webp">
                 <div class="jar"><img src="../jars/berry.webp" alt="Verry berry cake jar"></div>
                 <div class="jar-prices">
                     <h2>VERY BERRY</h2>
                     <p>KSH 450</p>
                 </div>
-                <button>ADD TO CART</button>
-            </div>
-
-            <div class="jar-info">
-                <div class="jar"><img src="../jars/berry.webp" alt="Very berry cake ajr"></div>
-                <div class="jar-prices">
-                    <h2>VERY BERRY</h2>
-                    <p>KSH 450</p>
-                </div>
-                <button>ADD TO CART</button>
-            </div>
-
-            <div class="jar-info">
-                <div class="jar"><img src="../jars/berry.webp" alt="Verry berry cake jar"></div>
-                <div class="jar-prices">
-                    <h2>VERY BERRY</h2>
-                    <p>KSH 450</p>
-                </div>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart-btn">ADD TO CART</button>
             </div>
         </div>
 
@@ -117,113 +129,43 @@
                 </div>
             </div>
         </section>
-         
+        
+        <button class="cart-float-btn" id="cartFloatBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M24 48C10.7 48 0 58.7 0 72C0 85.3 10.7 96 24 96L69.3 96C73.2 96 76.5 98.8 77.2 102.6L129.3 388.9C135.5 423.1 165.3 448 200.1 448L456 448C469.3 448 480 437.3 480 424C480 410.7 469.3 400 456 400L200.1 400C188.5 400 178.6 391.7 176.5 380.3L171.4 352L475 352C505.8 352 532.2 330.1 537.9 299.8L568.9 133.9C572.6 114.2 557.5 96 537.4 96L124.7 96L124.3 94C119.5 67.4 96.3 48 69.2 48L24 48zM208 576C234.5 576 256 554.5 256 528C256 501.5 234.5 480 208 480C181.5 480 160 501.5 160 528C160 554.5 181.5 576 208 576zM432 576C458.5 576 480 554.5 480 528C480 501.5 458.5 480 432 480C405.5 480 384 501.5 384 528C384 554.5 405.5 576 432 576z"/></svg>
+            <span class="cart-badge" id="cartBadge">0</span>
+        </button>
 
-        <div class="order-section animate">
-            
-            <form class="form" action="">
 
-                <div class="form-header animate">
-                    <a class="cart-icon"><i class="fa-solid fa-cart-shopping fa-6x"></i></a>
-                    <h2>Place Your Order</h2>
+        <!--side bar for the cart-->
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+            </div>
+
+            <div class="cart-items" id="cartItems">
+                <!--CART ITEMS WILL BE INSIDE HERE TYPE SHI-->
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="cart-total-price" id="cartTotalPrice">ksh 0.00</span>
                 </div>
-
-        <div class="form-pricing animate">
-                    <h2>Pricing</h2>
-                    <div class="price-items">
-                        <div class="price-row"><span class="label">Salted Caramel (Vanilla)</span><span class="value">Ksh. 450</span></div>
-                        <div class="price-row"><span class="label">Salted Caramel (Chocolate)</span><span class="value">Ksh. 550</span></div>
-                        <div class="price-row"><span class="label">Very Berry (Vanilla)</span><span class="value">Ksh. 500</span></div>
-                        <div class="price-row"><span class="label">Red Velvet</span><span class="value">Ksh. 450</span></div>
-                        <div class="price-row"><span class="label">Chocolate</span><span class="value">Ksh. 500</span></div>
-                    </div>
-
-                </div>
-
-                <div class="form-group animate">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group animate">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" required>
-                </div>
-
-                <div class="form-group animate">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="number" name="phone" required>
-                </div>
-
-                <div class="form-group animate">
-                    <label for="cake-flavour">Cake Flavour</label>
-                    <select id="cake-flavour" name="cake-flavour" required>
-                        <option value="">Select Flavour</option>
-                        <option value="salted-caramel-vanilla">Salted Caramel (Vanilla)</option>
-                        <option value="salted-caramel-chocolate">Salted Caramel (Chocolate)</option>
-                        <option value="very-berry-vanilla">Very Berry (Vanilla)</option>
-                        <option value="red-velvet">Red Velvet</option>
-                        <option value="chocolate">Chocolate</option>
-                    </select>
-                </div>
-
-                <div class="form-group animate">
-                    <label for="Amount">Amount</label>
-                    <input type="number" id="amount" name="amount" min="1" step="1" inputmode="numeric">
-                </div>
-
-                <div class="form-group animate">
-                    <label for="location">Delivery Location</label>
-                    <select id="location" name="location" required>
-                        <option value="">Select Location</option>
-                        <option value="hq-pickup" data-price="0">HQ Pick Up: KCS House, Mama Ngina Street, 8th Floor - FREE</option>
-                        <option value="platinum-pickup" data-price="0">Pick Up Point: Platinum Plaza Basement Shop B09 - FREE</option>
-                        <option value="zone-a" data-price="150">ZONE A: Within CBD - Ksh 150</option>
-                        <option value="pickup-mtaani" data-price="220">Pick Up Mtaani Agent Drop Off - Ksh 220</option>
-                        <option value="zone-l" data-price="250">ZONE L: Thika, Kikuyu, Ruiru, Juja, Ngong, Kitengela etc. via Super Metro - Ksh 250</option>
-                        <option value="zone-b" data-price="300">ZONE B: Upperhill, Valley Road, Community, Hurlingham, Nairobi Hospital, Pangani, Ngara, KNH, Ojijo Road etc. - Ksh 300</option>
-                        <option value="zone-c" data-price="350">ZONE C: Riverside, Westlands, ABC, Kilimani, Kileleshwa, Westgate, General Mathenge, Parklands, MP-Shah, Aghakhan, Oshwal etc. - Ksh 350</option>
-                        <option value="zone-e" data-price="350">ZONE E: South B/C, Mbagathi, Madaraka, Nairobi west, Lang'ata, carnivore, Nairobi West, Bellevue, NextGen Mall, Panari, Imara etc. - Ksh 350</option>
-                        <option value="zone-j" data-price="350">ZONE J: Roasters, Mountain Mall, Garden City, TRM, Lumumba Drive, USIU, Ngumba etc. - Ksh 350</option>
-                        <option value="zone-d" data-price="400">ZONE D: Kangemi, Loresho, Mountain View, Spring Valley, Lower Kabete, Industrial Area - Ksh 400</option>
-                        <option value="zone-f" data-price="400">ZONE F: Junction Mall, Lavington, Kibra, Dagoretti Corner, Kawangware, Wanyee etc. - Ksh 400</option>
-                        <option value="zone-k" data-price="400">ZONE K: Outside Nairobi (courier of choice) - Ksh 400</option>
-                        <option value="zone-n" data-price="400">ZONE N: Donholm, Uhuru Estate, Buruburu, Fedha, Tassia, Savanah, Pipeline, Mtindwa, Lucky Summer - Ksh 400</option>
-                        <option value="zone-g" data-price="450">ZONE G: Ruaka, Runda, Nyari, Gigiri, UNEP, Muchatha, Thindigua, Muthaiga North, Fourways, Ridgeways, Komarock, Tassia etc. - Ksh 450</option>
-                        <option value="zone-m" data-price="450">ZONE M: Mirema, Kahawa Sukari, Zimmerman, Githurai, Kahawa West, Kahawa Wendani, Clayworks etc. - Ksh 450</option>
-                        <option value="zone-h" data-price="600">ZONE H: Gateway Mall, Syokimau, Kinoo, Kenyatta Road, Ruiru Bypass - Ksh 600</option>
-                        <option value="zone-o" data-price="650">Zone O: Utawala, Karen, Ruiru Town - Ksh 650</option>
-                        <option value="zone-p" data-price="800">ZONE P: Rongai, Kikuyu, Kiambu Town, Tatu City - Ksh 800</option>
-                        <option value="zone-r" data-price="900">Zone R: Athi River, Thika Town, Kamulu, Kitengela - Ksh 900</option>
-                        <option value="zone-q" data-price="1350">Zone Q: Thika Town, Kamulu, Kitengela - Ksh 1,350</option>
-                    </select>
-                </div>
-
-                <div class="form-total animate">
-                    <div class="total-breakdown">
-                        <div class="breakdown-row">
-                            <span class="label">Product Total:</span>
-                            <span class="value" id="product-total">Ksh. 0</span>
-                        </div>
-                        <div class="breakdown-row">
-                            <span class="label">Delivery:</span>
-                            <span class="value" id="delivery-total">Ksh. 0</span>
-                        </div>
-                        <div class="breakdown-row total-row">
-                            <span class="label">Total:</span>
-                            <span class="value" id="grand-total">Ksh. 0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-btn animate">ORDER</button>
-            </form>
+                <button class="cart-checkout-btn">Checkout</button>
+                <button class="cart-clear-btn" id="cartClearBtn">Clear Cart</button>
+            </div>
         </div>
-    </div>
+
+        <div class="cart-overlay" id="cartOverlay"></div>
+
+    </div>    
 
     <div id="footer"></div>
     
-    <script src="javascript/jars.js"></script>
+    <script src="javascript/cakeJars.js"></script>
+    <script src="javascript/cartManager.js"></script>
+    <script src="javascript/cartUI.js"></script>
     <script src="javascript/animations.js"></script>
     <script>
     fetch("navigation.html")

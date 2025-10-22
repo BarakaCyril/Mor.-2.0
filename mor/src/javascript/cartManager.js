@@ -3,12 +3,14 @@ const cartManager = {
     cart: [],
 
     init() {
-        this.loadCart()
+        this.loadCart();
     },
 
     //load from local storage
     loadCart(){
-        const savedCart = localStorage.getItem('moreCakeCart');
+        const savedCart = localStorage.getItem('morCakeCart');
+        console.log('loaded cart from localStorage:', savedCart);
+
         if (savedCart){
             this.cart = JSON.parse(savedCart);
         }
@@ -16,6 +18,7 @@ const cartManager = {
 
     saveCart(){
         localStorage.setItem('morCakeCart', JSON.stringify(this.cart));
+        console.log('saved cart', this.cart);
     },
 
     //get all cart items
@@ -29,7 +32,7 @@ const cartManager = {
 
     //core functions//
     addItem(product) {
-        const existingItem = this.cart.find(item => ImageBitmapRenderingContext.id == product.id);
+        const existingItem = this.cart.find(item => item.id == product.id);
 
         if (existingItem){
             existingItem.quantity += 1;
@@ -38,7 +41,7 @@ const cartManager = {
                 id: product.id,
                 name: product.name,
                 price: product.price,
-                image: product.Image,
+                image: product.image,
                 quantity: 1
             });
         }
@@ -62,9 +65,11 @@ const cartManager = {
                 this.removeItem(productId);
             }else{
                 item.quantity = quantity;
-                this.saveCart();
+                
             }
         }
+
+        this.saveCart();
         return this.cart;
     },
 
@@ -80,3 +85,7 @@ const cartManager = {
         return this.cart;
     }
 };
+
+
+cartManager.init();
+window.cartManager = cartManager;
