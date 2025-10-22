@@ -16,6 +16,7 @@ const cartUI = {
         this.cartBadge = document.getElementById('cartBadge');
         this.cartTotalPrice = document.getElementById('cartTotalPrice');
         this.clearBtn = document.getElementById('cartClearBtn');
+        this.checkoutBtn = document.getElementById('cartCheckoutBtn');
     },
 
     //atach event listeners
@@ -29,6 +30,22 @@ const cartUI = {
 
         //clear cart
         this.clearBtn.addEventListener('click', ()=>this.clearCart());
+
+        //ceckout type shi
+        this.checkoutBtn.addEventListener('click', () => this.goToCheckout());
+    },
+
+    goToCheckout(){
+        const cart = cartManager.getCart();
+
+        if (cart.length === 0) {
+            alert('Your cart is empty! Add some items before checking out.');
+            return;
+        }else{
+            window.location.href = 'checkout.html'
+        }
+
+
     },
 
     openCart(){

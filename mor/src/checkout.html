@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Mor Cakes</title>
+    <link rel="stylesheet" href="../src/styles/checkout.css">
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--FAVIVO ICONS-->
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Mor" />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+</head>
+<body>
+    <div class="checkout-container">
+        <!-- Left Side: Checkout Form -->
+        <div class="checkout-form-section">
+            <div class="back-link">
+                <a href="menu.html">← Back to Menu</a>
+            </div>
+            
+            <h1>Checkout</h1>
+            
+            <form id="checkoutForm">
+                <!-- Contact Information -->
+                <div class="form-section">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number (M-Pesa) *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="07XX XXX XXX" required>
+                    </div>
+                </div>
+                
+                <!-- Delivery Information -->
+                <div class="form-section">
+                    <h2>Delivery Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="deliveryZone">Select Delivery Location *</label>
+                        <select id="deliveryZone" name="deliveryZone" required>
+                            <option value="">Choose your location</option>
+                            <optgroup label="Free Pickup">
+                                <option value="hq-pickup" data-fee="0">HQ Pick Up: KCS House, Mama Ngina Street, 8th Floor</option>
+                                <option value="platinum-pickup" data-fee="0">Pick Up Point: Platinum Plaza Basement Shop B09</option>
+                            </optgroup>
+                            <optgroup label="Nairobi Delivery">
+                                <option value="zone-a" data-fee="150">ZONE A: Within CBD - Ksh 150</option>
+                                <option value="mtaani-pickup" data-fee="220">Pick Up Mtaani Agent Drop Off - Ksh 220</option>
+                                <option value="zone-l" data-fee="250">ZONE L: Thika, Kikuyu, Ruiru, Juja, Ngong, Kitengela etc. via Super Metro - Ksh 250</option>
+                                <option value="zone-b" data-fee="300">ZONE B: Upperhill, Valley Road, Community, Hurlingham, Nairobi Hospital, Pangani, Ngara, KNH, Ojijo Road etc. - Ksh 300</option>
+                                <option value="zone-c" data-fee="350">ZONE C: Riverside, Westlands, ABC, Kilimani, Kileleshwa, Westgate, General Mathenge, Parklands, MP-Shah, Aghakhan, Oshwal etc. - Ksh 350</option>
+                                <option value="zone-e" data-fee="350">ZONE E: South B/C, Mbagathi, Madaraka, Nairobi west, Lang'ata, carnivore, Nairobi West, Bellevue, NextGen Mall, Panari, Imara etc. - Ksh 350</option>
+                                <option value="zone-j" data-fee="350">ZONE J: Roasters, Mountain Mall, Garden City, TRM, Lumumba Drive, USIU, Ngumba etc. - Ksh 350</option>
+                                <option value="zone-d" data-fee="400">ZONE D: Kangemi, Loresho, Mountain View, Spring Valley, Lower Kabete, Industrial Area - Ksh 400</option>
+                                <option value="zone-f" data-fee="400">ZONE F: Junction Mall, Lavington, Kibra, Dagoretti Corner, Kawangware, Wanyee etc. - Ksh 400</option>
+                                <option value="zone-k" data-fee="400">ZONE K: Outside Nairobi (courier of choice) - Ksh 400</option>
+                                <option value="zone-n" data-fee="400">ZONE N: Donholm, Uhuru Estate, Buruburu, Fedha, Tassia, Savanah, Pipeline, Mtindwa, Lucky Summer - Ksh 400</option>
+                                <option value="zone-g" data-fee="450">ZONE G: Ruaka, Runda, Nyari, Gigiri, UNEP, Muchatha, Thindigua, Muthaiga North, Fourways, Ridgeways, Komarock, Tassia etc. - Ksh 450</option>
+                                <option value="zone-m" data-fee="450">ZONE M: Mirema, Kahawa Sukari, Zimmerman, Githurai, Kahawa West, Kahawa Wendani, Clayworks etc. - Ksh 450</option>
+                                <option value="zone-h" data-fee="600">ZONE H: Gateway Mall, Syokimau, Kinoo, Kenyatta Road, Ruiru Bypass - Ksh 600</option>
+                                <option value="zone-o" data-fee="650">ZONE O: Utawala, Karen, Ruiru Town - Ksh 650</option>
+                                <option value="zone-p" data-fee="800">ZONE P: Rongai, Kikuyu, Kiambu Town, Tatu City - Ksh 800</option>
+                                <option value="zone-r" data-fee="900">ZONE R: Athi River, Thika Town, Kamulu, Kitengela - Ksh 900</option>
+                                <option value="zone-q" data-fee="1350">ZONE Q: Thika Town, Kamulu, Kitengela - Ksh 1,350</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="delivery-time-info">
+                        <div class="info-icon">📦</div>
+                        <div class="info-content">
+                            <strong>Delivery Timeline:</strong>
+                            <p id="deliveryTimeWindow">Standard delivery is within 24 hours. Orders placed in the morning (before 1 PM) will typically be delivered between 9 AM - 1 PM the next day. Orders placed in the afternoon/evening will typically be delivered between 1 PM - 5 PM the next day.</p>
+                            <p style="margin-top: 8px; font-size: 13px; color: #666;">
+                                <strong>Need a specific delivery date?</strong> No problem! We'll call you after payment to confirm your preferred delivery date and time.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="addressGroup" style="display: none;">
+                        <label for="address">Delivery Address *</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Street, Building, Apartment"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Additional Notes -->
+                <div class="form-section">
+                    <h2>Additional Notes</h2>
+                    
+                    <div class="form-group">
+                        <label for="notes">Special Instructions (Optional)</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Any special requests or delivery instructions"></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Proceed to Payment
+                </button>
+            </form>
+        </div>
+        
+        <!-- Right Side: Order Summary -->
+        <div class="order-summary-section">
+            <div class="order-summary-sticky">
+                <h2>Order Summary</h2>
+                
+                <div class="order-items" id="orderItems">
+                    <!-- Items will be inserted here by JavaScript -->
+                </div>
+                
+                <div class="order-totals">
+                    <div class="subtotal-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">KES 0.00</span>
+                    </div>
+                    <div class="delivery-row">
+                        <span>Delivery Fee</span>
+                        <span id="deliveryFee">KES 0.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Total</span>
+                        <span id="total">KES 0.00</span>
+                    </div>
+                </div>
+                
+                <div class="payment-info">
+                    <p>💳 Payment via M-Pesa or Card</p>
+                    <p>🔒 Secure checkout powered by Pesapal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-icon">✓</div>
+            <h2>Payment Successful!</h2>
+            <p class="order-number">Order #<span id="orderNumber"></span></p>
+            <p class="confirmation-message">
+                Thank you for your order! A confirmation email has been sent to <strong id="customerEmail"></strong>
+            </p>
+            <p class="next-steps" id="deliveryDateDisplay">
+                We will call you shortly to confirm your delivery date and time.
+            </p>
+            <div class="call-info">
+                <p>📞 <strong>We'll contact you at:</strong> <span id="customerPhone"></span></p>
+            </div>
+            <button class="modal-btn" onclick="window.location.href='menu.html'">
+                Continue Shopping
+            </button>
+            <button class="modal-btn-secondary" onclick="window.location.href='index.html'">
+                Back to Home
+            </button>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <script src="../src/javascript/cartManager.js"></script>
+    <script src="../src/javascript/checkout.js"></script>
+</body>
+</html>

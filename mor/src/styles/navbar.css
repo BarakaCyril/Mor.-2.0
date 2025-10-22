@@ -118,8 +118,8 @@ a{
   margin: 0;
   gap: 1.5rem;
   font-size: 1rem;
-  transition: all 0.4s ease-in;
   font-family: var(--font-main);
+  
 }
 
 .nav-links :hover {
@@ -129,6 +129,7 @@ a{
 .nav-links a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.2s ease;
 
 }
 
