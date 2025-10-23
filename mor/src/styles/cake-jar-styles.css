@@ -515,16 +515,121 @@ body{
   visibility: visible;
 }
 
+
+
 @media (max-width: 768px) {
-  .cart-sidebar {
-    width: 100%;
-    right: -100%;
-  }
-  
-  .cart-float-btn {
-    bottom: 20px;
-    left: 20px;
-    width: 55px;
-    height: 55px;
-  }
+    .top-text h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    .top-text h2 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .jar-hero {
+        margin-top: -4rem;
+    }
+
+    .info-section {
+        padding: 1rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: -2rem;
+    }
+
+    .info-word {
+        font-size: 1.2rem;
+    }
+
+    .cake-jars {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .jar {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .jar img {
+        width: 120px;
+    }
+
+    .why-section {
+        flex-direction: column;
+        padding: 2rem;
+        margin-top: 4rem;
+        align-items: center;
+    }
+
+    .why-right {
+        width: 100%;
+        height: 300px;
+    }
+
+    .why-info {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .why-reasons {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /* Grid layout adjustments */
+    .jar-display-section {
+        padding: 1rem;
+    }
+
+    .jar-display-grid {
+        width: 100%;
+    }
+
+    .row-1, .row-2, .row-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .rows video {
+        width: 100%;
+        transform: translateY(0);
+    }
+
+    /* Hide floating images on mobile */
+    .floats {
+        display: none;
+    }
+}
+
+/* Additional refinements for even smaller screens */
+@media (max-width: 480px) {
+    .top-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .top-text h2 {
+        font-size: 2rem;
+    }
+
+    .jar {
+        padding: 2rem 1rem;
+    }
+
+    .jar img {
+        width: 100px;
+    }
+
+    .info-section {
+        gap: 1rem;
+    }
+
+    .info-word {
+        font-size: 1rem;
+    }
 }
