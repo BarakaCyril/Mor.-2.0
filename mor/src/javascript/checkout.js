@@ -1,4 +1,6 @@
 
+const BACKEND_URL = 'http://localhost:5000';
+
 const checkoutManager = {
     deliveryFee: 0,
     isPickup: false,
@@ -97,7 +99,7 @@ const checkoutManager = {
             return false;
         }
 
-        const deliveryZone = document.getElementById('deliveryZone').value;
+        const deliveryZone = document.querySelector('input[name="deliveryZone"]:checked');
         if (!deliveryZone) {
             alert('Please select a delivery location');
             return false;
@@ -106,7 +108,7 @@ const checkoutManager = {
         return true;
     },
 
-    processOrder(){
+    async processOrder(){
         const submitBtn = document.getElementById('submitBtn');
         submitBtn.textContent = 'Processing...';
         submitBtn.disabled = true;
@@ -142,9 +144,121 @@ const checkoutManager = {
         localStorage.setItem('pendingOrder', JSON.stringify(this.orderData));
 
         //simulate payment processing (this is where pesapal will go)
-        setTimeout(()=>{
-            this.handlePaymentSuccess(this.orderData);
-        }, 2000);
+        await this.initiatePesapalPayment(this.orderData);
+    },
+
+    async initiatePesapalPayment(orderData){
+        try{
+            //get auth token
+            const tokenResponse = await fetch(`${BACKEND_URL}/pesapal/token`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!tokenResponse.ok){
+                throw new Error('Failed to get authentication token');
+            }
+
+            const tokenData = await tokenResponse.json();
+            console.log('Token response data:', tokenData); // Log full response
+
+            if (!tokenData.success || !tokenData.token) {
+                throw new Error('Failed to get valid token from server');
+            }
+            
+            const token = tokenData.token;
+            console.log('Received token:', token);
+
+            //register IPN URL first
+            const ipnResponse = await fetch(`${BACKEND_URL}/pesapal/register-ipn`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    token: token,
+                    ipn_url: `${window.location.origin}/pesapal/ipn-callback`
+                })
+            });
+            const ipnData = await ipnResponse.json();
+            if (!ipnData.success){
+                throw new Error('Failed to register IPN URL');
+            }
+
+            //prepare order for pesapal
+            const orderRef = orderData.orderNumber.replace(/[^a-zA-Z0-9]/g, '');
+            console.log('Generated order reference:', orderRef);
+            
+            const pesapalOrder = {
+                id: orderRef,  // Changed to 'id' as per Pesapal's API
+                currency: "KES",
+                amount: orderData.total,
+                description: `Mor Cakes Order #${orderRef}`,
+                callback_url: `${window.location.origin}/src/payment-callback.html`,
+                notification_id: ipnData.ipn_id,
+                billing_address: {
+                    email_address: orderData.customer.email,
+                    phone_number: orderData.customer.phone.replace(/\s/g, ''),//removes spaces
+                    country_code: "KE",
+                    first_name: orderData.customer.name.split(' ')[0],
+                    middle_name: "",
+                    last_name: orderData.customer.name.split(' ').slice(1).join(' ') || '-',
+                    line_1: orderData.delivery.address,
+                    line_2: "",
+                    city: "Nairobi",
+                    state: "Nairobi",
+                    postal_code: "00100",
+                    zip_code: "00100"
+                }
+            };
+
+            //submit order to pesapal
+            if (!token) {
+                throw new Error('No valid token available for order submission');
+            }
+
+            const requestBody = {
+                order: pesapalOrder,
+                token: token
+            };
+            console.log('Full request body:', requestBody);
+
+            const orderResponse = await fetch(`${BACKEND_URL}/pesapal/submit-order`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    order: pesapalOrder,
+                    token: token
+                })
+            });
+
+            if (!orderResponse.ok){
+                const errorData = await orderResponse.text();
+                console.error('Server response:', errorData);
+                throw new Error(`Failed to submit order to payment gateway: ${errorData}`);
+            }
+
+            const orderResult = await orderResponse.json();
+            console.log('Order submission response:', orderResult);
+
+            if (!orderResult.success || !orderResult.redirect_url){
+                throw new Error(`Invalid payment gateway response: ${JSON.stringify(orderResult)}`);
+            }
+
+            //redirect to pesapal payment page
+            window.location.href = orderResult.redirect_url;
+
+        }catch(error){
+            console.error('Payment initiation failed:', error);
+            alert('Payment initiation failed: ' + error.message + 'Please try again.');
+
+            //re-enable submit button
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = false;
+        }
+
 
     },
 
@@ -173,9 +287,10 @@ const checkoutManager = {
 
     //Generate order number
     generateOrderNumber(){
-        const timestamp = Date.now();
-        const random = Math.floor(Math.random() * 1000);
-        return `MOR${timestamp}${random}`.slice(0, 15);
+        // Generate UUID v4
+        const uuid = crypto.randomUUID();
+        // Take first 8 characters of UUID and combine with prefix
+        return `MOR-${uuid.slice(0,8)}`.toUpperCase();
     }
 };
 

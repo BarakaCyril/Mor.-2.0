@@ -315,5 +315,22 @@
 
     <script src="../src/javascript/cartManager.js"></script>
     <script src="../src/javascript/checkout.js"></script>
+    <script>
+        //check if returning from a succesful payment
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('payment') === 'success'){
+            const orderNumber = urlParams.get('order');
+            const email = urlParams.get('email');
+            const phone = urlParams.get('phone');
+
+            // Show success modal
+            document.getElementById('orderNumber').textContent = orderNumber;
+            document.getElementById('customerEmail').textContent = email;
+            document.getElementById('customerPhone').textContent = phone;
+            document.getElementById('confirmationModal').classList.add('active');
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+    </script>
 </body>
 </html>
