@@ -4,13 +4,10 @@ let heroScrollTrigger = null;
 ScrollTrigger.normalizeScroll(true);
 
 const mobileMenu = document.querySelector('.mobile-menu');
-
 const logo = document.querySelector('.logo');
 
 document.addEventListener("DOMContentLoaded", function(){
-
-
-
+  initServiceSlideshows();
   const animElements = document.querySelectorAll(".animate");
   const observor = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -23,9 +20,6 @@ document.addEventListener("DOMContentLoaded", function(){
     threshold: 0.15
   });
   animElements.forEach(el => observor.observe(el));
-
-
-
 
   //Animate the stat numbers
   const statNumbers = document.querySelectorAll('.stat-number');
@@ -173,7 +167,6 @@ function initHeroAnimation() {
 
   const directions = getResponsiveDirections();
   const scales = getResponsiveScales();
-
 
   // Reset all images initially
   for (let i = 1; i <= 8; i++) {
@@ -342,3 +335,68 @@ new Swiper(".mySwiper" , {
     prevEl: ".custom-prev",
   }
 })
+
+
+// Service card image arrays
+const serviceImages = {
+  'custom-cakes': [
+    'Images/custom-cake.jpg',
+    'Images/custom-cake-2.jpg',
+    'Images/custom-cake-3.jpg',
+    'Images/custom-cake-4.jpg'
+  ],
+  'bento-cakes': [
+    'Images/bento-cake.jpg',
+    'Images/bento-cake-2.jpg',
+    'Images/bento-cake-3.jpg'
+  ],
+  // Add more service image arrays as needed
+};
+
+// Initialize service card slideshows
+function initServiceSlideshows() {
+  const serviceCards = document.querySelectorAll('.service-card');
+  
+  serviceCards.forEach(card => {
+    let currentImageIndex = 0;
+    let intervalId = null;
+    const img = card.querySelector('img');
+    const serviceType = img.src.includes('custom-cake') ? 'custom-cakes' : 
+                       img.src.includes('bento-cake') ? 'bento-cakes' : null;
+    
+    if (!serviceType || !serviceImages[serviceType]) return;
+    
+    // Start slideshow on hover
+    card.addEventListener('mouseenter', () => {
+      if (intervalId) return; // Prevent multiple intervals
+      
+      intervalId = setInterval(() => {
+        currentImageIndex = (currentImageIndex + 1) % serviceImages[serviceType].length;
+        // Add fade-out class
+        img.classList.add('fade-out');
+        
+        // Change image and fade back in after a short delay
+        setTimeout(() => {
+          img.src = serviceImages[serviceType][currentImageIndex];
+          img.classList.remove('fade-out');
+        }, 200); // Match this with CSS transition time
+      }, 2000); // Change image every 2 seconds
+    });
+    
+    // Stop slideshow when mouse leaves
+    card.addEventListener('mouseleave', () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+        
+        // Reset to first image with fade transition
+        img.classList.add('fade-out');
+        setTimeout(() => {
+          img.src = serviceImages[serviceType][0];
+          img.classList.remove('fade-out');
+        }, 200);
+        currentImageIndex = 0;
+      }
+    });
+  });
+}
