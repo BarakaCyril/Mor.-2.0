@@ -38,7 +38,6 @@ button{
   transition: color 0.3s ease;
 }
 
-
 .animate{
   opacity: 0;
   transform: translateY(40px);

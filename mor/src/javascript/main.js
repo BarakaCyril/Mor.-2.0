@@ -7,7 +7,26 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const logo = document.querySelector('.logo');
 
 document.addEventListener("DOMContentLoaded", function(){
-  initServiceSlideshows();
+  
+  const testimonialSwiperEl = document.querySelector('.swiper');
+  if (testimonialSwiperEl) {
+  new Swiper('.swiper', {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      grabCursor: true,
+      loop: true,
+      navigation: {
+        nextEl: '.next',
+        prevEl: '.prev',
+      },
+      breakpoints: {
+        600: { slidesPerView: 2 },
+        900: { slidesPerView: 3 },
+        1200: { slidesPerView: 3 },
+      }
+    });
+  }
+
   const animElements = document.querySelectorAll(".animate");
   const observor = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -43,18 +62,18 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   //trigger when stats-section is in view
-  let started = false;
-  function onScroll() {
-    const statsSection = document.querySelector('.stats-section');
-    const rect = statsSection.getBoundingClientRect();
-    if (!started && rect.top < window.innerHeight - 200) {
-      statNumbers.forEach(animateCount);
-      started = true;
-      window.removeEventListener('scroll', onScroll);
-    }
-  }
-  window.addEventListener('scroll', onScroll);
-  onScroll();
+  // let started = false;
+  // function onScroll() {
+  //   const statsSection = document.querySelector('.stats-section');
+  //   const rect = statsSection.getBoundingClientRect();
+  //   if (!started && rect.top < window.innerHeight - 200) {
+  //     statNumbers.forEach(animateCount);
+  //     started = true;
+  //     window.removeEventListener('scroll', onScroll);
+  //   }
+  // }
+  // window.addEventListener('scroll', onScroll);
+  // onScroll();
 
 });
 
@@ -303,100 +322,80 @@ gsap.to(".update-card", {
 });
 
 
-gsap.to(".testimonial", {
-  scrollTrigger: {
-    trigger: ".testimonials-section",
-    start: "top 60%"
-  },
-  opacity: 1,
-  y: 0,
-  x: 0,
-  duration: 1,
-  stagger: 0.4,
-  ease: "power2.out"
-});
-
-//swiper carousel effect/////
-new Swiper(".mySwiper" , {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  loop: true,
-  coverflowEffect: {
-    rotate: 30,
-    stretch: 0,
-    depth: 50,
-    modifier: 0.5,
-    slideShadows: true,
-  },
-  navigation: {
-    nextEl: ".custom-next",
-    prevEl: ".custom-prev",
-  }
-})
+// gsap.to(".testimonial", {
 
 
-// Service card image arrays
-const serviceImages = {
-  'custom-cakes': [
-    'Images/custom-cake.jpg',
-    'Images/custom-cake-2.jpg',
-    'Images/custom-cake-3.jpg',
-    'Images/custom-cake-4.jpg'
-  ],
-  'bento-cakes': [
-    'Images/bento-cake.jpg',
-    'Images/bento-cake-2.jpg',
-    'Images/bento-cake-3.jpg'
-  ],
-  // Add more service image arrays as needed
-};
+//   scrollTrigger: {
+//     trigger: ".testimonials-section",
+//     start: "top 60%"
+//   },
+//   opacity: 1,
+//   y: 0,
+//   x: 0,
+//   duration: 1,
+//   stagger: 0.4,
+//   ease: "power2.out"
+// });
+
+// const serviceImages = {
+//   'custom-cakes': [
+//     'Images/custom-cake.jpg',
+//     'Images/custom-cake-2.jpg',
+//     'Images/custom-cake-3.jpg',
+//     'Images/custom-cake-4.jpg'
+//   ],
+//   'bento-cakes': [
+//     'Images/bento-cake.jpg',
+//     'Images/bento-cake-2.jpg',
+//     'Images/bento-cake-3.jpg'
+//   ],
+//   // Add more service image arrays as needed
+// };
 
 // Initialize service card slideshows
-function initServiceSlideshows() {
-  const serviceCards = document.querySelectorAll('.service-card');
+// function initServiceSlideshows() {
+//   const serviceCards = document.querySelectorAll('.service-card');
   
-  serviceCards.forEach(card => {
-    let currentImageIndex = 0;
-    let intervalId = null;
-    const img = card.querySelector('img');
-    const serviceType = img.src.includes('custom-cake') ? 'custom-cakes' : 
-                       img.src.includes('bento-cake') ? 'bento-cakes' : null;
+//   serviceCards.forEach(card => {
+//     let currentImageIndex = 0;
+//     let intervalId = null;
+//     const img = card.querySelector('img');
+//     const serviceType = img.src.includes('custom-cake') ? 'custom-cakes' : 
+//                        img.src.includes('bento-cake') ? 'bento-cakes' : null;
     
-    if (!serviceType || !serviceImages[serviceType]) return;
+//     if (!serviceType || !serviceImages[serviceType]) return;
     
-    // Start slideshow on hover
-    card.addEventListener('mouseenter', () => {
-      if (intervalId) return; // Prevent multiple intervals
+//     // Start slideshow on hover
+//     card.addEventListener('mouseenter', () => {
+//       if (intervalId) return; // Prevent multiple intervals
       
-      intervalId = setInterval(() => {
-        currentImageIndex = (currentImageIndex + 1) % serviceImages[serviceType].length;
-        // Add fade-out class
-        img.classList.add('fade-out');
+//       intervalId = setInterval(() => {
+//         currentImageIndex = (currentImageIndex + 1) % serviceImages[serviceType].length;
+//         // Add fade-out class
+//         img.classList.add('fade-out');
         
-        // Change image and fade back in after a short delay
-        setTimeout(() => {
-          img.src = serviceImages[serviceType][currentImageIndex];
-          img.classList.remove('fade-out');
-        }, 200); // Match this with CSS transition time
-      }, 2000); // Change image every 2 seconds
-    });
+//         // Change image and fade back in after a short delay
+//         setTimeout(() => {
+//           img.src = serviceImages[serviceType][currentImageIndex];
+//           img.classList.remove('fade-out');
+//         }, 200); // Match this with CSS transition time
+//       }, 2000); // Change image every 2 seconds
+//     });
     
-    // Stop slideshow when mouse leaves
-    card.addEventListener('mouseleave', () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-        intervalId = null;
+//     // Stop slideshow when mouse leaves
+//     card.addEventListener('mouseleave', () => {
+//       if (intervalId) {
+//         clearInterval(intervalId);
+//         intervalId = null;
         
-        // Reset to first image with fade transition
-        img.classList.add('fade-out');
-        setTimeout(() => {
-          img.src = serviceImages[serviceType][0];
-          img.classList.remove('fade-out');
-        }, 200);
-        currentImageIndex = 0;
-      }
-    });
-  });
-}
+//         // Reset to first image with fade transition
+//         img.classList.add('fade-out');
+//         setTimeout(() => {
+//           img.src = serviceImages[serviceType][0];
+//           img.classList.remove('fade-out');
+//         }, 200);
+//         currentImageIndex = 0;
+//       }
+//     });
+//   });
+// }
