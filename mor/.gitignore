@@ -26,3 +26,8 @@ dist-ssr
 env
 .env
 *.env
+
+
+node_modules
+backend/venv
+__pycache__
