@@ -432,7 +432,7 @@ html {
 }
 
 .swiper-button-custom {
-  background: var(--light-cream);
+  background: rgba(255, 255, 255, 0);
   border: 1px solid var(--accent);
   color: var(--accent);
   border-radius: 50%;
@@ -457,7 +457,7 @@ html {
 }
 
 .swiper-slide {
-  background: var(--cream-transparent);
+  background: rgba(255, 255, 255, 0);
   border-radius: 12px;
   padding: 2rem 1.5rem;
   box-shadow: 0 4px 10px rgba(29, 29, 29, 0.08);
@@ -468,11 +468,6 @@ html {
 
 .swiper-slide:hover {
   transform: translateY(-5px);
-}
-
-.stars {
-  color: #ff8800;
-  margin-bottom: 0.8rem;
 }
 
 .testimonial-title {
