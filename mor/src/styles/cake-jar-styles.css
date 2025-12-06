@@ -120,133 +120,198 @@ body{
 }
 
 .cake-jars{
-    display: flex;
-    gap: 2rem;
-    margin-top: 4rem;
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.jar-info{
+  width: 340px;
+  border: 1px solid rgba(210,200,195,0.5);
+  cursor: pointer;
+  background: linear-gradient(180deg,#fffaf8 0%, #fff 100%);
+  border-radius: 28px;
+  box-shadow: 0 12px 30px rgba(20,20,20,0.06);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0.9rem;
+  text-align: left;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
 .jar{
-    background: linear-gradient(
-        180deg,
-        rgba(255, 196, 172, 1) 0%,
-        rgba(255, 162, 124, 1) 100%
-    );
-    border-radius: 2rem;
-    padding: 6rem 3rem;
-    width: 250px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--primary-color);
-    cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
 }
 
 .jar img{
-    width: 150px;
-}
-
-.jar-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.jar-prices{
-    margin-top: 2rem;
-}
-
-.why-section{
-    display: flex;
-    gap: 4rem;
-    justify-content: center;
-    margin-top: 8rem;
-}
-
-.why-info{
-    max-width: 450px;
-    line-height: 1.5;
-    font-weight: 400;
-    font-size: 1.2rem;
-}
-
-.why-right{
-    width: 450px;
-    height: 450px;
-    border: 2px solid var(--primary-color);
-    border-radius: 2rem;
-    overflow: hidden;
-}
-.why-image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.why-reasons{
-    margin-top: 4rem;
-    cursor: pointer;
-    font-family: var(--font-main);
-    font-weight: 500;
-    font-size: 1.5rem;
-}
-
-.jar-display-section{
-  margin-top: 2rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.jar-display-grid{
-  display: grid;
-  margin: 0 auto;
-  gap: 15px;
-  grid-auto-rows: minmax(200px, 2fr);
-}
-
-.grid-item{
-  border-radius: 2rem;
-  overflow: hidden;
-  position: relative;
-  border: 2px solid var(--primary-color);
-  max-height: 450px;
-  transition: transform 0.3s ease;
-}
-
-.rows{
-  display: grid;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.row-1 {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.row-2 {
-  grid-template-columns: 2fr 1fr;
-}
-
-.row-3 {
-  grid-template-columns: 1fr 2fr;
-}
-
-.rows img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
   display: block;
 }
 
-.rows video{
+.jar-prices{
+  margin-top: 0.9rem;
+  margin-left: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.jar-prices h2{
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--black);
+  font-family: var(--font-accent);
+  letter-spacing: 0.4px;
+}
+
+.jar-prices p{
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+  background: var(--white);
+  padding: 0.35rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+.jar-meta{
+  font-family: var(--font-main);
+  margin-top: 0.8rem;
+  margin-left: 0.6rem;
+  display:flex;
+  gap:0.6rem;
+  padding: 0.4rem 0rem 1rem 0rem;
+  color: #6b6b6b;
+  font-size:0.9rem;
+}
+
+.jar-meta .tag{
+  background: #f7f5f3;
+  color:#333;
+  padding:0.32rem 0.7rem;
+  border-radius:16px;
+  font-size:.82rem;
+}
+
+#philosophy {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: var(--font-accent);
+}
+
+.philosophy-card {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    position: relative;
+    gap: 0;
+    min-height: 350px;
+    max-height: 370px;
+    border: 1.5px solid var(--accent);
+    border-radius: 20px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.text-box {
+    background-color: var(--light-cream);
+    padding: 60px 40px;
+    border-radius: 20px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-box h3 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.image-box {
+    flex: 0 0 35%; /* Image takes 50% width */
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.image-box img {
     width: 100%;
-    width: 700px;
-    transform: translateY(-500px);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.layout-right {
+    flex-direction: row; 
+}
+
+.layout-right .image-box {
+    margin-left: -40px; /* Overlap look */
+}
+
+.layout-left {
+    flex-direction: row;
+}
+
+.layout-left .text-box{
+  padding-left: 70px;
+}
+.layout-left .image-box {
+    margin-right: -40px; /* Overlap look */
+}
+
+.add-to-cart-btn{
+  margin: 1rem 0 0 0;
+  padding: 0.75rem 1.05rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.add-to-cart-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 900px){
+  .jar-info{ width: 300px; }
+  .jar-info .jar img{ width: 180px; height: 150px; }
 }
 
 .cart-float-btn{

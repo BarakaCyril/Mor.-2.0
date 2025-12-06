@@ -77,6 +77,23 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 
+const scrollIndicator = document.querySelector('.scroll-indicator');
+window.addEventListener('scroll', ()=>{
+  const scrollY = window.scrollY;
+  if (scrollY > 50){
+    gsap.to(scrollIndicator, {
+      autoAlpha: 0,
+      duration: 0.3,
+      overwrite: true
+    });
+  }else {
+    gsap.to(scrollIndicator, {
+      autoAlpha: 1,
+      duration: 0.3,
+      overwrite: true
+    })
+  }
+});
 
 
 function getResponsiveDirections() {
@@ -320,6 +337,7 @@ gsap.to(".update-card", {
   stagger: 0.3,
   ease: "power2.out"
 });
+
 
 
 // gsap.to(".testimonial", {

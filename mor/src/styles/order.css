@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: var(--secondary-color);
+    background-color: var(--white);
     min-height: 100vh;
 }
 
@@ -36,7 +36,7 @@ p{
 }
 
 .choice-card{
-    background: #FFF5EE;
+    background: var(--white);
     border: 1.5px solid var(--accent-color);
     border-radius: 16px;
     padding: 1.2rem;
@@ -48,7 +48,7 @@ p{
 .choice-card:hover{
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0,0,0,.08);
-    background: #fff9f4;
+    background-color: (--cream);
 }
 
 .choice-card h2{
@@ -69,6 +69,7 @@ p{
     display: grid;
     place-items: center;
     border: 1px solid #eee;
+    color: var(--accent-color);
 }
 
 @media (max-width: 900px){
