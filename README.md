@@ -1,6 +1,6 @@
 
-![Mor] (images/circle-logo.png)
-![Mor] (images/logo.png)
+!\[Mor] (images/circle-logo.png)
+!\[Mor] (images/logo.png)
 # Mor. Cakes and Pastries
 
 <img src="images/banner.png" alt="Alt Text" width="200" height="150">
