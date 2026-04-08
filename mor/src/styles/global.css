@@ -2,12 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap");
 
 :root {
-    --white: #FFF8F6;
+    --white: #fff6f49b;
     --light-cream: #FEECE5;
     --cream: rgb(250, 207, 189);
     --accent: #333333;
     --cream-transparent: rgba(250, 207, 189, 0.3);
-
 
     --primary-color: rgb(250, 207, 189);
     --primary-easy: #FEECE5;
