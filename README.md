@@ -1,3 +1,5 @@
+
+![Mor] (images/logo.png)
 # Mor. Cakes and Pastries
 
 This is a full-stack e-commerce website for a bakery called "Mor. Cakes and Pastries". The frontend is built with HTML, CSS, and JavaScript, and the backend is a Python Flask application that handles payment processing with Pesapal.
