@@ -102,7 +102,9 @@ The website consists of the following pages:
 - **Checkout (checkout.html)**: Shopping cart review and payment processing
 - **Payment Callback (payment-callback.html)**: Payment confirmation and order status page
 
-I don't have images for the last two sections but they are there, trust me bro. Regardless, you can visit the website with the live link that will be at later sections in this readme and see for yourself.
+<p align="center">
+  <img src="images/payment.png" alt="Alt Text" width="700">
+</p>
 
 ## Features
 
