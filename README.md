@@ -2,8 +2,13 @@
 ![Mor Logo](images/circle-logo.png)
 # Mor. Cakes and Pastries
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/mor-cakes)
+[![Live Demo](https://img.shields.io/badge/demo-live-green.svg)](https://mor-cakes.vercel.app)
 
+```
 Mor. Cakes and Pastries is an e-commerce web application built for my sister's bakery business. It was my first ever 'full' project made with html, css and javascript for the frontend and python-flask application for the backend; which mostly handles payment processing
+```
 
 ## Preview (hero-section)
 <p align="center">
@@ -172,6 +177,7 @@ This project was built following a component-based architecture with separation 
 4. **Testing**: Cross-browser and mobile device testing
 5. **Deployment**: Configured for production deployment
 
+
 ## Setup and Installation
 
 ### Prerequisites
@@ -180,71 +186,52 @@ This project was built following a component-based architecture with separation 
 - Python 3.8+
 - Pesapal merchant account and API credentials
 
-### Frontend
+### Installation
 
-1.  Navigate to the root directory of the project.
-2.  Install the necessary Node.js dependencies:
-    ```bash
-    npm install
-    ```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/mor-cakes.git
+   cd mor-cakes
+   ```
 
-### Backend
+2. **Setup Frontend**
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-1.  Navigate to the `backend` directory:
-    ```bash
-    cd backend
-    ```
-2.  Create a Python virtual environment:
-    ```bash
-    python -m venv venv
-    ```
-3.  Activate the virtual environment:
-    *   On Windows:
-        ```bash
-        venv\Scripts\activate
-        ```
-    *   On macOS and Linux:
-        ```bash
-        source venv/bin/activate
-4.  Install the required Python packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
-5.  Create a `.env` file in the `backend` directory and add your Pesapal API credentials:
-    ```
-    PESAPAL_CONSUMER_KEY=your_consumer_key
-    PESAPAL_CONSUMER_SECRET=your_consumer_secret
-    PESAPAL_BASE_URL=https://cybqa.pesapal.com/pesapalv3
-    ```
+3. **Setup Backend**
+   ```bash
+   cd backend
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On macOS/Linux
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
 
-## Running the Application
+4. **Environment Setup**
+   Create a `.env` file in the `backend` directory:
+   ```
+   PESAPAL_CONSUMER_KEY=your_consumer_key
+   PESAPAL_CONSUMER_SECRET=your_consumer_secret
+   PESAPAL_BASE_URL=https://cybqa.pesapal.com/pesapalv3
+   ```
 
-### Frontend
+5. **Run the Application**
+   ```bash
+   # Terminal 1 - Frontend
+   npm run dev
 
-1.  In the root directory of the project, run the following command to start the Vite development server:
-    ```bash
-    npm run dev
-    ```
-    The frontend will be available at `http://localhost:5173`
+   # Terminal 2 - Backend
+   cd backend && python app.py
+   ```
 
-### Backend
+The application will be available at:
+- Frontend: `http://localhost:5173`
+- Backend API: `http://localhost:5000`
 
-1.  Navigate to the `backend` directory.
-2.  Run the Flask application:
-    ```bash
-    python app.py
-    ```
-    The backend API will be available at `http://localhost:5000`
-
-## Building for Production
-
-To build the frontend for production:
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist` directory.
 
 ## Lessons Learned
 
@@ -278,6 +265,16 @@ During the development of this project, several key learnings emerged:
 - **Mobile Commerce**: Optimizing for mobile shopping experiences
 
 
+## Acknowledgments
+
+- **My Sister**: For the inspiration and business vision
+- **My Niece**: Born the same year I started this project!
+- **Open Source Community**: For the amazing tools and libraries that made this possible
+- **Pesapal**: For their payment processing API - It's also so hard to use btw
+- **Figma**: For the design planning - This tool is a pain in the apps
+
+Special thanks to all the developers who shared their knowledge online - this project stands on the shoulders of giants and dwarfs alike
+
 ## License
 
 This project is made public to document my journey, feel free to reach me at Barakacreal@gmail.com if you have any questions on how I did some of the things I did. Or better yet, If you want to hire me (*wink, *wink). The project is public to anyone who wants to fork it and view/continue it's development on their own. Happy coding fellow nerds
@@ -285,3 +282,5 @@ This project is made public to document my journey, feel free to reach me at Bar
 ## Contact
 
 For questions or support, please contact the development team. (That's me lol)
+
+**If you found this project helpful ( or if you have a secret crush on me ) please give it a star!** 
