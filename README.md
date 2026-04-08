@@ -1,6 +1,9 @@
 
+![Mor] (images/circle-logo.png)
 ![Mor] (images/logo.png)
 # Mor. Cakes and Pastries
+
+<img src="images/banner.png" alt="Alt Text" width="200" height="150">
 
 This is a full-stack e-commerce website for a bakery called "Mor. Cakes and Pastries". The frontend is built with HTML, CSS, and JavaScript, and the backend is a Python Flask application that handles payment processing with Pesapal.
 
@@ -13,6 +16,10 @@ This is a full-stack e-commerce website for a bakery called "Mor. Cakes and Past
 - **Responsive Design**: Mobile-friendly interface with modern UI/UX
 - **Animations**: Smooth GSAP animations for enhanced user experience
 - **SEO Optimized**: Structured data and meta tags for better search visibility
+
+<p align="center">
+  <img src="images/hero.png" alt="Alt Text" width="600">
+</p>
 
 ## Pages
 
