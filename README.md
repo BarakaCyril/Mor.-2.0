@@ -1,37 +1,18 @@
 
-!\[Mor] (images/circle-logo.png)
-!\[Mor] (images/logo.png)
+![Mor Logo](images/circle-logo.png)
 # Mor. Cakes and Pastries
 
-<img src="images/banner.png" alt="Alt Text" width="200" height="150">
 
-This is a full-stack e-commerce website for a bakery called "Mor. Cakes and Pastries". The frontend is built with HTML, CSS, and JavaScript, and the backend is a Python Flask application that handles payment processing with Pesapal.
+Mor. Cakes and Pastries is an e-commerce web application built for my sister's bakery business. It was my first ever 'full' project made with html, css and javascript for the frontend and python-flask application for the backend; which mostly handles payment processing
 
-## Features
-
-- **Product Catalog**: Display of cakes, pastries, and cake jars with images and descriptions
-- **Shopping Cart**: Add/remove items, quantity management, and cart persistence
-- **Checkout Process**: Secure payment processing via Pesapal integration
-- **Order Management**: Order placement and payment callback handling
-- **Responsive Design**: Mobile-friendly interface with modern UI/UX
-- **Animations**: Smooth GSAP animations for enhanced user experience
-- **SEO Optimized**: Structured data and meta tags for better search visibility
-
+## Preview (hero-section)
 <p align="center">
   <img src="images/hero.png" alt="Alt Text" width="600">
 </p>
 
-## Pages
+## The Idea
+Mor was made out of love for two things. My sister's niece (who was born the same year I started this website) and baking. We chose a brownish color, the one that is mostly seen in baked goods to reflect that 'raw and fresh' bakery feel. (I think that's how color theory works)
 
-The website consists of the following pages:
-
-- **Home (index.html)**: Landing page with hero section, featured products, testimonials, and bakery information
-- **About (about.html)**: Information about the bakery, story, and contact details
-- **Cake Jars (cake-jars.html)**: Dedicated page for cake jar products with detailed descriptions
-- **Menu (menu.html)**: Product catalog displaying all available cakes and pastries
-- **Order (order.html)**: Order placement form for custom cake orders
-- **Checkout (checkout.html)**: Shopping cart review and payment processing
-- **Payment Callback (payment-callback.html)**: Payment confirmation and order status page
 
 ## Technologies Used
 
@@ -41,7 +22,7 @@ The website consists of the following pages:
 *   CSS3
 *   Vanilla JavaScript (ES6+)
 *   [Vite](https://vitejs.dev/) for frontend tooling and development server
-*   [GSAP](https://greensock.com/gsap/) for animations
+*   [GSAP](https://greensock.com/gsap/) for animations - (It was such a pain to use this library, but it was worth it)
 *   [Swiper.js](https://swiperjs.com/) for carousels and image galleries
 *   Font Awesome for icons
 
@@ -53,6 +34,83 @@ The website consists of the following pages:
 *   [Requests](https://requests.readthedocs.io/) for HTTP calls
 *   [python-dotenv](https://pypi.org/project/python-dotenv/) for environment variables
 *   [Pesapal API](https://developer.pesapal.com/) for payment processing
+
+
+## Pages
+
+The website consists of the following pages:
+
+- **Home (index.html)**: Landing page with hero section, what we do, featured products, testimonials, and frequently asked questions
+
+<p align="center">
+  <img src="images/hero-burst.png" alt="Alt Text" width="700">
+</p>
+<p align="center">
+  <img src="images/about.png" alt="Alt Text" width="700">
+</p>
+
+<p align="center">
+  <img src="images/featured.png" alt="Alt Text" width="700">
+</p>
+
+<p align="center">
+  <img src="images/footer.png" alt="Alt Text" width="700">
+</p>
+
+---
+---
+
+- **About (about.html)**
+    Despite it's simplistic design, this just so happens to be my favorite section. There's something about the pictures and the cookie in the middle that does down as you scroll that really means something to me. It's minimalistic, simple and has a lot of emotion carrying it. I just love it!
+
+
+<p align="center">
+  <img src="images/about-section.png" alt="Alt Text" width="700">
+</p>
+
+
+- **Cake Jars (cake-jars.html)**: This is a dedicated page for the cake jars (A product that we were trying out that saw a lot of fruition). Did I say the previous section was my favourite? Scratch that. This is now my new favourite section. There's a certain parallax effect that I was chasing and it was exciting to go from an idea in my head to a website page. I achieved it with some CSS trickery with some painful trial and error.
+
+<p align="center">
+  <img src="images/jars.png" alt="Alt Text" width="700">
+</p>
+
+<p align="center">
+  <img src="images/jar-cart.png" alt="Alt Text" width="700">
+</p>
+
+
+
+- **Menu (menu.html)**: Product catalog displaying all available cakes and pastries. Not really happy with how it turned out, but hey, it's mine and I have to claim it proudly.
+
+<p align="center">
+  <img src="images/menu.png" alt="Alt Text" width="700">
+</p>
+
+
+- **Order (order.html)**: Order placement form for custom cake orders. Also not one of my best works, but it works, ...I think.
+
+<p align="center">
+  <img src="images/order.png" alt="Alt Text" width="700">
+</p>
+
+- **Checkout (checkout.html)**: Shopping cart review and payment processing
+- **Payment Callback (payment-callback.html)**: Payment confirmation and order status page
+
+I don't have images for the last two sections but they are there, trust me bro. Regardless, you can visit the website with the live link that will be at later sections in this readme and see for yourself.
+
+## Features
+
+- **Product Catalog**: Display of cakes, pastries, and cake jars with images and descriptions
+- **Shopping Cart**: Add/remove items, quantity management, and cart persistence
+- **Checkout Process**: Secure payment processing via Pesapal integration
+- **Order Management**: Order placement and payment callback handling
+- **Responsive Design**: Mobile-friendly interface with modern UI/UX
+- **Animations**: Smooth GSAP animations for enhanced user experience
+- **SEO Optimized**: Structured data and meta tags for better search visibility
+
+
+
 
 ## Project Structure
 
@@ -101,15 +159,15 @@ The backend provides the following API endpoints:
 
 This project was built following a component-based architecture with separation of concerns:
 
-1. **Planning**: Wireframes and user flow design
+1. **Planning**: Wireframes and user flow design with figma ( such a stubborn tool when you have a laptop that constantly challenges your sanity )
 2. **Frontend Development**: 
    - Built responsive HTML structure
    - Implemented CSS with mobile-first approach
    - Added JavaScript for interactivity and cart management
-   - Integrated GSAP for smooth animations
+   - Integrated GSAP and Swiper JS for smooth animations
 3. **Backend Development**:
    - Set up Flask application with CORS
-   - Integrated Pesapal payment API
+   - Integrated Pesapal payment API (Also another pain in the apps)
    - Implemented secure token management
 4. **Testing**: Cross-browser and mobile device testing
 5. **Deployment**: Configured for production deployment
@@ -148,7 +206,6 @@ This project was built following a component-based architecture with separation 
     *   On macOS and Linux:
         ```bash
         source venv/bin/activate
-    ```
 4.  Install the required Python packages:
     ```bash
     pip install -r requirements.txt
@@ -201,30 +258,30 @@ During the development of this project, several key learnings emerged:
 - **SEO Optimization**: Implementing structured data and meta tags for better search visibility
 
 ### Development Practices
-- **Component Architecture**: Breaking down UI into reusable components
+- **Component Architecture**: I didn't use react initially as the main purpose of this project was to learn how to use javascript first. regardless I broke down sections of this website into 'components'. Doing this with vanilla javascript enabled me to appreciate why react exits.
+
 - **Version Control**: Proper git workflow and commit practices
+
 - **Environment Management**: Using environment variables for sensitive configuration
+
 - **Error Handling**: Implementing proper error handling for API calls and user inputs
-- **Performance Optimization**: Optimizing images and implementing lazy loading
+
+- **Performance Optimization**: Optimizing images and implementing lazy loading - quite
 
 ### Business Understanding
-- **E-commerce Flow**: Understanding the complete customer journey from browsing to payment
+- **E-commerce Flow**: Understanding the complete customer journey from browsing to payment - I will one day use this for my startup
+
 - **User Experience**: Importance of intuitive navigation and clear call-to-actions
+
 - **Payment Security**: Handling sensitive payment information securely
+
 - **Mobile Commerce**: Optimizing for mobile shopping experiences
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
-This project is private and proprietary.
+This project is made public to document my journey, feel free to reach me at Barakacreal@gmail.com if you have any questions on how I did some of the things I did. Or better yet, If you want to hire me (*wink, *wink). The project is public to anyone who wants to fork it and view/continue it's development on their own. Happy coding fellow nerds
 
 ## Contact
 
-For questions or support, please contact the development team.
+For questions or support, please contact the development team. (That's me lol)
