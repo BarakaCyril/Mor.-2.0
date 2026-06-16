@@ -275,14 +275,14 @@ During the development of this project, several key learnings emerged:
 - **Pesapal**: For their payment processing API - It's also so hard to use btw
 - **Figma**: For the design planning - This tool is a pain in the apps
 
-Special thanks to all the developers who shared their knowledge online - this project stands on the shoulders of giants and dwarfs alike
+Special thanks to all the developers who shared their knowledge online - this project stands on the shoulders of great minds
 
 ## License
 
-This project is made public to document my journey, feel free to reach me at Barakacreal@gmail.com if you have any questions on how I did some of the things I did. Or better yet, If you want to hire me (*wink, *wink). The project is public to anyone who wants to fork it and view/continue it's development on their own. Happy coding fellow nerds
+This project is made public to document my journey, feel free to reach me at Barakacreal@gmail.com if you have any questions on how I did some of the things I did. Or better yet, If you want to hire me (*wink, *wink). The project is public to anyone who wants to fork it and view/continue it's development on their own. Happy coding
 
 ## Contact
 
-For questions or support, please contact the development team. (That's me lol)
+For questions or support, please contact the development team. (That's me)
 
-**If you found this project helpful ( or if you have a secret crush on me ) please give it a star!** 
+**If you found this project helpful please give it a star!** 
