@@ -93,6 +93,12 @@ a{
   right: 0;
 }
 
+@media (min-width: 669px){
+  .mobile-menu.active{
+    right: -450px;
+  }
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -142,4 +148,13 @@ a{
   border: none;
   cursor: pointer;
   transition: color 0.3s ease;
+}
+
+@media (max-width: 668px){
+  .nav-links{
+    display: none;
+  }
+  .ham-menu{
+    display: block;
+  }
 }

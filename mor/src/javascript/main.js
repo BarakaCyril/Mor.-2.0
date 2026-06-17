@@ -3,9 +3,6 @@ gsap.registerPlugin(ScrollTrigger);
 let heroScrollTrigger = null;
 ScrollTrigger.normalizeScroll(true);
 
-const mobileMenu = document.querySelector('.mobile-menu');
-const logo = document.querySelector('.logo');
-
 document.addEventListener("DOMContentLoaded", function(){
   
   const testimonialSwiperEl = document.querySelector('.swiper');

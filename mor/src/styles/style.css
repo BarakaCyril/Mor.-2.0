@@ -881,12 +881,6 @@ html {
 }
 
 @media (max-width: 668px){
-  .nav-links {
-    display: none;
-  }
-  .ham-menu {
-    display: block;
-  }
   .image {
     width: 180px;
     height: 180px;
@@ -930,6 +924,37 @@ html {
 
   .custom-swiper-btn{
     display: none;
+  }
+
+  .services-container{
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .service-card{
+    width: 100%;
+    max-width: 320px;
+    height: 260px;
+  }
+
+  .service-card:hover{
+    width: 100%;
+  }
+
+  .service-card::before{
+    opacity: 0.55;
+  }
+
+  .service-card h1{
+    display: block;
+    left: 20px;
+    bottom: 80px;
+  }
+
+  .service-card p{
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .socials-images-grid {

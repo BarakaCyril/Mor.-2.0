@@ -4,9 +4,6 @@ const cards = document.querySelectorAll('.philosophy-card');
 document.addEventListener('DOMContentLoaded', () => {
   const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 
-  localStorage.setItem('test', 'hello');
-  console.log(localStorage.getItem('test'))
-
   addToCartButtons.forEach(button=>{
     button.addEventListener('click', (e)=>{
       //get the parent jar info div
