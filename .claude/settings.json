@@ -10,7 +10,10 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/cake-jars.html)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/order.html)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/javascript/navbar.js)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/styles/navbar.css)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/styles/navbar.css)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/checkout.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/javascript/checkout.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/styles/checkout.css)"
     ]
   }
 }

@@ -2,6 +2,11 @@
 const BACKEND_URL = window.location.hostname ===  'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://localhost:5000' : '/api';
 
+// Pesapal account setup is incomplete, so online payment is disabled for now —
+// orders are handed off to WhatsApp instead. Flip back to true once it's sorted.
+const PAYMENTS_ENABLED = false;
+const WHATSAPP_NUMBER = '254742044311';
+
 
 const checkoutManager = {
     deliveryFee: 0,
@@ -145,8 +150,39 @@ const checkoutManager = {
         //store order data temporaroly
         localStorage.setItem('pendingOrder', JSON.stringify(this.orderData));
 
-        //simulate payment processing (this is where pesapal will go)
+        if (!PAYMENTS_ENABLED){
+            this.redirectToWhatsApp(this.orderData);
+            return;
+        }
+
         await this.initiatePesapalPayment(this.orderData);
+    },
+
+    //hand the order off to WhatsApp while online payment is unavailable
+    redirectToWhatsApp(orderData){
+        const itemsList = orderData.items
+            .map(item => `- ${item.name} x${item.quantity} (KES ${(item.price * item.quantity).toFixed(2)})`)
+            .join('\n');
+
+        const addressLine = orderData.delivery.isPickup ? '' : `Address: ${orderData.delivery.address}\n`;
+
+        const message = `Hi Mor! I'd like to place an order.\n\n` +
+            `Order #${orderData.orderNumber}\n${itemsList}\n\n` +
+            `Delivery: ${orderData.delivery.zone}\n${addressLine}` +
+            `Subtotal: KES ${orderData.subtotal.toFixed(2)}\n` +
+            `Delivery Fee: KES ${orderData.deliveryFee.toFixed(2)}\n` +
+            `Total: KES ${orderData.total.toFixed(2)}\n\n` +
+            `Name: ${orderData.customer.name}\n` +
+            `Phone: ${orderData.customer.phone}\n` +
+            `Email: ${orderData.customer.email}` +
+            (orderData.notes ? `\n\nNotes: ${orderData.notes}` : '');
+
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.textContent = "Opened WhatsApp ✓ — didn't open? Click again";
+        submitBtn.disabled = false;
     },
 
     async initiatePesapalPayment(orderData){
