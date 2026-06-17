@@ -5,6 +5,47 @@ import path from 'node:path';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 
+// Mirrors the rewrites in vercel.json so clean URLs behave the same in
+// `vite dev`/`vite preview` as they will in production.
+const CLEAN_URL_ROUTES = {
+  '/about': '/src/about.html',
+  '/menu': '/src/menu.html',
+  '/cake-jars': '/src/cake-jars.html',
+  '/order': '/src/order.html',
+  '/checkout': '/src/checkout.html',
+  '/payment-callback': '/src/payment-callback.html',
+};
+
+function cleanUrlRewrites() {
+  const middleware = (req, res, next) => {
+    const path = req.url?.split('?')[0];
+    const target = path && CLEAN_URL_ROUTES[path];
+    if (target) {
+      req.url = target + req.url.slice(path.length);
+    }
+    next();
+  };
+
+  return {
+    name: 'clean-url-rewrites',
+    // order: 'pre' is required so this runs before Vite's own SPA fallback
+    // middleware, which otherwise rewrites any extension-less path (like
+    // /menu) straight to index.html before we get a chance to redirect it.
+    configureServer: {
+      order: 'pre',
+      handler(server) {
+        server.middlewares.use(middleware);
+      },
+    },
+    configurePreviewServer: {
+      order: 'pre',
+      handler(server) {
+        server.middlewares.use(middleware);
+      },
+    },
+  };
+}
+
 async function copyDir(src, dest) {
   await fs.mkdir(dest, { recursive: true });
   const entries = await fs.readdir(src, { withFileTypes: true });
@@ -34,6 +75,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    cleanUrlRewrites(),
     {
       // Vite's bundler only processes <script type="module">; these pages use
       // classic <script src="..."> tags so cartManager/cartUI/etc. keep sharing

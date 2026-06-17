@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/navbar.css"/>
-    <link rel="stylesheet" href="styles/cake-jar-styles.css"/>
-    <link rel="stylesheet" href="styles/footer.css"/>
+    <link rel="stylesheet" href="/src/styles/global.css">
+    <link rel="stylesheet" href="/src/styles/navbar.css"/>
+    <link rel="stylesheet" href="/src/styles/cake-jar-styles.css"/>
+    <link rel="stylesheet" href="/src/styles/footer.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Mor. Cake Jars</title>
 
     <!--FAVIVO ICONS-->
-    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-    <link rel="shortcut icon" href="../favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Mor" />
-    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
 </head>
 <body>
     <div id="navbar"></div>
@@ -30,14 +30,14 @@
         </div>
 
         <div class="jar-hero animate">
-            <img src="../jars/Hero.webp" alt="Hero-Image">
+            <img src="/jars/Hero.webp" alt="Hero-Image">
         </div>
 
-        <div class="floats caramel animate"><img src="../icons/caramel.webp" alt=""></div>
-        <div class="floats caramel2 animate"><img src="../icons/caramel2.webp" alt=""></div>
+        <div class="floats caramel animate"><img src="/icons/caramel.webp" alt=""></div>
+        <div class="floats caramel2 animate"><img src="/icons/caramel2.webp" alt=""></div>
 
-        <div class="floats berry animate"><img src="../icons/berry.webp" alt=""></div>
-        <div class="floats berry2 animate"><img src="../icons/berry.webp" alt=""></div>
+        <div class="floats berry animate"><img src="/icons/berry.webp" alt=""></div>
+        <div class="floats berry2 animate"><img src="/icons/berry.webp" alt=""></div>
 
         <div class="info-section">
             <div class="info-word">100% DELICIOUS</div>
@@ -165,13 +165,13 @@
 
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="javascript/cakeJars.js"></script>
-    <script src="javascript/cartManager.js"></script>
-    <script src="javascript/cartUI.js"></script>
-    <script src="javascript/animations.js"></script>
-    <script src="javascript/navbar.js"></script>
+    <script src="/src/javascript/cakeJars.js"></script>
+    <script src="/src/javascript/cartManager.js"></script>
+    <script src="/src/javascript/cartUI.js"></script>
+    <script src="/src/javascript/animations.js"></script>
+    <script src="/src/javascript/navbar.js"></script>
     <script>
-    fetch("navigation.html")
+    fetch("/src/navigation.html")
         .then(response => response.text())
         .then(data => {
         document.getElementById("navbar").innerHTML = data;
@@ -179,7 +179,7 @@
         .catch(error => console.error("Error loading navbar:", error));
     </script>
     <script>
-      fetch("footer.html")
+      fetch("/src/footer.html")
         .then(response => response.text())
         .then(data => {
           const footer = document.getElementById("footer");

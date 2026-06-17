@@ -14,9 +14,18 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/checkout.html)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/javascript/checkout.js)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/src/styles/checkout.css)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "PowerShell($conn = Get-NetTCPConnection -LocalPort 4174 -ErrorAction SilentlyContinue; if \\($conn\\) { Stop-Process -Id $conn.OwningProcess -Force; \"stopped\" } else { \"not found\" })",
+      "PowerShell(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -in 5173,5174,4173,4174 } | ForEach-Object { $proc = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue; [PSCustomObject]@{Port=$_.LocalPort; PID=$_.OwningProcess; Process=$proc.ProcessName; Started=$proc.StartTime} })",
+      "Bash(curl -s http://localhost:5174/menu)",
+      "Bash(curl -s -D - -o /dev/null http://localhost:5174/menu)",
+      "Bash(curl -s http://localhost:5173/menu)",
+      "Bash(curl -s http://localhost:5173/about)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5190/src/navigation.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5190/src/footer.html)",
+      "Bash(rm -rf dist)"
     ]
   }
 }
-
-

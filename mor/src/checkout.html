@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - Mor Cakes</title>
-    <link rel="stylesheet" href="../src/styles/checkout.css">
-    <link rel="stylesheet" href="../src/styles/global.css">
-    <link rel="stylesheet" href="../src/styles/footer.css">
+    <link rel="stylesheet" href="/src/styles/checkout.css">
+    <link rel="stylesheet" href="/src/styles/global.css">
+    <link rel="stylesheet" href="/src/styles/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!--FAVIVO ICONS-->
-    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
-    <link rel="shortcut icon" href="../favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Mor" />
-    <link rel="manifest" href="../favicon/site.webmanifest" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
 </head>
 <body>
     <div class="checkout-container">
         <!-- Left Side: Checkout Form -->
         <div class="checkout-form-section">
             <div class="back-link">
-                <a href="cake-jars.html">← Back to Cart</a>
+                <a href="/cake-jars">← Back to Cart</a>
             </div>
             
             <h1>Checkout</h1>
@@ -308,18 +308,18 @@
             <div class="call-info">
                 <p>📞 <strong>We'll contact you at:</strong> <span id="customerPhone"></span></p>
             </div>
-            <button class="modal-btn" onclick="window.location.href='cake-jars.html'">
+            <button class="modal-btn" onclick="window.location.href='/cake-jars'">
                 Continue Shopping
             </button>
-            <button class="modal-btn-secondary" onclick="window.location.href='../index.html'">
+            <button class="modal-btn-secondary" onclick="window.location.href='/'">
                 Back to Home
             </button>
         </div>
     </div>
     <div class="modal-overlay" id="modalOverlay"></div>
 
-    <script src="../src/javascript/cartManager.js"></script>
-    <script src="../src/javascript/checkout.js"></script>
+    <script src="/src/javascript/cartManager.js"></script>
+    <script src="/src/javascript/checkout.js"></script>
     <script>
         //check if returning from a succesful payment
         const urlParams = new URLSearchParams(window.location.search);

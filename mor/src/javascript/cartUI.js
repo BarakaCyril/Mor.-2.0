@@ -42,7 +42,7 @@ const cartUI = {
             alert('Your cart is empty! Add some items before checking out.');
             return;
         }else{
-            window.location.href = 'checkout.html'
+            window.location.href = '/checkout'
         }
 
 

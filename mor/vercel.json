@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/src/about.html" },
+    { "source": "/menu", "destination": "/src/menu.html" },
+    { "source": "/cake-jars", "destination": "/src/cake-jars.html" },
+    { "source": "/order", "destination": "/src/order.html" },
+    { "source": "/checkout", "destination": "/src/checkout.html" },
+    { "source": "/payment-callback", "destination": "/src/payment-callback.html" }
+  ]
+}

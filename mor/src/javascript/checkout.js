@@ -25,7 +25,7 @@ const checkoutManager = {
         const orderItemsContainer = document.getElementById('orderItems');
 
         if (cart.length === 0){
-            window.location.href = 'menu.html';
+            window.location.href = '/menu';
             return;
         }else{
             orderItemsContainer.innerHTML = cart.map(item => `
@@ -232,7 +232,7 @@ const checkoutManager = {
                 currency: "KES",
                 amount: orderData.total,
                 description: `Mor Cakes Order #${orderRef}`,
-                callback_url: `${window.location.origin}/src/payment-callback.html`,
+                callback_url: `${window.location.origin}/payment-callback`,
                 notification_id: ipnData.ipn_id,
                 billing_address: {
                     email_address: orderData.customer.email,

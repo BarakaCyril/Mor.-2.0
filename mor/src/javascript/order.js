@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded',  ()=>{
     });
 
     const whatsAppUrl = "https://wa.me/254742044311?text=Hi%20mor.%20I%20want%20a%20custom%20cake";
-    const jarsUrl = "/src/cake-jars.html";
+    const jarsUrl = "/cake-jars";
     const custom = document.getElementById('choice-custom');
     const jars = document.getElementById('choice-jars');
     const inquiry = document.getElementById('choice-inquiry');
