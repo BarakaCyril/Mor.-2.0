@@ -104,9 +104,9 @@ a{
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 248, 246, 0.012);
-  backdrop-filter: blur(3px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.039);
+  background: rgba(255, 248, 241, 0.55);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(62, 43, 34, 0.06);
 }
 
 .nav-links {

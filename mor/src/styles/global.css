@@ -2,28 +2,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap");
 
 :root {
-    --white: #fff6f49b;
-    --light-cream: #FEECE5;
-    --cream: rgb(250, 207, 189);
-    --accent: #333333;
-    --cream-transparent: rgba(250, 207, 189, 0.3);
+    /* Base surfaces */
+    --white: #FFF8F1;
+    --light-cream: #FBE8DC;
+    --cream: #f2dbc8;
+    --cream-transparent: rgba(239, 192, 154, 0.3);
+    --mor-white: #FFFBF7;
+    --primary-easy: #FBE8DC;
+    --secondary-color: #FBE8DC;
 
-    --primary-color: rgb(250, 207, 189);
-    --primary-easy: #FEECE5;
-    --mor-white: #FFF5EE;
-    --primary-color-light: rgba(250, 207, 189, 0.3);
-    --secondary-color: #FEECE5;
-    --accent-color: #333;
-  
+    /* Brand accent (muted dusty clay) */
+    --primary-color: #fcd9c7;
+    --primary-color-light: rgba(169, 124, 99, 0.12);
+
+    /* Text & ink (espresso brown) */
+    --accent: #3E2B22;
+    --accent-color: #3E2B22;
+    --accent-dark: #2A1C14;
+
+    /* Warm-tinted neutrals */
+    --muted-text: #7A6357;
+    --border-light: #EAD9C9;
+    --border-medium: #D8BFA8;
+    --surface-hover: #F6EAE0;
+
+    /* Status */
+    --danger-color: #BD5A4C;
+
     --font-main: "Winky Sans", sans-serif;
     --font-accent: "Noto Serif Georgian", cursive;
     --ticker-gap: 20px;
-    --default-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --default-shadow: 0 4px 16px rgba(62, 43, 34, 0.12);
     color: var(--accent);
 }
 
 p{
   font-family: var(--font-main);
+  line-height: 1.6;
 }
 
 button{
@@ -34,7 +49,11 @@ button{
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover{
+  background-color: var(--accent-dark);
 }
 
 .animate{

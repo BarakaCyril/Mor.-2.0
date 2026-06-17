@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
     background-color: var(--white);
     min-height: 100vh;
+    font-family: var(--font-main);
 }
 
 h1{
@@ -47,8 +47,8 @@ p{
 
 .choice-card:hover{
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0,0,0,.08);
-    background-color: (--cream);
+    box-shadow: 0 8px 18px rgba(62,43,34,.1);
+    background-color: var(--light-cream);
 }
 
 .choice-card h2{
@@ -68,7 +68,7 @@ p{
     background: white;
     display: grid;
     place-items: center;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-light);
     color: var(--accent-color);
 }
 
@@ -86,16 +86,16 @@ p{
 }
 
 .order-form{
-    background-color: #FFF5EE;
+    background-color: var(--mor-white);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--default-shadow);
 }
 
 .form-header h1 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #333;
+    color: var(--accent-color);
 }
 
 .form-description {
@@ -136,7 +136,7 @@ select,
 textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-light);
     border-radius: 8px;
     font-size: 14px;
     background-color: white;
@@ -145,9 +145,21 @@ textarea {
 
 select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%233E2B22' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 12px center;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
 }
 
 .upload-section {
@@ -164,7 +176,7 @@ select {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-color: #f0f0f0;
+    background-color: var(--surface-hover);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,7 +189,7 @@ select {
 .upload-circle label {
     font-size: 12px;
     text-align: center;
-    color: #666;
+    color: var(--muted-text);
     cursor: pointer;
 }
 
@@ -191,7 +203,7 @@ select {
 
 .upload-info {
     text-align: center;
-    color: #666;
+    color: var(--muted-text);
     font-size: 14px;
 }
 
@@ -236,11 +248,11 @@ select {
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    color: #ff4444;
+    color: var(--danger-color);
 }
 
 .error-message {
-    color: #ff4444;
+    color: var(--danger-color);
     font-size: 14px;
     text-align: center;
     min-height: 20px;
@@ -270,7 +282,8 @@ select {
 }
 
 .important-note {
-    background-color: #f8f8f8;
+    background-color: var(--surface-hover);
+    border-left: 4px solid var(--primary-color);
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 30px;
@@ -278,13 +291,13 @@ select {
 
 .important-note h3 {
     font-size: 16px;
-    color: #333;
+    color: var(--accent-color);
     margin-bottom: 10px;
 }
 
 .important-note p {
     font-size: 14px;
-    color: #666;
+    color: var(--muted-text);
     padding-bottom: 5px;
 }
 
@@ -305,13 +318,21 @@ select {
 }
 
 .cancel-btn {
-    background-color: #f0f0f0;
-    color: #666;
+    background-color: var(--light-cream);
+    color: var(--accent-color);
+}
+
+.cancel-btn:hover {
+    background-color: var(--surface-hover);
 }
 
 .submit-btn {
-    background-color: #333;
+    background-color: var(--accent-color);
     color: white;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-dark);
 }
 
 @media (max-width: 480px) {

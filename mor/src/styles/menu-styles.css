@@ -65,9 +65,9 @@ body {
   padding: 1.5rem;
   width: 100%;
   max-width: 550px;
-  box-shadow: 0 0 10px #00000010;
+  box-shadow: 0 4px 14px rgba(62, 43, 34, 0.08);
   position: relative;
-  border: 1.5px solid var(--accent-color);
+  border: 1.5px solid var(--border-medium);
 }
 
 .menu-title {
@@ -93,10 +93,10 @@ body {
 .menu-special {
   background: var(--primary-color-light);
   border-radius: 1rem;
-  border: 1.5px solid var(--accent-color);
+  border: 1.5px solid var(--border-medium);
   padding: 1.5rem 2.5rem;
   position: relative;
-  box-shadow: 0 0 10px #00000010;
+  box-shadow: 0 4px 14px rgba(62, 43, 34, 0.08);
   margin-bottom: 2rem;
 }
 
@@ -129,7 +129,7 @@ body {
   gap: 1rem;
   text-align: center;
   border-radius: 1.5rem;
-  border: 1.5px solid var(--accent-color);
+  border: 1.5px solid var(--border-medium);
 }
 
 /* Animations */
